@@ -1,0 +1,70 @@
+/* css W01 Prove - HTML/CSS Review Luis Cordeiro */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Libre+Baskerville:wght@400;700&display=swap');
+
+
+body {
+    background-color: white;
+    color: black;
+    margin: 0;
+}
+
+#content {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 3rem 3rem 3rem 3rem;
+    font-family: "Times New Roman", serif;
+    border: 1px solid darkgray;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+#title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 15px;
+}
+
+#subheading {
+    font-family: "Cinzel", serif;
+    text-transform: uppercase;
+    color: #035f9c;
+    letter-spacing: 0.4em;
+    font-size: 11px;
+    margin-bottom: -8px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+p {
+
+    line-height: 1.4;
+    margin-top: 40px;
+}
+
+#university-does-this {
+    margin-top: 20px;
+    font-style: italic;
+}
+
+ul {
+    list-style-type: decimal;
+    line-height: 1.4;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+img {
+    display: block;
+    margin: 50px auto 20px;
+    width: 25%;
+}
