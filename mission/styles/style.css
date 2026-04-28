@@ -6,6 +6,7 @@ body {
     background-color: white;
     color: black;
     margin: 0;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 #content {
@@ -68,3 +69,15 @@ img {
     margin: 50px auto 20px;
     width: 25%;
 }
+
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+body.dark-mode #subheading {
+    color: #6fb4e9;
+}
+
