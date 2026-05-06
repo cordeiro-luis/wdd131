@@ -15,8 +15,6 @@ header {
 }
 
 main {
-    display: grid;
-    grid-template-columns: 1fr;
     background-color: lightgray;
 }
 
@@ -29,6 +27,11 @@ footer {
 main p {
     text-align: center;
     font-size: larger;
+}
+
+#picGallery {
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 .coolPic {
@@ -76,7 +79,6 @@ nav a:hover {
 @media screen and (min-width: 600px) {
 
     #picGallery {
-        display: grid;
         grid-template-columns: 1fr 1fr;
     }
 

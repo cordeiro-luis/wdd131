@@ -19,8 +19,6 @@ footer {
 main {
     display: grid;
     grid-template-columns: 1fr;
-
-    text-align: center;
 }
 
 h1 {
@@ -83,7 +81,7 @@ footer {
 }
 
 @media screen and (min-width: 1000px) {
-    #picGallery {
+    main {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
