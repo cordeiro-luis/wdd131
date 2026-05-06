@@ -1,0 +1,112 @@
+header,
+main,
+footer {
+
+    margin: 0px auto;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    font-family: sans-serif;
+}
+
+header {
+    color: white;
+    background-color: #3f7cc4;
+    margin-bottom: 0px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: lightgray;
+}
+
+footer {
+    background-color: #3f7cc4;
+    color: white;
+    text-align: center;
+}
+
+main p {
+    text-align: center;
+    font-size: larger;
+}
+
+.coolPic {
+    border: 4px solid white;
+    outline: 1px solid #999;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+    margin: 15px;
+    width: 90%;
+    height: 250px;
+    object-fit: cover;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+header nav {
+    text-align: center;
+}
+
+nav a {
+    padding: 20px;
+    color: white;
+    display: none;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: none;
+    color: #616061;
+}
+
+.menu-btn {
+    display: block;
+    margin: 0 auto;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+
+    #picGallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    nav {
+        text-align: right;
+        display: block;
+    }
+
+    nav a {
+        display: inline-block;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    header,
+    main h2 {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (min-width: 900px) {
+
+    #picGallery {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    header,
+    main h2 {
+        font-size: 2em;
+    }
+}
