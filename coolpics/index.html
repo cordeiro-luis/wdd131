@@ -9,44 +9,65 @@
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="styles/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
 
     <!-- Header nav to be completed in the next prove assignment -->
     <header id="navHeader">
-        <h1>Cool Pics 📷</h1>
-        <button class="menu-btn">
-            Menu
-            <span class="bar1"></span>
-            <span class="bar2"></span>
-            <span class="bar3"></span>
-        </button>
+        <h1 id="title">Cool Pics 📷</h1>
+        <button id="menu-btn">Menu</button>
 
         <nav>
             <a href="#">Home</a>
-            <a href="#">option 1</a>
-            <a href="#">option 2</a>
-            <a href="#">option 3</a>
+            <a href="#">People</a>
+            <a href="#">Places</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
         </nav>
     </header>
 
     <main>
-        <h2>Current Work</h2>
-        <div id="picGallery">
-            <img class="coolPic" src="images/norris-sm.jpg" alt="image 1">
-            <img class="coolPic" src="images/norris-sm.jpg" alt="image 2">
-            <img class="coolPic" src="images/norris-sm.jpg" alt="image 3">
-            <img class="coolPic" src="images/norris-sm.jpg" alt="image 4">
-            <img class="coolPic" src="images/norris-sm.jpg" alt="image 5">
-            <img class="coolPic" src="images/norris-sm.jpg" alt="image 6">
-            <img class="coolPic" src="images/norris-sm.jpg" alt="image 7">
-            <img class="coolPic" src="images/norris-sm.jpg" alt="image 8">
-            <img class="coolPic" src="images/norris-sm.jpg" alt="image 9">
-        </div>
+        <h2 id="gallery-heading">Current Work</h2>
+        <section id="picGallery">
+            <figure>
+                <img src="images/norris-sm.jpg" alt="image 1">
+            </figure>
+            <figure>
+                <img src="images/norris-sm.jpg" alt="image 2">
+            </figure>
+            <figure>
+                <img src="images/norris-sm.jpg" alt="image 3">
+            </figure>
+            <figure>
+                <img src="images/norris-sm.jpg" alt="image 4">
+            </figure>
+            <figure>
+                <img src="images/norris-sm.jpg" alt="image 5">
+            </figure>
+            <figure>
+                <img src="images/norris-sm.jpg" alt="image 6">
+            </figure>
+            <figure>
+                <img src="images/norris-sm.jpg" alt="image 7">
+            </figure>
+            <figure>
+                <img src="images/norris-sm.jpg" alt="image 8">
+            </figure>
+            <figure>
+                <img src="images/norris-sm.jpg" alt="image 9">
+            </figure>
+        </section>
     </main>
 
     <footer>Luis Cordeiro WDD131</footer>
+
+    <!-- Modal dialog used for image preview (UI layer, not main content) -->
+    <dialog>
+        <img>
+        <button class="close-viewer">X</button>
+    </dialog>
 
 </body>
 
