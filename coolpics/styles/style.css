@@ -42,7 +42,7 @@ main p {
     font-size: larger;
 }
 
-#picGallery {
+#pic-gallery {
     display: grid;
     grid-template-columns: 1fr;
 }
@@ -126,7 +126,7 @@ dialog {
 
 @media screen and (min-width: 890px) {
 
-    #picGallery {
+    #pic-gallery {
         grid-template-columns: 1fr 1fr;
     }
 
@@ -139,7 +139,7 @@ dialog {
 
 @media screen and (min-width: 1350px) {
 
-    #picGallery {
+    #pic-gallery {
         grid-template-columns: 1fr 1fr 1fr;
     }
 

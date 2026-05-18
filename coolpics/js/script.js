@@ -1,7 +1,6 @@
-
 // Select all relevant elements
 
-const gallery = document.querySelector('#picGallery');
+const gallery = document.querySelector('#pic-gallery');
 const modal = document.querySelector('dialog');
 const modalImage = modal.querySelector('img');
 const closeButton = modal.querySelector('.close-viewer');
@@ -30,8 +29,6 @@ function openModal(e) {
     modalImage.alt = alt;
     modal.showModal();
 }
-
-
 
 // Event listener for the menu button
 btn.addEventListener("click", ToggleMenu);
