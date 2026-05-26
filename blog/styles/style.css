@@ -59,6 +59,19 @@ nav {
     margin: 2px 0;
 }
 
+.post-meta .date {
+    font-style: italic;
+}
+
+.rating {
+    letter-spacing: -2px;
+}
+
+.post-content h2,
+h1 {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
 .post-content h2 {
     color: #b3002d;
     font-size: 1.3rem;
@@ -99,23 +112,20 @@ footer {
         grid-template-columns: 200px 1fr;
         gap: 2rem;
         align-items: stretch;
-
+        margin-bottom: 40px;
     }
 
     .post-meta {
         border-right: 1px solid #dbc193;
         padding-right: 1rem;
-        text-align: right;
     }
 
     .post-content {
-        max-width: 450px;
-        display: grid;
+        max-width: 600px;
     }
 
     .post-content img {
-        max-width: 150px;
-        display: block;
+        max-width: 100%;
         margin: 1rem 0;
         justify-self: center;
     }
