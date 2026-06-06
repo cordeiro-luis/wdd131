@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W07 Prove - Event Ticket Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <main class="wrapper">
+        <h1>Event Ticket</h1>
+
+        <form id="event-form">
+            <div class="field">
+                <label for="first-name">First Name</label>
+                <input id="first-name" name="firstName" type="text" required />
+            </div>
+
+            <div class="field">
+                <label for="last-name">Last Name</label>
+                <input id="last-name" name="lastName" type="text" required />
+            </div>
+
+            <div class="field full">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required />
+            </div>
+
+            <div class="field">
+                <label for="participant-type">Type</label>
+                <select id="participant-type" name="participantType"
+                    aria-controls="student-number-container guest-type-container">
+                    <option value="">Choose one</option>
+                    <option value="student">Student</option>
+                    <option value="guest">Guest</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="event-date">Event Date</label>
+                <input id="event-date" name="eventDate" type="date" required />
+            </div>
+
+            <div id="student-number-container" class="field full" hidden>
+                <label for="student-number">Student I#</label>
+                <input id="student-number" name="studentNumber" type="text" aria-describedby="student-instructions" />
+                <span id="student-instructions" class="helper-text">Enter a 9-digit student ID</span>
+            </div>
+
+            <div id="guest-type-container" class="field full" hidden>
+                <label for="guest-code">Access Code</label>
+                <input id="guest-code" name="guestCode" type="text" aria-describedby="guest-instructions" />
+                <span id="guest-instructions" class="helper-text">Enter valid guest access code</span>
+            </div>
+
+            <button class="full" type="submit">Create Ticket</button>
+        </form>
+
+        <section id="output" aria-live="polite"></section>
+    </main>
+
+</body>
+
+</html>

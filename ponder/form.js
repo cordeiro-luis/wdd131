@@ -12,9 +12,7 @@ function updateNotesField() {
   // Show the travel notes on the form if they are choosing many campuses and require it
 
   if (value === "many") {
-    //notesContainer.classList.remove("is-hidden");
     notesContainer.hidden = false;
-
 
     // The video instructs to make the notes field required,
     // but this prevents to show a message on the output if the user
@@ -23,9 +21,8 @@ function updateNotesField() {
     // notes.required = true;
 
   } else {
-    //notesContainer.classList.add("is-hidden");
+    
     notesContainer.hidden = true;
-
     // notes.required = false;
   }
 
