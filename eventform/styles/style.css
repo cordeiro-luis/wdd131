@@ -47,6 +47,11 @@ button:hover {
   color: #ffffff;
 }
 
+button:focus-visible {
+  outline: 3px solid #7890a1;
+  outline-offset: 3px;
+}
+
 [hidden] {
   display: none;
 }
