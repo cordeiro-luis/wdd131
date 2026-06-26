@@ -33,7 +33,7 @@ header {
 }
 
 .logo h1 {
-    font-family: "Amatic SC", sans-serif;
+    font-family: "Amatic SC", "Arial Narrow", sans-serif;
     font-weight: 700;
     font-size: 2.5rem;
     margin: 0;
@@ -41,7 +41,8 @@ header {
 }
 
 
-header form {
+
+#search {
     display: flex;
     width: 100%;
     max-width: 360px;
@@ -51,7 +52,7 @@ header form {
     background-color: #fff;
 }
 
-header form input[type="search"] {
+#search input[type="search"] {
     flex: 1;
     border: none;
     padding: 0.5rem;
@@ -59,7 +60,7 @@ header form input[type="search"] {
     outline: none;
 }
 
-header form button {
+#search button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -71,7 +72,7 @@ header form button {
     cursor: pointer;
 }
 
-header form button img {
+#search button img {
     width: 20px;
     height: 20px;
 }
@@ -87,6 +88,7 @@ header form button img {
     white-space: nowrap;
     border: 0;
 }
+
 main {
     border-top: 1px solid #ccc;
     padding-top: 0.7rem;
@@ -114,14 +116,14 @@ main {
 }
 
 .recipe-details {
-    padding-left: 15px;
+    padding: 0 15px 10px 15px;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
 .recipe-details h2 {
-    font-family: "Amatic SC", sans-serif;
+    font-family: "Amatic SC", "Arial Narrow", sans-serif;
     font-weight: 700;
     font-size: 2rem;
     margin: 0.5rem 0 0 0;
@@ -129,12 +131,26 @@ main {
     letter-spacing: 1px;
 }
 
+.recipe-description {
+    display: none;
+}
+
 .category-tag {
+
+    display: inline-flex;
     align-self: flex-start;
+
     border: 1px solid #333;
     padding: 0.2rem 0.5rem;
     font-size: 0.85rem;
     background-color: #eeeeee;
+}
+
+.tags-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 0.1rem;
+    /* the original video shows no space, but that's a bit ugly */
 }
 
 .icon-star {
@@ -175,7 +191,7 @@ footer {
         font-size: 3.5rem;
     }
 
-    header form {
+    #search {
         max-width: 750px;
     }
 
@@ -186,7 +202,7 @@ footer {
     .recipe-card {
         flex-direction: row;
         max-width: 750px;
-        max-height: 250px;
+        min-height: 250px;
     }
 
     .recipe-image-wrapper {
@@ -204,6 +220,10 @@ footer {
         flex-direction: column;
         justify-content: flex-start;
         padding: 15px 1.5rem 1.5rem 0;
+    }
+
+    .recipe-description {
+        display: block;
     }
 
     .icon-star-empty {

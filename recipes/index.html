@@ -4,20 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>W09 Prove: Recipe Book part 1</title>
-    <meta name="description" content="WDD 131 - Week 9 Prove Assignment - A clean and responsive
-        Recipe Book website part 1 featuring delicious recipes.">
+    <title>W10 Prove: Recipe Book part 2</title>
+    <meta name="description" content="WDD 131 - Week 10 Prove Assignment - A clean and responsive
+        Recipe Book website part 2 featuring delicious recipes.">
 
     <!-- Open Graph (Facebook, LinkedIn, etc.) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="W09 Prove: Recipe Book part 1">
-    <meta property="og:description" content="WDD 131 - Week 9 Prove Assignment - Recipe Book part 1">
+    <meta property="og:title" content="W10 Prove: Recipe Book part 2">
+    <meta property="og:description" content="WDD 131 - Week 10 Prove Assignment - Recipe Book part 2">
     <meta property="og:url" content="http://cordeiro-luis.github.io/wdd131/recipes/index.html">
     <meta property="og:image" content="http://cordeiro-luis.github.io/wdd131/recipes/images/recipe-placeholder.webp">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="W09 Prove: Recipe Book part 1">
-    <meta name="twitter:description" content="WDD 131 - Week 9 Prove Assignment - Recipe Book part 1">
+    <meta name="twitter:title" content="W10 Prove: Recipe Book part 2">
+    <meta name="twitter:description" content="WDD 131 - Week 10 Prove Assignment - Recipe Book part 2">
     <meta name="twitter:image" content="http://cordeiro-luis.github.io/wdd131/recipes/images/recipe-placeholder.webp">
     <!-- One favicon (ICO works everywhere) -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -37,36 +37,16 @@
                 alt="Recipe book with a stylized cookbook containing a spoon and fork crossed on the cover">
             <h1>RECIPEBOOK</h1>
         </div>
-        <form role="search">
+        <div id="search" role="search">
             <label for="recipe-search" class="sr-only">Find a recipe</label>
             <input type="search" id="recipe-search" name="q" placeholder="Find a recipe">
-            <button type="submit" aria-label="Search">
-                <img src="images/search.svg" alt="Search icon"> </button>
-        </form>
+            <button type="button" aria-label="Search">
+                <img src="images/search.svg" alt="Search icon">
+            </button>
+        </div>
     </header>
 
-    <main>
-        <article class="recipe-card">
-            <div class="recipe-image-wrapper">
-                <img src="images/apple-crisp.jpg" alt="Warm apple crisp served with a scoop of vanilla ice cream">
-            </div>
-
-            <div class="recipe-details">
-                <span class="category-tag">dessert</span>
-                <h2>APPLE CRISP</h2>
-                <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star-empty">☆</span>
-                </span>
-                <p class="recipe-description">
-                    This apple crisp recipe is a simple yet delicious fall dessert that's great served warm with vanilla
-                    ice cream.
-                </p>
-            </div>
-        </article>
+    <main id="main">
     </main>
 
     <footer>
