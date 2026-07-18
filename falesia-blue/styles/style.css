@@ -530,3 +530,30 @@ body {
         gap: 40px;
     }
 }
+
+/* Fix for small screens where the modal content might exceed the viewport height */
+@media (max-height: 600px) {
+    #details-modal:not(.hidden) {
+        display: flex !important;
+        align-items: flex-start; 
+        overflow-y: auto;        
+        padding: 20px 15px;      
+    }
+
+    #details-modal:not(.hidden) .modal-card-container {
+        margin: 0 auto !important;          
+        position: relative !important;
+        top: 0 !important;
+        transform: none !important;
+        
+        /* New safety nets for physical phones */
+        height: auto !important;
+        max-height: none !important; 
+    }
+    
+    /* Shrink the massive banner image on landscape mobile so text is visible immediately */
+    #details-modal:not(.hidden) .modal-landscape-img {
+        max-height: 140px;
+        object-fit: cover;
+    }
+}

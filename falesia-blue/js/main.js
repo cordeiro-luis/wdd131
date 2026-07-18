@@ -205,7 +205,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const initialBeaches = spots.filter(beach => beach.region === 'Arrábida');
     renderCards(initialBeaches);
     
-    // Força o botão da Arrábida a ficar ativo/pressionado logo no arranque
+    // Force the first filter button (Arrábida) to be active on page load for clarity and accessibility
     const defaultBtn = document.querySelector('.filter-btn[data-region="Arrábida"]');
     if (defaultBtn) defaultBtn.classList.add('active');
     
@@ -360,7 +360,7 @@ function openDetails(beachName) {
         .map(amenity => `<span class="amenity-tag">${amenity}</span>`)
         .join('');
 
-    // Criação do URL dinâmico de pesquisa no Google Maps para o botão DIRECTIONS
+    // Dynamically generate a Google Maps search URL for the selected beach, allowing users to get directions easily.
     const mapsQuery = encodeURIComponent(`${beach.name}, ${beach.region}, Portugal`);
     const mapsURL = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
 
@@ -376,7 +376,7 @@ function openDetails(beachName) {
             
             <div class="modal-glass-overlay">
                 <div class="modal-header-text">
-                    <!-- id="modal-title" faz com que o Narrator leia o título assim que abre -->
+                    <!-- id="modal-title" makes the narrator read the title as soon as the modal opens -->
                     <h2 id="modal-title">${beach.name.toUpperCase()}</h2>
                     <p class="modal-subtitle">${beach.region.toUpperCase()} (${beach.type.toUpperCase()})</p>
                 </div>
@@ -409,7 +409,7 @@ function openDetails(beachName) {
                     ${amenitiesHTML}
                 </div>
                 
-                <!-- O botão agora abre a rota real no Google Maps instantaneamente -->
+                <!-- Dynamically generate the Google Maps directions button -->
                 <button class="directions-btn" onclick="window.open('${mapsURL}', '_blank')">DIRECTIONS</button>
             </div>
         </div>
