@@ -200,15 +200,15 @@ let lastActiveElement = null;
 
 window.addEventListener('DOMContentLoaded', () => {
     setupHeroSuggestion();
-    
+
     // performance optimization: render only Arrábida beaches initially to avoid overloading the DOM with all beaches at once
     const initialBeaches = spots.filter(beach => beach.region === 'Arrábida');
     renderCards(initialBeaches);
-    
-    // Força o botão da Arrábida a ficar ativo/pressionado logo no arranque
+
+    // Force the first filter button (Arrábida) to be active on page load for clarity and accessibility
     const defaultBtn = document.querySelector('.filter-btn[data-region="Arrábida"]');
     if (defaultBtn) defaultBtn.classList.add('active');
-    
+
     setupFilters();
     setupModalClose();
 });
@@ -218,13 +218,13 @@ function setupHeroSuggestion() {
 
     // Randomly select a beach for the hero section. In a PROD system, maybe this wopuld be based on a daily rotation or an API call.
     const randomIndex = Math.floor(Math.random() * spots.length);
-    const suggestion = spots[randomIndex]; 
-    
+    const suggestion = spots[randomIndex];
+
     heroContainer.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45)), url('${suggestion.detailImg}')`;
 
     // For long location descriptions, truncate to 120 characters for the hero section to maintain a clean layout.
-    const textDescription = suggestion.description 
-        ? suggestion.description.substring(0, 120) + "..." 
+    const textDescription = suggestion.description
+        ? suggestion.description.substring(0, 120) + "..."
         : "Calm water, perfect for snorkeling!";
 
     // Accessibility: Define the hero section as a landmark region with an aria-label for screen readers
@@ -266,7 +266,7 @@ function renderCards(beaches) {
     beaches.forEach(beach => {
         const card = document.createElement('div');
         card.className = 'beach-card';
-        
+
         // Accessibility: Logic to determine the color of the small circle (hint) for safety
         let statusClass = "hint-safe";
         let statusText = "Safe";
@@ -277,12 +277,12 @@ function renderCards(beaches) {
             statusClass = "hint-caution";
             statusText = "Caution";
         }
-        
+
         // Accessibility: Include the water temperature and safety status in the screen reader report
         card.setAttribute('tabindex', '0');
         card.setAttribute('role', 'button');
         card.setAttribute('aria-label', `Beach: ${beach.name}, Region: ${beach.region}. Water temperature: ${beach.temp} degrees. Condition: ${statusText}. Press Enter to view details.`);
-        
+
         card.innerHTML = `
             <!-- Pequeno círculo indicador de segurança sobreposto à imagem -->
             <span class="status-badge ${statusClass}" title="Status: ${statusText}"></span>
@@ -296,14 +296,14 @@ function renderCards(beaches) {
                 </div>
             </div>
         `;
-        
+
         // Clicking the card opens the modal with detailed information about the beach
         card.addEventListener('click', () => openDetails(beach.name));
-        
+
         // Accessibility: Allow keyboard users to open the modal with Enter or Space keys
         card.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault(); 
+                e.preventDefault();
                 openDetails(beach.name);
             }
         });
@@ -316,7 +316,7 @@ function renderCards(beaches) {
 function setupFilters() {
     filterButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            
+
             filterButtons.forEach(b => b.classList.remove('active'));
             e.target.classList.add('active');
 
@@ -360,14 +360,14 @@ function openDetails(beachName) {
         .map(amenity => `<span class="amenity-tag">${amenity}</span>`)
         .join('');
 
-    // Criação do URL dinâmico de pesquisa no Google Maps para o botão DIRECTIONS
+    // Dynamically generate a Google Maps search URL for the selected beach, allowing users to get directions easily.
     const mapsQuery = encodeURIComponent(`${beach.name}, ${beach.region}, Portugal`);
     const mapsURL = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
 
     // Accessibility: Force the container to behave as a focused popup dialog
     modal.setAttribute('role', 'dialog');
     modal.setAttribute('aria-modal', 'true');
-    modal.setAttribute('tabindex', '-1'); 
+    modal.setAttribute('tabindex', '-1');
     modal.setAttribute('aria-labelledby', 'modal-title');
 
     modalContent.innerHTML = `
@@ -376,7 +376,7 @@ function openDetails(beachName) {
             
             <div class="modal-glass-overlay">
                 <div class="modal-header-text">
-                    <!-- id="modal-title" faz com que o Narrator leia o título assim que abre -->
+                    <!-- id="modal-title" makes the narrator read the title as soon as the modal opens -->
                     <h2 id="modal-title">${beach.name.toUpperCase()}</h2>
                     <p class="modal-subtitle">${beach.region.toUpperCase()} (${beach.type.toUpperCase()})</p>
                 </div>
@@ -401,21 +401,24 @@ function openDetails(beachName) {
                     <p>${alertDesc}</p>
                 </div>
 
-                <!-- NEW: LONG DESCRIPTION -->
+                <!-- LONG DESCRIPTION -->
                 <p class="modal-description">${beach.description || 'No description available for this destination.'}</p>
 
-                <!-- NEW: AMENITIES TAGS GRID -->
+                <!-- AMENITIES TAGS GRID -->
                 <div class="modal-amenities-container">
                     ${amenitiesHTML}
                 </div>
                 
-                <!-- O botão agora abre a rota real no Google Maps instantaneamente -->
+                <!-- Dynamically generate the Google Maps directions button -->
                 <button class="directions-btn" onclick="window.open('${mapsURL}', '_blank')">DIRECTIONS</button>
             </div>
         </div>
     `;
 
     modal.classList.remove('hidden');
+
+    // Prevent background page from scrolling on PC & Mobile
+    document.body.style.overflow = 'hidden';
 
     //Accessibility: Set focus to the modal for screen readers and keyboard users
     setTimeout(() => {
@@ -436,7 +439,10 @@ function setupModalClose() {
 
 function closeModal() {
     modal.classList.add('hidden');
-    
+
+    // Restore normal background scrolling when closed
+    document.body.style.overflow = '';
+
     //Accessibility: Return focus to the last active element before the modal was opened
     if (lastActiveElement) {
         lastActiveElement.focus();
