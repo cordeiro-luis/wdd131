@@ -363,5 +363,56 @@ const spots = [
             { label: "🎒 Zero Amenities", value: "Wild island beach • Bring your own water and shade" }
         ],
         amenities: []
+    },
+    {
+        name: "Ilha de Faro",
+        region: "Algarve",
+        lat: 37.0083,
+        lng: -7.9943,
+        img: "images/beaches/faro-thumb.jpg",
+        detailImg: "images/beaches/faro-landscape.jpg",
+        type: "Beach",
+        description: "Situated on a barrier island within the Ria Formosa Natural Park, Ilha de Faro is an easily accessible beach connected to the mainland by a single-lane bridge. It features an expansive golden sand beach facing the open ocean, alongside a sheltered lagoon side popular for water sports.",
+
+        // Set to null so live API feeds dictate the grid UI
+        temp: null,
+        waveHeight: null,
+        flag: "Green",
+        wind: { speed: "11 km/h", direction: "S" },
+        uvIndex: { value: 7, label: "High" },
+        tide: { nextLow: "14:15", nextHigh: "20:30" },
+
+        extraDetails: [
+            { label: "🌉 Bridge Access", value: "New bridge • Heavy traffic during summer peak hours" },
+            { label: "🏖️ Dual Coastline", value: "Calm Ria Formosa lagoon on one side, open Atlantic waves on the other" },
+            { label: "🚌 Public Transit", value: "Direct municipal bus connection (Line 16) from Faro Airport & city center" }
+        ],
+        amenities: ["🚗 Parking", "🍽️ Restaurants", "🧑‍⚕️ Lifeguard", "🚿 Showers", "🪑 Sunbeds", "♿ Accessibility", "🛶 Water Sports"]
+    },
+    {
+        name: "Praia do Cabeço",
+        region: "Algarve",
+        lat: 37.1754,
+        lng: -7.4721,
+        img: "images/beaches/cabeco-thumb.jpg",
+        detailImg: "images/beaches/cabeco-landscape.jpg",
+        type: "Beach",
+        description: "Also known as Praia da Retur, this tranquil Eastern Algarve gem in Castro Marim is framed by a lush pine forest and pristine sand dunes. Renowned for its calm, shallow waters and noticeably warmer sea temperatures, it offers a peaceful, expansive coastal escape.",
+
+        // Set to null so live API feeds dictate the grid UI
+        temp: null,
+        waveHeight: null,
+        flag: "Green",
+        wind: { speed: "9 km/h", direction: "SE" },
+        uvIndex: { value: 7, label: "High" },
+        tide: { nextLow: "14:10", nextHigh: "20:25" },
+
+        extraDetails: [
+            { label: "🌲 Pine Forest", value: "Framed by the dense Gancho pine woods with wooden boardwalks protecting the dunes" },
+            { label: "🌡️ Warm Waters", value: "Enjoys some of the warmest sea temperatures in mainland Portugal" },
+            { label: "👨‍👩‍👧 Family Friendly", value: "Gentle seabed slope, minimal swell, and safe swimming conditions" }
+        ],
+        amenities: ["🚗 Parking", "🍽️ Restaurants", "🧑‍⚕️ Lifeguard", "🚿 Showers", "🪑 Sunbeds", "♿ Accessibility"]
     }
+
 ];
