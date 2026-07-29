@@ -11,7 +11,7 @@ let lastActiveElement = null;
 window.addEventListener('DOMContentLoaded', () => {
     setupHeroSuggestion();
 
-    // Performance optimization: render Arrábida initial view
+    // Initial view rendering Arrábida spots
     const initialBeaches = spots.filter(beach => beach.region === 'Arrábida');
     renderCards(initialBeaches);
 
@@ -22,7 +22,14 @@ window.addEventListener('DOMContentLoaded', () => {
     setupModalClose();
 });
 
-// Helper function to find the index matching the current hour (e.g. "2026-07-29T12")
+// Helper: Format temperature with exactly 1 decimal digit
+function formatTemp(val) {
+    if (val === null || val === undefined || val === "-") return "-";
+    const num = Number(val);
+    return isNaN(num) ? "-" : `${num.toFixed(1)}°C`;
+}
+
+// Helper function to find current hour index from Open-Meteo time array
 function getCurrentHourIndex(timeArray) {
     if (!timeArray || timeArray.length === 0) return 0;
     const nowISO = new Date().toISOString().slice(0, 13);
@@ -34,7 +41,6 @@ function getCurrentHourIndex(timeArray) {
 function computeBeachStatus(beach) {
     const swell = beach.waveHeight;
 
-    // If live swell data is available, evaluate actual ocean conditions dynamically
     if (swell !== null && swell !== undefined) {
         if ((beach.type === "Natural Pool" && swell > 1.5) || beach.flag === "Red" || swell >= 2.0) {
             return { cssClass: "hint-danger", text: "Danger" };
@@ -44,13 +50,12 @@ function computeBeachStatus(beach) {
         return { cssClass: "hint-safe", text: "Safe" };
     }
 
-    // Baseline static status while swell data is fetching
     if (beach.flag === "Red") return { cssClass: "hint-danger", text: "Danger" };
     if (beach.flag === "Yellow") return { cssClass: "hint-caution", text: "Caution" };
     return { cssClass: "hint-safe", text: "Safe" };
 }
 
-// Updates a specific beach card's temperature AND safety badge on the main grid
+// Updates a specific beach card on the main grid dynamically
 function updateCardInGrid(beach) {
     const safeName = CSS.escape(beach.name);
     const cardEl = document.querySelector(`.beach-card[data-beach="${safeName}"]`);
@@ -60,7 +65,7 @@ function updateCardInGrid(beach) {
     const statusBadgeEl = cardEl.querySelector('.status-badge');
 
     if (cardTempEl) {
-        cardTempEl.innerHTML = `🌡️ ${beach.temp !== null ? `${beach.temp}°C` : '-'}`;
+        cardTempEl.innerHTML = `🌡️ ${formatTemp(beach.temp)}`;
     }
 
     if (statusBadgeEl) {
@@ -70,23 +75,72 @@ function updateCardInGrid(beach) {
     }
 }
 
+// Helper to compute and update the modal's verdict box dynamically
+function updateModalVerdict(beach) {
+    const verdictBox = document.querySelector('.glass-verdict-box');
+    if (!verdictBox) return;
+
+    let alertTitle = "DAILY SAFETY VERDICT: SAFE";
+    let alertDesc = "Conditions are perfect for swimming.";
+    let alertClass = "verdict-safe";
+
+    const swell = beach.waveHeight;
+
+    if ((beach.type === "Natural Pool" && swell > 1.5) || beach.flag === "Red" || swell >= 2.0) {
+        alertTitle = "⚠️ HIGH SURF / STRONG CURRENTS";
+        alertDesc = "Exercise extreme caution or avoid swimming.";
+        alertClass = "verdict-danger";
+    } else if (beach.flag === "Yellow" || swell >= 1.2) {
+        alertTitle = "⚠️ CAUTION REQUIRED";
+        alertDesc = "Moderate swell or tide movement. Pay attention.";
+        alertClass = "verdict-caution";
+    }
+
+    verdictBox.className = `glass-verdict-box ${alertClass}`;
+    verdictBox.innerHTML = `
+        <h4>${alertTitle}</h4>
+        <p>${alertDesc}</p>
+    `;
+}
+
 async function fetchLiveMetrics(lat, lng) {
     try {
         const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current=wind_speed_10m,wind_direction_10m,uv_index&timezone=auto`;
-        const marineUrl = `https://marine-api.open-meteo.com/v1/marine?latitude=${lat}&longitude=${lng}&current=wave_height&hourly=sea_surface_temperature&timezone=auto`;
+        // ✅ Updated parameter: sea_level_height_msl
+        const marineUrl = `https://marine-api.open-meteo.com/v1/marine?latitude=${lat}&longitude=${lng}&current=wave_height&hourly=sea_surface_temperature,sea_level_height_msl&timezone=auto`;
 
         const [weatherRes, marineRes] = await Promise.all([
             fetch(weatherUrl),
             fetch(marineUrl)
         ]);
 
-        if (!weatherRes.ok || !marineRes.ok) throw new Error("API network error");
+        if (!weatherRes.ok) throw new Error(`Weather API returned HTTP ${weatherRes.status}`);
+        if (!marineRes.ok) throw new Error(`Marine API returned HTTP ${marineRes.status}`);
 
         const weatherData = await weatherRes.json();
         const marineData = await marineRes.json();
 
         const currentHourIdx = getCurrentHourIndex(marineData.hourly?.time || []);
         const rawTemp = marineData.hourly?.sea_surface_temperature?.[currentHourIdx] ?? null;
+
+        // --- TIDE CALCULATION (Compact Format) ---
+        const seaLevels = marineData.hourly?.sea_level_height_msl || [];
+        const currentSeaLevel = seaLevels[currentHourIdx] ?? null;
+        const nextSeaLevel = seaLevels[currentHourIdx + 1] ?? null;
+
+        let tideFormatted = "-";
+        if (currentSeaLevel !== null) {
+            const sign = currentSeaLevel >= 0 ? "+" : "";
+            const heightStr = `${sign}${currentSeaLevel.toFixed(1)}m`;
+
+            if (nextSeaLevel !== null) {
+                // Compact arrow trend
+                const trendIcon = nextSeaLevel >= currentSeaLevel ? "↗" : "↘";
+                tideFormatted = `${heightStr} ${trendIcon}`;
+            } else {
+                tideFormatted = heightStr;
+            }
+        }
 
         const getCardinalDirection = (deg) => {
             const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
@@ -99,12 +153,13 @@ async function fetchLiveMetrics(lat, lng) {
         const rawUV = weatherData.current?.uv_index ?? null;
 
         return {
-            temp: rawTemp !== null ? `${Math.round(rawTemp)}°C` : "-",
+            temp: rawTemp !== null ? formatTemp(rawTemp) : "-",
             waveHeight: rawSwell !== null ? `${rawSwell.toFixed(1)}m` : "-",
             wind: rawWindSpeed !== null ? `${Math.round(rawWindSpeed)} km/h (${rawWindDir})` : "-",
             uv: rawUV !== null ? `UV ${Math.round(rawUV)}` : "-",
+            tide: tideFormatted,
 
-            rawTempNum: rawTemp !== null ? Math.round(rawTemp) : null,
+            rawTempNum: rawTemp !== null ? Number(rawTemp.toFixed(1)) : null,
             rawSwellNum: rawSwell !== null ? Number(rawSwell.toFixed(1)) : null
         };
     } catch (error) {
@@ -114,18 +169,17 @@ async function fetchLiveMetrics(lat, lng) {
             waveHeight: "-",
             wind: "-",
             uv: "-",
+            tide: "-",
             rawTempNum: null,
             rawSwellNum: null
         };
     }
 }
 
-// Asynchronously updates all visible beaches currently rendered on screen
 function fetchMetricsForVisibleBeaches(beaches) {
     beaches.forEach(async (beach) => {
         if (!beach.lat || !beach.lng) return;
 
-        // Skip fetching if already retrieved during this browser session
         if (beach.temp !== null && beach.waveHeight !== null) {
             updateCardInGrid(beach);
             return;
@@ -155,9 +209,6 @@ function setupHeroSuggestion() {
     heroContainer.setAttribute('role', 'region');
     heroContainer.setAttribute('aria-label', "Today's Featured Beach Spot");
 
-    const tempDisplay = suggestion.temp !== null ? `${suggestion.temp}°C` : '-';
-    const swellDisplay = suggestion.waveHeight !== null ? `${suggestion.waveHeight}m` : '-';
-
     heroContainer.innerHTML = `
         <div class="hero-glass-card">
             <span class="hero-tag">TODAY'S SPOT</span>
@@ -167,12 +218,12 @@ function setupHeroSuggestion() {
             <div class="hero-meta-row">
                 <div class="meta-item">
                     <span class="hero-icon" aria-hidden="true">🌡️</span>
-                    <span id="hero-temp-val">${tempDisplay}</span>
+                    <span id="hero-temp-val">${formatTemp(suggestion.temp)}</span>
                 </div>
                 <span class="meta-divider" aria-hidden="true">|</span>
                 <div class="meta-item">
                     <span class="hero-icon" aria-hidden="true">🌊</span>
-                    <span id="hero-swell-val">Swell: ${swellDisplay}</span>
+                    <span id="hero-swell-val">Swell: ${suggestion.waveHeight !== null ? `${suggestion.waveHeight.toFixed(1)}m` : '-'}</span>
                 </div>
             </div>
             
@@ -184,7 +235,6 @@ function setupHeroSuggestion() {
         openDetails(suggestion.name);
     });
 
-    // Fetch hero live metrics if missing
     if (suggestion.lat && suggestion.lng && (suggestion.temp === null || suggestion.waveHeight === null)) {
         fetchLiveMetrics(suggestion.lat, suggestion.lng).then(liveData => {
             if (liveData.rawTempNum !== null) suggestion.temp = liveData.rawTempNum;
@@ -208,11 +258,10 @@ function renderCards(beaches) {
         card.setAttribute('data-beach', beach.name);
 
         const statusInfo = computeBeachStatus(beach);
-        const tempDisplay = beach.temp !== null ? `${beach.temp}°C` : '-';
 
         card.setAttribute('tabindex', '0');
         card.setAttribute('role', 'button');
-        card.setAttribute('aria-label', `Beach: ${beach.name}, Region: ${beach.region}. Water temperature: ${tempDisplay}. Condition: ${statusInfo.text}. Press Enter to view details.`);
+        card.setAttribute('aria-label', `Beach: ${beach.name}, Region: ${beach.region}. Water temperature: ${formatTemp(beach.temp)}. Condition: ${statusInfo.text}. Press Enter to view details.`);
 
         card.innerHTML = `
             <span class="status-badge ${statusInfo.cssClass}" title="Status: ${statusInfo.text}"></span>
@@ -221,7 +270,7 @@ function renderCards(beaches) {
                 <h3>${beach.name}</h3>
                 <div class="card-meta-layout">
                     <p><span aria-hidden="true">📍</span> ${beach.region}</p>
-                    <span class="card-temp">🌡️ ${tempDisplay}</span>
+                    <span class="card-temp">🌡️ ${formatTemp(beach.temp)}</span>
                 </div>
             </div>
         `;
@@ -237,7 +286,6 @@ function renderCards(beaches) {
         gridContainer.appendChild(card);
     });
 
-    // ⚡ Loop through all visible cards asynchronously to update temp & safety dot live
     fetchMetricsForVisibleBeaches(beaches);
 }
 
@@ -259,20 +307,6 @@ function openDetails(beachName) {
     if (!beach) return;
 
     lastActiveElement = document.activeElement;
-
-    let alertTitle = "DAILY SAFETY VERDICT: SAFE";
-    let alertDesc = "Conditions are perfect for swimming.";
-    let alertClass = "verdict-safe";
-
-    if ((beach.type === "Natural Pool" && beach.waveHeight > 1.5) || beach.flag === "Red" || beach.waveHeight >= 2.0) {
-        alertTitle = "⚠️ HIGH SURF / STRONG CURRENTS";
-        alertDesc = "Exercise extreme caution or avoid swimming.";
-        alertClass = "verdict-danger";
-    } else if (beach.flag === "Yellow" || beach.waveHeight >= 1.2) {
-        alertTitle = "⚠️ CAUTION REQUIRED";
-        alertDesc = "Moderate swell or tide movement. Pay attention.";
-        alertClass = "verdict-caution";
-    }
 
     const windText = beach.wind ? `${beach.wind.speed} (${beach.wind.direction})` : "-";
     const uvText = beach.uvIndex ? `UV ${beach.uvIndex.value} (${beach.uvIndex.label})` : "-";
@@ -311,19 +345,22 @@ function openDetails(beachName) {
                     <p class="modal-subtitle">${beach.region.toUpperCase()} (${beach.type.toUpperCase()})</p>
                 </div>
 
-                <!-- LIVE STATUS BADGE -->
                 <div id="live-badge" class="live-status-badge loading">
                     <span class="badge-dot"></span> FETCHING LIVE DATA...
                 </div>
                 
                 <div class="modal-metrics-grid">
                     <div class="metric-item">
-                        <span id="metric-temp">🌡️ ${beach.temp !== null ? `${beach.temp}°C` : '-'}</span>
+                        <span id="metric-temp">🌡️ ${formatTemp(beach.temp)}</span>
                         <small>Water Temp</small>
                     </div>
                     <div class="metric-item">
-                        <span id="metric-swell">🌊 ${beach.waveHeight !== null ? `${beach.waveHeight}m` : '-'}</span>
+                        <span id="metric-swell">🌊 ${beach.waveHeight !== null ? `${beach.waveHeight.toFixed(1)}m` : '-'}</span>
                         <small>Swell</small>
+                    </div>
+                    <div class="metric-item">
+                        <span id="metric-tide">⚓ -</span>
+                        <small>Tide</small>
                     </div>
                     <div class="metric-item">
                         <span id="metric-wind">💨 ${windText}</span>
@@ -335,10 +372,8 @@ function openDetails(beachName) {
                     </div>
                 </div>
                 
-                <div class="glass-verdict-box ${alertClass}">
-                    <h4>${alertTitle}</h4>
-                    <p>${alertDesc}</p>
-                </div>
+                <!-- VERDICT BOX (Dynamic) -->
+                <div class="glass-verdict-box"></div>
 
                 <p class="modal-description">${beach.description || 'No description available for this destination.'}</p>
 
@@ -353,30 +388,37 @@ function openDetails(beachName) {
         </div>
     `;
 
+    // Render initial verdict
+    updateModalVerdict(beach);
+
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
 
     setTimeout(() => modal.focus(), 50);
 
-    // --- ASYNC LIVE DATA OVERLAY & GRID SYNC ---
+    // Fetch live metrics including Tide
     if (beach.lat && beach.lng) {
         const badgeEl = document.getElementById('live-badge');
 
         fetchLiveMetrics(beach.lat, beach.lng).then(liveData => {
+            if (liveData.rawTempNum !== null) beach.temp = liveData.rawTempNum;
+            if (liveData.rawSwellNum !== null) beach.waveHeight = liveData.rawSwellNum;
+
             const tempEl = document.getElementById('metric-temp');
             const swellEl = document.getElementById('metric-swell');
+            const tideEl = document.getElementById('metric-tide');
             const windEl = document.getElementById('metric-wind');
             const uvEl = document.getElementById('metric-uv');
 
             if (tempEl) tempEl.innerHTML = `🌡️ ${liveData.temp}`;
             if (swellEl) swellEl.innerHTML = `🌊 ${liveData.waveHeight}`;
+            if (tideEl) tideEl.innerHTML = `⚓ ${liveData.tide}`;
             if (windEl) windEl.innerHTML = `💨 ${liveData.wind}`;
             if (uvEl) uvEl.innerHTML = `☀️ ${liveData.uv}`;
 
-            if (liveData.rawTempNum !== null) beach.temp = liveData.rawTempNum;
-            if (liveData.rawSwellNum !== null) beach.waveHeight = liveData.rawSwellNum;
-
+            // Update main grid card badge and modal verdict banner live
             updateCardInGrid(beach);
+            updateModalVerdict(beach);
 
             if (badgeEl) {
                 if (liveData.temp !== "-") {
