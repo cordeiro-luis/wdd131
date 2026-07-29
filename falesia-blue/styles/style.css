@@ -492,6 +492,142 @@ body {
     background: rgba(255, 255, 255, 0.15);
 }
 
+
+/* Expanded 4-Metric Grid */
+.modal-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 8px;
+    margin: 18px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 14px 0;
+}
+
+/* --- Live Status Badge --- */
+.live-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--heading-font);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-top: 10px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    width: fit-content;
+    transition: all 0.3s ease;
+}
+
+.badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Loading State */
+.live-status-badge.loading {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.live-status-badge.loading .badge-dot {
+    background: #e74c3c;
+    animation: livePulse 1.2s infinite ease-in-out;
+}
+
+/* Success / Live State */
+.live-status-badge.live {
+    background: rgba(46, 204, 113, 0.15);
+    color: #2ecc71;
+    border: 1px solid rgba(46, 204, 113, 0.4);
+}
+
+.live-status-badge.live .badge-dot {
+    background: #2ecc71;
+    box-shadow: 0 0 8px #2ecc71;
+}
+
+/* Offline / Static State */
+.live-status-badge.offline {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.live-status-badge.offline .badge-dot {
+    background: #95a5a6;
+}
+
+@keyframes livePulse {
+    0% { opacity: 0.3; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0.3; transform: scale(0.9); }
+}
+
+
+@media (min-width: 550px) {
+    .modal-metrics-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Dynamic Extra Details Container */
+.extra-details-container {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.extra-detail-row {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 8px;
+}
+
+.extra-detail-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.extra-detail-label {
+    font-family: var(--heading-font);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent1-color);
+    margin-bottom: 2px;
+}
+
+.extra-detail-value {
+    font-family: var(--paragraph-font);
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.3;
+}
+
+@media (min-width: 500px) {
+    .extra-detail-row {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .extra-detail-label {
+        margin-bottom: 0;
+    }
+}
+
+
 @media (min-width: 768px) {
     .main-header {
         display: block;
