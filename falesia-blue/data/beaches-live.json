@@ -1,0 +1,2671 @@
+{
+  "meta": {
+    "lastUpdated": "2026-08-04T15:16:31.114Z",
+    "totalBeaches": 17,
+    "status": "success"
+  },
+  "beaches": [
+    {
+      "id": "creiro",
+      "name": "Praia do Creiro",
+      "region": "Arrábida",
+      "lat": 38.48054555025773,
+      "lng": -8.97754480944295,
+      "type": "Beach",
+      "img": "images/beaches/creiro-thumb.jpg",
+      "detailImg": "images/beaches/creiro-landscape.jpg",
+      "description": {
+        "en": "Nestled in the heart of the Arrábida Natural Park, Praia do Creiro is famous for its calm, crystalline waters and the iconic small island sitting just off the shore. It offers breathtaking mountain backdrops and fine white sand, making it a paradise for nature lovers.",
+        "pt": "Encravada no coração do Parque Natural da Arrábida, a Praia do Creiro é famosa pelas suas águas calmas e cristalinas e pela icónica pedra/ilha junto à costa. Oferece cenários de montanha deslumbrantes e areia branca, sendo um paraíso para os amantes da natureza."
+      },
+      "extraDetails": [
+        {
+          "label": {
+            "en": "🅿️ Parking Info",
+            "pt": "🅿️ Estacionamento"
+          },
+          "value": {
+            "en": "Paid structured lot • Fills quickly by 10 AM",
+            "pt": "Parque pago estruturado • Esgota rapidamente até às 10h"
+          }
+        },
+        {
+          "label": {
+            "en": "🛡️ Wind Shelter",
+            "pt": "🛡️ Proteção do Vento"
+          },
+          "value": {
+            "en": "Protected from North winds by Arrábida hills",
+            "pt": "Protegida dos ventos do Norte pela serra da Arrábida"
+          }
+        },
+        {
+          "label": {
+            "en": "🌊 Tide Tip",
+            "pt": "🌊 Dica de Maré"
+          },
+          "value": {
+            "en": "Swimming zone remains calm across all tides",
+            "pt": "Zona de banhos permanece calma em todas as marés"
+          }
+        }
+      ],
+      "amenities": [
+        "parking",
+        "restaurant",
+        "lifeguard",
+        "shower",
+        "sunbed",
+        "toilet"
+      ],
+      "euCode": "PTCW2P",
+      "officialAPAInfo": {
+        "name": "Portinho da Arrábida",
+        "code": "PTCW2P",
+        "lat": 38.480654,
+        "lng": -8.977638,
+        "id": 464,
+        "numericCode": 8979630736,
+        "arhRegion": "ARH-ALENTEJO",
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCW2P&ano=2026",
+        "concelho": "SETÚBAL",
+        "dico": 1512
+      },
+      "apaFacilities": {
+        "code": 8979630736,
+        "waterCode": "PTCW2P",
+        "lifeguard": true,
+        "firstAid": false,
+        "restrooms": true,
+        "showers": false,
+        "wasteCollection": true,
+        "beachCleaning": true,
+        "infoBoard": true,
+        "supportFacilities": true,
+        "parking": true,
+        "blueFlag": false,
+        "accessible": false,
+        "amphibiousChair": false,
+        "surfInterest": false,
+        "constructionWork": false,
+        "landslideRisk": true,
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCW2P&ano=2026",
+        "isCoastal": true,
+        "isInland": false
+      },
+      "live": {
+        "weather": {
+          "airTemp": 25,
+          "formattedAirTemp": "25°C",
+          "condition": {
+            "en": "Partly cloudy",
+            "pt": "Parcialmente Nublado",
+            "icon": "⛅"
+          },
+          "icon": "⛅"
+        },
+        "sun": {
+          "sunrise": "06:40",
+          "sunset": "20:40"
+        },
+        "waterTemp": {
+          "value": 17,
+          "formatted": "17.0°C",
+          "source": "Open-Meteo"
+        },
+        "waterQuality": {
+          "status": {
+            "en": "Excellent",
+            "pt": "Excelente"
+          },
+          "blueFlag": true,
+          "accessibleBeach": false,
+          "goldQuality": true,
+          "lastTested": "2026-08-04"
+        },
+        "jellyfish": {
+          "status": {
+            "en": "Low Risk",
+            "pt": "Risco Baixo"
+          },
+          "recentSightings": false,
+          "count": 0,
+          "species": [],
+          "hasPortugueseManOfWar": false,
+          "message": {
+            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
+            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
+          }
+        },
+        "swell": {
+          "value": 0.5,
+          "formatted": "0.5m",
+          "period": "6.0s",
+          "direction": "N/A"
+        },
+        "tide": {
+          "value": -1.4,
+          "formatted": "-1.4m ↗",
+          "trend": "rising",
+          "arrow": "↗",
+          "nextHigh": "19:00",
+          "nextLow": "01:00"
+        },
+        "wind": {
+          "speed": 10,
+          "direction": "N/A",
+          "formatted": "10 km/h (N/A)"
+        },
+        "uv": {
+          "value": 7,
+          "formatted": "UV 7"
+        },
+        "safety": {
+          "flag": "Green",
+          "verdict": {
+            "en": "DAILY SAFETY VERDICT: SAFE",
+            "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
+          },
+          "message": {
+            "en": "Conditions are perfect for swimming.",
+            "pt": "Condições perfeitas para ir a banhos."
+          },
+          "ipmaWarning": null
+        },
+        "status": "live"
+      }
+    },
+    {
+      "id": "portinho-arrabida",
+      "name": "Portinho da Arrábida",
+      "region": "Arrábida",
+      "lat": 38.48011095995522,
+      "lng": -8.978775735027632,
+      "type": "Beach",
+      "img": "images/beaches/portinhoArrabida-thumb.jpg",
+      "detailImg": "images/beaches/portinhoArrabida-landscape.jpg",
+      "description": {
+        "en": "Considered one of Portugal's most beautiful natural bays, Portinho da Arrábida charms with its calm, crystal-clear emerald waters sheltered by the dramatic Arrábida hills. It features a scenic mix of sand and pebbles, rich marine life ideal for snorkeling, and a historic 17th-century fort.",
+        "pt": "Considerada uma das baías naturais mais belas de Portugal, o Portinho da Arrábida encanta pelas suas águas esmeralda, calmas e cristalinas, abrigadas pela imponente serra da Arrábida. Apresenta uma mistura cénica de areia e calhau, vida marinha rica ideal para mergulho e um forte histórico do século XVII."
+      },
+      "extraDetails": [
+        {
+          "label": {
+            "en": "🚗 Access Warning",
+            "pt": "🚗 Restrição de Acesso"
+          },
+          "value": {
+            "en": "Summer car restrictions apply • Use municipal shuttle",
+            "pt": "Restrições de carros no verão • Utilizar autocarro municipal"
+          }
+        },
+        {
+          "label": {
+            "en": "🤿 Snorkeling",
+            "pt": "🤿 Snorkeling / Mergulho"
+          },
+          "value": {
+            "en": "Oceanographic Museum & protected bay area nearby",
+            "pt": "Museu Oceanográfico e zona de baía protegida nas proximidades"
+          }
+        }
+      ],
+      "amenities": [
+        "restaurant",
+        "lifeguard",
+        "shower",
+        "water_sports",
+        "toilet",
+        "parking"
+      ],
+      "euCode": "PTCW2P",
+      "officialAPAInfo": {
+        "name": "Portinho da Arrábida",
+        "code": "PTCW2P",
+        "lat": 38.480654,
+        "lng": -8.977638,
+        "id": 464,
+        "numericCode": 8979630736,
+        "arhRegion": "ARH-ALENTEJO",
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCW2P&ano=2026",
+        "concelho": "SETÚBAL",
+        "dico": 1512
+      },
+      "apaFacilities": {
+        "code": 8979630736,
+        "waterCode": "PTCW2P",
+        "lifeguard": true,
+        "firstAid": false,
+        "restrooms": true,
+        "showers": false,
+        "wasteCollection": true,
+        "beachCleaning": true,
+        "infoBoard": true,
+        "supportFacilities": true,
+        "parking": true,
+        "blueFlag": false,
+        "accessible": false,
+        "amphibiousChair": false,
+        "surfInterest": false,
+        "constructionWork": false,
+        "landslideRisk": true,
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCW2P&ano=2026",
+        "isCoastal": true,
+        "isInland": false
+      },
+      "live": {
+        "weather": {
+          "airTemp": 25,
+          "formattedAirTemp": "25°C",
+          "condition": {
+            "en": "Partly cloudy",
+            "pt": "Parcialmente Nublado",
+            "icon": "⛅"
+          },
+          "icon": "⛅"
+        },
+        "sun": {
+          "sunrise": "06:40",
+          "sunset": "20:40"
+        },
+        "waterTemp": {
+          "value": 17,
+          "formatted": "17.0°C",
+          "source": "Open-Meteo"
+        },
+        "waterQuality": {
+          "status": {
+            "en": "Excellent",
+            "pt": "Excelente"
+          },
+          "blueFlag": true,
+          "accessibleBeach": false,
+          "goldQuality": true,
+          "lastTested": "2026-08-04"
+        },
+        "jellyfish": {
+          "status": {
+            "en": "Low Risk",
+            "pt": "Risco Baixo"
+          },
+          "recentSightings": false,
+          "count": 0,
+          "species": [],
+          "hasPortugueseManOfWar": false,
+          "message": {
+            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
+            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
+          }
+        },
+        "swell": {
+          "value": 0.5,
+          "formatted": "0.5m",
+          "period": "6.0s",
+          "direction": "N/A"
+        },
+        "tide": {
+          "value": -1.4,
+          "formatted": "-1.4m ↗",
+          "trend": "rising",
+          "arrow": "↗",
+          "nextHigh": "19:00",
+          "nextLow": "01:00"
+        },
+        "wind": {
+          "speed": 10,
+          "direction": "N/A",
+          "formatted": "10 km/h (N/A)"
+        },
+        "uv": {
+          "value": 7,
+          "formatted": "UV 7"
+        },
+        "safety": {
+          "flag": "Green",
+          "verdict": {
+            "en": "DAILY SAFETY VERDICT: SAFE",
+            "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
+          },
+          "message": {
+            "en": "Conditions are perfect for swimming.",
+            "pt": "Condições perfeitas para ir a banhos."
+          },
+          "ipmaWarning": null
+        },
+        "status": "live"
+      }
+    },
+    {
+      "id": "galapinhos",
+      "name": "Praia de Galapinhos",
+      "region": "Arrábida",
+      "lat": 38.48388523255184,
+      "lng": -8.968872450025481,
+      "type": "Beach",
+      "img": "images/beaches/galapinhos-thumb.jpg",
+      "detailImg": "images/beaches/galapinhos-landscape.jpg",
+      "description": {
+        "en": "Once voted the best beach in Europe, Galapinhos is a stunning, semi-wild cove with pristine turquoise waters and white sand enveloped by dense Mediterranean vegetation.",
+        "pt": "Eleita outrora como a melhor praia da Europa, Galapinhos é uma enseada deslumbrante e semi-selvagem com águas turquesa límpidas e areia branca, emoldurada pela densa vegetação mediterrânica."
+      },
+      "extraDetails": [
+        {
+          "label": {
+            "en": "🚌 Access Restriction",
+            "pt": "🚌 Restrição de Acesso"
+          },
+          "value": {
+            "en": "Private cars banned in summer • Hike or shuttle required",
+            "pt": "Carros particulares proibidos no verão • Acesso a pé ou de autocarro"
+          }
+        },
+        {
+          "label": {
+            "en": "🎒 Foot Trail",
+            "pt": "🎒 Trilho Pedestre"
+          },
+          "value": {
+            "en": "Steep dirt trail down from the main road",
+            "pt": "Trilho íngreme de terra a partir da estrada principal"
+          }
+        }
+      ],
+      "amenities": [
+        "restaurant",
+        "lifeguard",
+        "sunbed"
+      ],
+      "euCode": "PTCW7E",
+      "officialAPAInfo": {
+        "name": "Galapinhos",
+        "code": "PTCW7E",
+        "lat": 38.48377,
+        "lng": -8.968847,
+        "id": 478,
+        "numericCode": 8979630764,
+        "arhRegion": "ARH-ALENTEJO",
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCW7E&ano=2026",
+        "concelho": "SETÚBAL",
+        "dico": 1512
+      },
+      "apaFacilities": {
+        "code": 8979630764,
+        "waterCode": "PTCW7E",
+        "lifeguard": true,
+        "firstAid": false,
+        "restrooms": false,
+        "showers": false,
+        "wasteCollection": true,
+        "beachCleaning": true,
+        "infoBoard": false,
+        "supportFacilities": true,
+        "parking": false,
+        "blueFlag": false,
+        "accessible": false,
+        "amphibiousChair": false,
+        "surfInterest": false,
+        "constructionWork": false,
+        "landslideRisk": true,
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCW7E&ano=2026",
+        "isCoastal": true,
+        "isInland": false
+      },
+      "live": {
+        "weather": {
+          "airTemp": 25,
+          "formattedAirTemp": "25°C",
+          "condition": {
+            "en": "Partly cloudy",
+            "pt": "Parcialmente Nublado",
+            "icon": "⛅"
+          },
+          "icon": "⛅"
+        },
+        "sun": {
+          "sunrise": "06:40",
+          "sunset": "20:40"
+        },
+        "waterTemp": {
+          "value": 17,
+          "formatted": "17.0°C",
+          "source": "Open-Meteo"
+        },
+        "waterQuality": {
+          "status": {
+            "en": "Excellent",
+            "pt": "Excelente"
+          },
+          "blueFlag": true,
+          "accessibleBeach": false,
+          "goldQuality": true,
+          "lastTested": "2026-08-04"
+        },
+        "jellyfish": {
+          "status": {
+            "en": "Low Risk",
+            "pt": "Risco Baixo"
+          },
+          "recentSightings": false,
+          "count": 0,
+          "species": [],
+          "hasPortugueseManOfWar": false,
+          "message": {
+            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
+            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
+          }
+        },
+        "swell": {
+          "value": 0.5,
+          "formatted": "0.5m",
+          "period": "6.0s",
+          "direction": "N/A"
+        },
+        "tide": {
+          "value": -1.4,
+          "formatted": "-1.4m ↗",
+          "trend": "rising",
+          "arrow": "↗",
+          "nextHigh": "19:00",
+          "nextLow": "01:00"
+        },
+        "wind": {
+          "speed": 10,
+          "direction": "N/A",
+          "formatted": "10 km/h (N/A)"
+        },
+        "uv": {
+          "value": 7,
+          "formatted": "UV 7"
+        },
+        "safety": {
+          "flag": "Green",
+          "verdict": {
+            "en": "DAILY SAFETY VERDICT: SAFE",
+            "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
+          },
+          "message": {
+            "en": "Conditions are perfect for swimming.",
+            "pt": "Condições perfeitas para ir a banhos."
+          },
+          "ipmaWarning": null
+        },
+        "status": "live"
+      }
+    },
+    {
+      "id": "coelhos",
+      "name": "Praia dos Coelhos",
+      "region": "Arrábida",
+      "lat": 38.48180037190258,
+      "lng": -8.96951811210443,
+      "type": "Beach",
+      "img": "images/beaches/coelhos-thumb.jpg",
+      "detailImg": "images/beaches/coelhos-landscape.jpg",
+      "description": {
+        "en": "A completely wild, hidden gem tucked away in a secret pocket of the mountain. Praia dos Coelhos has zero infrastructure, rewarding adventurers with absolute peace and calm, transparent waters.",
+        "pt": "Uma joia completamente selvagem e escondida num recanto secreto da serra. A Praia dos Coelhos não tem qualquer infraestrutura, recompensando os aventureiros com paz absoluta e águas transparentes."
+      },
+      "extraDetails": [
+        {
+          "label": {
+            "en": "🥾 Hike Required",
+            "pt": "🥾 Caminhada Necessária"
+          },
+          "value": {
+            "en": "Unmarked steep bush path • Sturdy shoes recommended",
+            "pt": "Trilho de mato íngreme e não sinalizado • Recomenda-se calçado adequado"
+          }
+        },
+        {
+          "label": {
+            "en": "🌊 Tide Warning",
+            "pt": "🌊 Aviso de Maré"
+          },
+          "value": {
+            "en": "Beach area shrinks significantly during high tide",
+            "pt": "O areal reduz-se significativamente durante a maré alta"
+          }
+        }
+      ],
+      "amenities": [
+        "lifeguard",
+        "restaurant"
+      ],
+      "euCode": "PTCW7E",
+      "officialAPAInfo": {
+        "name": "Galapinhos",
+        "code": "PTCW7E",
+        "lat": 38.48377,
+        "lng": -8.968847,
+        "id": 478,
+        "numericCode": 8979630764,
+        "arhRegion": "ARH-ALENTEJO",
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCW7E&ano=2026",
+        "concelho": "SETÚBAL",
+        "dico": 1512
+      },
+      "apaFacilities": {
+        "code": 8979630764,
+        "waterCode": "PTCW7E",
+        "lifeguard": true,
+        "firstAid": false,
+        "restrooms": false,
+        "showers": false,
+        "wasteCollection": true,
+        "beachCleaning": true,
+        "infoBoard": false,
+        "supportFacilities": true,
+        "parking": false,
+        "blueFlag": false,
+        "accessible": false,
+        "amphibiousChair": false,
+        "surfInterest": false,
+        "constructionWork": false,
+        "landslideRisk": true,
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCW7E&ano=2026",
+        "isCoastal": true,
+        "isInland": false
+      },
+      "live": {
+        "weather": {
+          "airTemp": 25,
+          "formattedAirTemp": "25°C",
+          "condition": {
+            "en": "Partly cloudy",
+            "pt": "Parcialmente Nublado",
+            "icon": "⛅"
+          },
+          "icon": "⛅"
+        },
+        "sun": {
+          "sunrise": "06:40",
+          "sunset": "20:40"
+        },
+        "waterTemp": {
+          "value": 17,
+          "formatted": "17.0°C",
+          "source": "Open-Meteo"
+        },
+        "waterQuality": {
+          "status": {
+            "en": "Excellent",
+            "pt": "Excelente"
+          },
+          "blueFlag": true,
+          "accessibleBeach": false,
+          "goldQuality": true,
+          "lastTested": "2026-08-04"
+        },
+        "jellyfish": {
+          "status": {
+            "en": "Low Risk",
+            "pt": "Risco Baixo"
+          },
+          "recentSightings": false,
+          "count": 0,
+          "species": [],
+          "hasPortugueseManOfWar": false,
+          "message": {
+            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
+            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
+          }
+        },
+        "swell": {
+          "value": 0.5,
+          "formatted": "0.5m",
+          "period": "6.0s",
+          "direction": "N/A"
+        },
+        "tide": {
+          "value": -1.4,
+          "formatted": "-1.4m ↗",
+          "trend": "rising",
+          "arrow": "↗",
+          "nextHigh": "19:00",
+          "nextLow": "01:00"
+        },
+        "wind": {
+          "speed": 10,
+          "direction": "N/A",
+          "formatted": "10 km/h (N/A)"
+        },
+        "uv": {
+          "value": 7,
+          "formatted": "UV 7"
+        },
+        "safety": {
+          "flag": "Green",
+          "verdict": {
+            "en": "DAILY SAFETY VERDICT: SAFE",
+            "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
+          },
+          "message": {
+            "en": "Conditions are perfect for swimming.",
+            "pt": "Condições perfeitas para ir a banhos."
+          },
+          "ipmaWarning": null
+        },
+        "status": "live"
+      }
+    },
+    {
+      "id": "figueirinha",
+      "name": "Praia da Figueirinha",
+      "region": "Arrábida",
+      "lat": 38.4844,
+      "lng": -8.9467,
+      "type": "Beach",
+      "img": "images/beaches/figueirinha-thumb.jpg",
+      "detailImg": "images/beaches/figueirinha-landscape.jpg",
+      "description": {
+        "en": "The largest and most accessible beach along the Arrábida coast, famous for its long sandbank that emerges during low tide, creating a beautiful shallow lagoon.",
+        "pt": "A maior e mais acessível praia da costa da Arrábida, famosa pelo seu extenso banco de areia que emerge na maré baixa, criando uma bonita lagoa de águas rasas."
+      },
+      "extraDetails": [
+        {
+          "label": {
+            "en": "🅿️ Parking Info",
+            "pt": "🅿️ Estacionamento"
+          },
+          "value": {
+            "en": "Large paid lot available • Buses available from Setúbal",
+            "pt": "Parque pago amplo • Autocarros diretos a partir de Setúbal"
+          }
+        },
+        {
+          "label": {
+            "en": "🏖️ Sandbank Feature",
+            "pt": "🏖️ Banco de Areia"
+          },
+          "value": {
+            "en": "Low tide exposes shallow lagoon ideal for kids",
+            "pt": "A maré baixa expõe uma lagoa rasa ideal para crianças"
+          }
+        }
+      ],
+      "amenities": [
+        "parking",
+        "restaurant",
+        "lifeguard",
+        "shower",
+        "sunbed",
+        "accessibility",
+        "toilet"
+      ],
+      "euCode": "PTCJ7C",
+      "officialAPAInfo": {
+        "name": "Figueirinha",
+        "code": "PTCJ7C",
+        "lat": 38.484787,
+        "lng": -8.94519,
+        "id": 168,
+        "numericCode": 8979630120,
+        "arhRegion": "ARH-ALENTEJO",
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCJ7C&ano=2026",
+        "concelho": "SETÚBAL",
+        "dico": 1512
+      },
+      "apaFacilities": {
+        "code": 8979630120,
+        "waterCode": "PTCJ7C",
+        "lifeguard": true,
+        "firstAid": true,
+        "restrooms": true,
+        "showers": true,
+        "wasteCollection": true,
+        "beachCleaning": true,
+        "infoBoard": true,
+        "supportFacilities": true,
+        "parking": true,
+        "blueFlag": true,
+        "accessible": true,
+        "amphibiousChair": true,
+        "surfInterest": false,
+        "constructionWork": false,
+        "landslideRisk": true,
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCJ7C&ano=2026",
+        "isCoastal": true,
+        "isInland": false
+      },
+      "live": {
+        "weather": {
+          "airTemp": 25,
+          "formattedAirTemp": "25°C",
+          "condition": {
+            "en": "Partly cloudy",
+            "pt": "Parcialmente Nublado",
+            "icon": "⛅"
+          },
+          "icon": "⛅"
+        },
+        "sun": {
+          "sunrise": "06:40",
+          "sunset": "20:40"
+        },
+        "waterTemp": {
+          "value": 17,
+          "formatted": "17.0°C",
+          "source": "Open-Meteo"
+        },
+        "waterQuality": {
+          "status": {
+            "en": "Excellent",
+            "pt": "Excelente"
+          },
+          "blueFlag": true,
+          "accessibleBeach": true,
+          "goldQuality": true,
+          "lastTested": "2026-08-04"
+        },
+        "jellyfish": {
+          "status": {
+            "en": "Low Risk",
+            "pt": "Risco Baixo"
+          },
+          "recentSightings": false,
+          "count": 0,
+          "species": [],
+          "hasPortugueseManOfWar": false,
+          "message": {
+            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
+            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
+          }
+        },
+        "swell": {
+          "value": 0.5,
+          "formatted": "0.5m",
+          "period": "6.0s",
+          "direction": "N/A"
+        },
+        "tide": {
+          "value": -1.4,
+          "formatted": "-1.4m ↗",
+          "trend": "rising",
+          "arrow": "↗",
+          "nextHigh": "19:00",
+          "nextLow": "01:00"
+        },
+        "wind": {
+          "speed": 10,
+          "direction": "N/A",
+          "formatted": "10 km/h (N/A)"
+        },
+        "uv": {
+          "value": 7,
+          "formatted": "UV 7"
+        },
+        "safety": {
+          "flag": "Green",
+          "verdict": {
+            "en": "DAILY SAFETY VERDICT: SAFE",
+            "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
+          },
+          "message": {
+            "en": "Conditions are perfect for swimming.",
+            "pt": "Condições perfeitas para ir a banhos."
+          },
+          "ipmaWarning": null
+        },
+        "status": "live"
+      }
+    },
+    {
+      "id": "pontas-negras",
+      "name": "Pontas Negras",
+      "region": "Azores",
+      "lat": 38.397,
+      "lng": -28.0312,
+      "type": "Natural Pool",
+      "img": "images/beaches/pontas-negras-thumb.jpg",
+      "detailImg": "images/beaches/pontas-negras-landscape.jpg",
+      "description": {
+        "en": "Located on the south coast of Pico Island, this unique swimming area features crystal-clear waters built directly into a jagged basaltic lava field. It offers steel ladders for sea access and concrete sunbathing platforms.",
+        "pt": "Localizada na costa sul da Ilha do Pico, esta zona balnear única apresenta águas cristalinas construídas diretamente num campo de lava basáltica. Oferece escadas de aço para acesso ao mar e plataformas em cimento para apanhar sol."
+      },
+      "extraDetails": [
+        {
+          "label": {
+            "en": "🅿️ Parking Info",
+            "pt": "🅿️ Estacionamento"
+          },
+          "value": {
+            "en": "Free dedicated parking lot next to the bay",
+            "pt": "Parque de estacionamento gratuito junto à baía"
+          }
+        },
+        {
+          "label": {
+            "en": "⚠️ Swell Warning",
+            "pt": "⚠️ Aviso de Ondulação"
+          },
+          "value": {
+            "en": "Exposed ocean pool • Check wave height before entering",
+            "pt": "Piscina aberta ao oceano • Verificar a altura das ondas antes de entrar"
+          }
+        }
+      ],
+      "amenities": [
+        "parking",
+        "lifeguard",
+        "shower",
+        "toilet"
+      ],
+      "live": {
+        "weather": {
+          "airTemp": 25,
+          "formattedAirTemp": "25°C",
+          "condition": {
+            "en": "Partly cloudy",
+            "pt": "Parcialmente Nublado",
+            "icon": "⛅"
+          },
+          "icon": "⛅"
+        },
+        "sun": {
+          "sunrise": "06:40",
+          "sunset": "20:40"
+        },
+        "waterTemp": {
+          "value": 17,
+          "formatted": "17.0°C",
+          "source": "Open-Meteo"
+        },
+        "waterQuality": {
+          "status": {
+            "en": "Excellent",
+            "pt": "Excelente"
+          },
+          "blueFlag": true,
+          "accessibleBeach": false,
+          "goldQuality": true,
+          "lastTested": "2026-08-04"
+        },
+        "jellyfish": {
+          "status": {
+            "en": "Low Risk",
+            "pt": "Risco Baixo"
+          },
+          "recentSightings": false,
+          "count": 0,
+          "species": [],
+          "hasPortugueseManOfWar": false,
+          "message": {
+            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
+            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
+          }
+        },
+        "swell": {
+          "value": 0.5,
+          "formatted": "0.5m",
+          "period": "6.0s",
+          "direction": "N/A"
+        },
+        "tide": {
+          "value": -1.4,
+          "formatted": "-1.4m ↗",
+          "trend": "rising",
+          "arrow": "↗",
+          "nextHigh": "19:00",
+          "nextLow": "01:00"
+        },
+        "wind": {
+          "speed": 10,
+          "direction": "N/A",
+          "formatted": "10 km/h (N/A)"
+        },
+        "uv": {
+          "value": 7,
+          "formatted": "UV 7"
+        },
+        "safety": {
+          "flag": "Green",
+          "verdict": {
+            "en": "DAILY SAFETY VERDICT: SAFE",
+            "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
+          },
+          "message": {
+            "en": "Conditions are perfect for swimming.",
+            "pt": "Condições perfeitas para ir a banhos."
+          },
+          "ipmaWarning": null
+        },
+        "status": "live"
+      }
+    },
+    {
+      "id": "simao-dias",
+      "name": "Simão Dias",
+      "region": "Azores",
+      "lat": 38.6433,
+      "lng": -28.0494,
+      "type": "Natural Pool",
+      "img": "images/beaches/simao-dias-thumb.jpg",
+      "detailImg": "images/beaches/simao-dias-landscape.jpg",
+      "description": {
+        "en": "The crown jewel of Fajã do Ouvidor on São Jorge Island. This breathtaking natural pool is carved out of monumental, vertical basalt prisms formed by cooling volcanic lava.",
+        "pt": "A joia da coroa da Fajã do Ouvidor na Ilha de São Jorge. Esta impressionante piscina natural foi escavada entre monumentais prismas basálticos verticais formados pelo arrefecimento da lava vulcânica."
+      },
+      "extraDetails": [
+        {
+          "label": {
+            "en": "🌋 Geological Wonder",
+            "pt": "🌋 Maravilha Geológica"
+          },
+          "value": {
+            "en": "Framed by massive prismatic basalt columns",
+            "pt": "Emoldurada por maciças colunas de basalto prismático"
+          }
+        },
+        {
+          "label": {
+            "en": "⚠️ Sea Conditions",
+            "pt": "⚠️ Condições do Mar"
+          },
+          "value": {
+            "en": "Waves can wash over outer wall during high swell",
+            "pt": "As ondas podem galgar a parede exterior em dias de forte ondulação"
+          }
+        }
+      ],
+      "amenities": [
+        "parking"
+      ],
+      "live": {
+        "weather": {
+          "airTemp": 25,
+          "formattedAirTemp": "25°C",
+          "condition": {
+            "en": "Partly cloudy",
+            "pt": "Parcialmente Nublado",
+            "icon": "⛅"
+          },
+          "icon": "⛅"
+        },
+        "sun": {
+          "sunrise": "06:40",
+          "sunset": "20:40"
+        },
+        "waterTemp": {
+          "value": 17,
+          "formatted": "17.0°C",
+          "source": "Open-Meteo"
+        },
+        "waterQuality": {
+          "status": {
+            "en": "Excellent",
+            "pt": "Excelente"
+          },
+          "blueFlag": false,
+          "accessibleBeach": false,
+          "goldQuality": true,
+          "lastTested": "2026-08-04"
+        },
+        "jellyfish": {
+          "status": {
+            "en": "Low Risk",
+            "pt": "Risco Baixo"
+          },
+          "recentSightings": false,
+          "count": 0,
+          "species": [],
+          "hasPortugueseManOfWar": false,
+          "message": {
+            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
+            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
+          }
+        },
+        "swell": {
+          "value": 0.5,
+          "formatted": "0.5m",
+          "period": "6.0s",
+          "direction": "N/A"
+        },
+        "tide": {
+          "value": -1.4,
+          "formatted": "-1.4m ↗",
+          "trend": "rising",
+          "arrow": "↗",
+          "nextHigh": "19:00",
+          "nextLow": "01:00"
+        },
+        "wind": {
+          "speed": 10,
+          "direction": "N/A",
+          "formatted": "10 km/h (N/A)"
+        },
+        "uv": {
+          "value": 7,
+          "formatted": "UV 7"
+        },
+        "safety": {
+          "flag": "Green",
+          "verdict": {
+            "en": "DAILY SAFETY VERDICT: SAFE",
+            "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
+          },
+          "message": {
+            "en": "Conditions are perfect for swimming.",
+            "pt": "Condições perfeitas para ir a banhos."
+          },
+          "ipmaWarning": null
+        },
+        "status": "live"
+      }
+    },
+    {
+      "id": "ilheu-vila-franca",
+      "name": "Ilhéu de Vila Franca",
+      "region": "Azores",
+      "lat": 37.7058,
+      "lng": -25.4419,
+      "type": "Natural Pool",
+      "img": "images/beaches/ilheu-thumb.jpg",
+      "detailImg": "images/beaches/ilheu-landscape.jpg",
+      "description": {
+        "en": "A magnificent flooded volcanic crater located just off the coast of São Miguel Island. The perfectly circular interior lagoon is connected to the open ocean by a narrow channel.",
+        "pt": "Um magnífico cráter vulcânico inundado situado ao largo da costa da Ilha de São Miguel. A lagoa interior, perfeitamente circular, está ligada ao oceano por um estreito canal."
+      },
+      "extraDetails": [
+        {
+          "label": {
+            "en": "🎟️ Ticket Requirement",
+            "pt": "🎟️ Bilheteira e Quota"
+          },
+          "value": {
+            "en": "Strict visitor quota • Book ferry online in advance",
+            "pt": "Lotação diária limitada • Reservar barco online com antecedência"
+          }
+        },
+        {
+          "label": {
+            "en": "🏬 Commercial Note",
+            "pt": "🏬 Informação Comercial"
+          },
+          "value": {
+            "en": "Protected reserve • No shops or food on the islet",
+            "pt": "Reserva protegida • Sem lojas ou estabelecimentos de comida no ilhéu"
+          }
+        }
+      ],
+      "amenities": [
+        "lifeguard",
+        "shower",
+        "toilet",
+        "parking",
+        "restaurant"
+      ],
+      "euCode": "PTAV7H",
+      "officialAPAInfo": {
+        "name": "Ilhéu de Vila Franca do Campo",
+        "code": "PTAV7H",
+        "lat": 37.70576,
+        "lng": -25.44339,
+        "id": 635,
+        "numericCode": 9724180108,
+        "arhRegion": "AÇORES",
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTAV7H&ano=2026",
+        "concelho": "VILA FRANCA DO CAMPO",
+        "dico": 4206
+      },
+      "apaFacilities": {
+        "code": 9724180108,
+        "waterCode": "PTAV7H",
+        "lifeguard": true,
+        "firstAid": true,
+        "restrooms": true,
+        "showers": false,
+        "wasteCollection": true,
+        "beachCleaning": true,
+        "infoBoard": true,
+        "supportFacilities": true,
+        "parking": true,
+        "blueFlag": false,
+        "accessible": false,
+        "amphibiousChair": false,
+        "surfInterest": false,
+        "constructionWork": false,
+        "landslideRisk": false,
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTAV7H&ano=2026",
+        "isCoastal": true,
+        "isInland": false
+      },
+      "live": {
+        "weather": {
+          "airTemp": 25,
+          "formattedAirTemp": "25°C",
+          "condition": {
+            "en": "Partly cloudy",
+            "pt": "Parcialmente Nublado",
+            "icon": "⛅"
+          },
+          "icon": "⛅"
+        },
+        "sun": {
+          "sunrise": "06:40",
+          "sunset": "20:40"
+        },
+        "waterTemp": {
+          "value": 17,
+          "formatted": "17.0°C",
+          "source": "Open-Meteo"
+        },
+        "waterQuality": {
+          "status": {
+            "en": "Excellent",
+            "pt": "Excelente"
+          },
+          "blueFlag": true,
+          "accessibleBeach": false,
+          "goldQuality": true,
+          "lastTested": "2026-08-04"
+        },
+        "jellyfish": {
+          "status": {
+            "en": "Low Risk",
+            "pt": "Risco Baixo"
+          },
+          "recentSightings": false,
+          "count": 0,
+          "species": [],
+          "hasPortugueseManOfWar": false,
+          "message": {
+            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
+            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
+          }
+        },
+        "swell": {
+          "value": 0.5,
+          "formatted": "0.5m",
+          "period": "6.0s",
+          "direction": "N/A"
+        },
+        "tide": {
+          "value": -1.4,
+          "formatted": "-1.4m ↗",
+          "trend": "rising",
+          "arrow": "↗",
+          "nextHigh": "19:00",
+          "nextLow": "01:00"
+        },
+        "wind": {
+          "speed": 10,
+          "direction": "N/A",
+          "formatted": "10 km/h (N/A)"
+        },
+        "uv": {
+          "value": 7,
+          "formatted": "UV 7"
+        },
+        "safety": {
+          "flag": "Green",
+          "verdict": {
+            "en": "DAILY SAFETY VERDICT: SAFE",
+            "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
+          },
+          "message": {
+            "en": "Conditions are perfect for swimming.",
+            "pt": "Condições perfeitas para ir a banhos."
+          },
+          "ipmaWarning": null
+        },
+        "status": "live"
+      }
+    },
+    {
+      "id": "caloura",
+      "name": "Piscinas da Caloura",
+      "region": "Azores",
+      "lat": 37.7094,
+      "lng": -25.5008,
+      "type": "Natural Pool",
+      "img": "images/beaches/caloura-thumb.jpg",
+      "detailImg": "images/beaches/caloura-landscape.jpg",
+      "description": {
+        "en": "Tucked inside a charming fishing harbor on São Miguel's southern shore. Sheltered by volcanic cliffs, its crystal-clear pool offers safe swimming and rich marine life.",
+        "pt": "Escondida num pitoresco porto de pesca na costa sul de São Miguel. Protegida por falésias vulcânicas, a sua piscina de águas límpidas oferece banhos em segurança e uma rica vida marinha."
+      },
+      "extraDetails": [
+        {
+          "label": {
+            "en": "🍽️ Dining Highlight",
+            "pt": "🍽️ Restauração"
+          },
+          "value": {
+            "en": "Located next to famous local harbor seafood restaurant",
+            "pt": "Junto ao famoso restaurante de peixe e marisco do porto"
+          }
+        },
+        {
+          "label": {
+            "en": "🪜 Access",
+            "pt": "🪜 Acessos"
+          },
+          "value": {
+            "en": "Concrete platforms with steel ladders into clear water",
+            "pt": "Plataformas em cimento com escadas de aço para a água límpida"
+          }
+        }
+      ],
+      "amenities": [
+        "parking",
+        "restaurant",
+        "lifeguard",
+        "shower",
+        "toilet"
+      ],
+      "euCode": "PTAW9P",
+      "officialAPAInfo": {
+        "name": "Caloura",
+        "code": "PTAW9P",
+        "lat": 37.7133,
+        "lng": -25.49565,
+        "id": 578,
+        "numericCode": 9724179994,
+        "arhRegion": "AÇORES",
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTAW9P&ano=2026",
+        "concelho": "LAGOA",
+        "dico": 4201
+      },
+      "apaFacilities": {
+        "code": 9724179994,
+        "waterCode": "PTAW9P",
+        "lifeguard": true,
+        "firstAid": true,
+        "restrooms": true,
+        "showers": true,
+        "wasteCollection": true,
+        "beachCleaning": true,
+        "infoBoard": true,
+        "supportFacilities": true,
+        "parking": true,
+        "blueFlag": true,
+        "accessible": false,
+        "amphibiousChair": false,
+        "surfInterest": false,
+        "constructionWork": false,
+        "landslideRisk": false,
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTAW9P&ano=2026",
+        "isCoastal": true,
+        "isInland": false
+      },
+      "live": {
+        "weather": {
+          "airTemp": 25,
+          "formattedAirTemp": "25°C",
+          "condition": {
+            "en": "Partly cloudy",
+            "pt": "Parcialmente Nublado",
+            "icon": "⛅"
+          },
+          "icon": "⛅"
+        },
+        "sun": {
+          "sunrise": "06:40",
+          "sunset": "20:40"
+        },
+        "waterTemp": {
+          "value": 17,
+          "formatted": "17.0°C",
+          "source": "Open-Meteo"
+        },
+        "waterQuality": {
+          "status": {
+            "en": "Excellent",
+            "pt": "Excelente"
+          },
+          "blueFlag": true,
+          "accessibleBeach": false,
+          "goldQuality": true,
+          "lastTested": "2026-08-04"
+        },
+        "jellyfish": {
+          "status": {
+            "en": "Low Risk",
+            "pt": "Risco Baixo"
+          },
+          "recentSightings": false,
+          "count": 0,
+          "species": [],
+          "hasPortugueseManOfWar": false,
+          "message": {
+            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
+            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
+          }
+        },
+        "swell": {
+          "value": 0.5,
+          "formatted": "0.5m",
+          "period": "6.0s",
+          "direction": "N/A"
+        },
+        "tide": {
+          "value": -1.4,
+          "formatted": "-1.4m ↗",
+          "trend": "rising",
+          "arrow": "↗",
+          "nextHigh": "19:00",
+          "nextLow": "01:00"
+        },
+        "wind": {
+          "speed": 10,
+          "direction": "N/A",
+          "formatted": "10 km/h (N/A)"
+        },
+        "uv": {
+          "value": 7,
+          "formatted": "UV 7"
+        },
+        "safety": {
+          "flag": "Green",
+          "verdict": {
+            "en": "DAILY SAFETY VERDICT: SAFE",
+            "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
+          },
+          "message": {
+            "en": "Conditions are perfect for swimming.",
+            "pt": "Condições perfeitas para ir a banhos."
+          },
+          "ipmaWarning": null
+        },
+        "status": "live"
+      }
+    },
+    {
+      "id": "mosteiros",
+      "name": "Mosteiros",
+      "region": "Azores",
+      "lat": 37.8925,
+      "lng": -25.8236,
+      "type": "Beach",
+      "img": "images/beaches/mosteiros-thumb.jpg",
+      "detailImg": "images/beaches/mosteiros-landscape.jpg",
+      "description": {
+        "en": "A dramatic volcanic beach on the westernmost tip of São Miguel Island, famous for its dark black sand and the towering basalt sea stacks rising from the ocean.",
+        "pt": "Uma dramática praia vulcânica no extremo oeste da Ilha de São Miguel, famosa pela sua areia preta e pelos imponentes ilhéus de basalto que emergem do oceano."
+      },
+      "extraDetails": [
+        {
+          "label": {
+            "en": "🌅 Highlight",
+            "pt": "🌅 Ponto Forte"
+          },
+          "value": {
+            "en": "Renowned as the best sunset viewpoint in São Miguel",
+            "pt": "Conhecida como o melhor ponto para ver o pôr do sol em São Miguel"
+          }
+        },
+        {
+          "label": {
+            "en": "⚠️ Current Alert",
+            "pt": "⚠️ Alerta de Correntes"
+          },
+          "value": {
+            "en": "Strong Atlantic rip currents • Exercise extreme caution",
+            "pt": "Correntes fortes do Atlântico • Exercer extrema precaução"
+          }
+        }
+      ],
+      "amenities": [
+        "parking",
+        "restaurant",
+        "lifeguard",
+        "shower",
+        "toilet"
+      ],
+      "euCode": "PTAW8J",
+      "officialAPAInfo": {
+        "name": "Praia dos Mosteiros",
+        "code": "PTAW8J",
+        "lat": 37.88777,
+        "lng": -25.82423,
+        "id": 600,
+        "numericCode": 9724180038,
+        "arhRegion": "AÇORES",
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTAW8J&ano=2026",
+        "concelho": "PONTA DELGADA",
+        "dico": 4203
+      },
+      "apaFacilities": {
+        "code": 9724180038,
+        "waterCode": "PTAW8J",
+        "lifeguard": true,
+        "firstAid": false,
+        "restrooms": true,
+        "showers": true,
+        "wasteCollection": true,
+        "beachCleaning": true,
+        "infoBoard": true,
+        "supportFacilities": true,
+        "parking": true,
+        "blueFlag": false,
+        "accessible": false,
+        "amphibiousChair": false,
+        "surfInterest": false,
+        "constructionWork": false,
+        "landslideRisk": true,
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTAW8J&ano=2026",
+        "isCoastal": true,
+        "isInland": false
+      },
+      "live": {
+        "weather": {
+          "airTemp": 25,
+          "formattedAirTemp": "25°C",
+          "condition": {
+            "en": "Partly cloudy",
+            "pt": "Parcialmente Nublado",
+            "icon": "⛅"
+          },
+          "icon": "⛅"
+        },
+        "sun": {
+          "sunrise": "06:40",
+          "sunset": "20:40"
+        },
+        "waterTemp": {
+          "value": 17,
+          "formatted": "17.0°C",
+          "source": "Open-Meteo"
+        },
+        "waterQuality": {
+          "status": {
+            "en": "Excellent",
+            "pt": "Excelente"
+          },
+          "blueFlag": true,
+          "accessibleBeach": false,
+          "goldQuality": true,
+          "lastTested": "2026-08-04"
+        },
+        "jellyfish": {
+          "status": {
+            "en": "Low Risk",
+            "pt": "Risco Baixo"
+          },
+          "recentSightings": false,
+          "count": 0,
+          "species": [],
+          "hasPortugueseManOfWar": false,
+          "message": {
+            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
+            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
+          }
+        },
+        "swell": {
+          "value": 0.5,
+          "formatted": "0.5m",
+          "period": "6.0s",
+          "direction": "N/A"
+        },
+        "tide": {
+          "value": -1.4,
+          "formatted": "-1.4m ↗",
+          "trend": "rising",
+          "arrow": "↗",
+          "nextHigh": "19:00",
+          "nextLow": "01:00"
+        },
+        "wind": {
+          "speed": 10,
+          "direction": "N/A",
+          "formatted": "10 km/h (N/A)"
+        },
+        "uv": {
+          "value": 7,
+          "formatted": "UV 7"
+        },
+        "safety": {
+          "flag": "Green",
+          "verdict": {
+            "en": "DAILY SAFETY VERDICT: SAFE",
+            "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
+          },
+          "message": {
+            "en": "Conditions are perfect for swimming.",
+            "pt": "Condições perfeitas para ir a banhos."
+          },
+          "ipmaWarning": null
+        },
+        "status": "live"
+      }
+    },
+    {
+      "id": "marinha",
+      "name": "Praia da Marinha",
+      "region": "Algarve",
+      "lat": 37.0898,
+      "lng": -8.4128,
+      "type": "Beach",
+      "img": "images/beaches/marinha-thumb.jpg",
+      "detailImg": "images/beaches/marinha-landscape.jpg",
+      "description": {
+        "en": "Consistently ranked among the most beautiful beaches in the world, Praia da Marinha is a masterclass in Algarve coastal scenery, boasting golden limestone cliffs, natural tunnels, and double rock arches.",
+        "pt": "Consistentemente classificada entre as praias mais bonitas do mundo, a Praia da Marinha é um ex-líbris da costa algarvia, ostentando falésias douradas de calcário, túneis naturais e arcos rochosos duplos."
+      },
+      "extraDetails": [
+        {
+          "label": {
+            "en": "🅿️ Parking Status",
+            "pt": "🅿️ Estacionamento"
+          },
+          "value": {
+            "en": "Clifftop lot prone to gridlock • Arrive before 9 AM",
+            "pt": "Parque no topo da falésia sujeito a engarrafamentos • Chegar antes das 9h"
+          }
+        },
+        {
+          "label": {
+            "en": "🪜 Access",
+            "pt": "🪜 Acesso"
+          },
+          "value": {
+            "en": "Long steep wooden staircase down the cliffside",
+            "pt": "Escadaria longa e íngreme de madeira a descer a falésia"
+          }
+        }
+      ],
+      "amenities": [
+        "parking",
+        "restaurant",
+        "lifeguard",
+        "toilet"
+      ],
+      "euCode": "PTCV2P",
+      "officialAPAInfo": {
+        "name": "Albandeira",
+        "code": "PTCV2P",
+        "lat": 37.09094,
+        "lng": -8.39998,
+        "id": 426,
+        "numericCode": 8979630658,
+        "arhRegion": "ARH-ALGARVE",
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCV2P&ano=2026",
+        "concelho": "LAGOA",
+        "dico": 806
+      },
+      "apaFacilities": {
+        "code": 8979630658,
+        "waterCode": "PTCV2P",
+        "lifeguard": true,
+        "firstAid": false,
+        "restrooms": true,
+        "showers": false,
+        "wasteCollection": true,
+        "beachCleaning": true,
+        "infoBoard": true,
+        "supportFacilities": true,
+        "parking": true,
+        "blueFlag": false,
+        "accessible": false,
+        "amphibiousChair": false,
+        "surfInterest": false,
+        "constructionWork": false,
+        "landslideRisk": true,
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCV2P&ano=2026",
+        "isCoastal": true,
+        "isInland": false
+      },
+      "live": {
+        "weather": {
+          "airTemp": 25,
+          "formattedAirTemp": "25°C",
+          "condition": {
+            "en": "Partly cloudy",
+            "pt": "Parcialmente Nublado",
+            "icon": "⛅"
+          },
+          "icon": "⛅"
+        },
+        "sun": {
+          "sunrise": "06:40",
+          "sunset": "20:40"
+        },
+        "waterTemp": {
+          "value": 17,
+          "formatted": "17.0°C",
+          "source": "Open-Meteo"
+        },
+        "waterQuality": {
+          "status": {
+            "en": "Excellent",
+            "pt": "Excelente"
+          },
+          "blueFlag": true,
+          "accessibleBeach": false,
+          "goldQuality": true,
+          "lastTested": "2026-08-04"
+        },
+        "jellyfish": {
+          "status": {
+            "en": "Low Risk",
+            "pt": "Risco Baixo"
+          },
+          "recentSightings": false,
+          "count": 0,
+          "species": [],
+          "hasPortugueseManOfWar": false,
+          "message": {
+            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
+            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
+          }
+        },
+        "swell": {
+          "value": 0.5,
+          "formatted": "0.5m",
+          "period": "6.0s",
+          "direction": "N/A"
+        },
+        "tide": {
+          "value": -1.4,
+          "formatted": "-1.4m ↗",
+          "trend": "rising",
+          "arrow": "↗",
+          "nextHigh": "19:00",
+          "nextLow": "01:00"
+        },
+        "wind": {
+          "speed": 10,
+          "direction": "N/A",
+          "formatted": "10 km/h (N/A)"
+        },
+        "uv": {
+          "value": 7,
+          "formatted": "UV 7"
+        },
+        "safety": {
+          "flag": "Green",
+          "verdict": {
+            "en": "DAILY SAFETY VERDICT: SAFE",
+            "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
+          },
+          "message": {
+            "en": "Conditions are perfect for swimming.",
+            "pt": "Condições perfeitas para ir a banhos."
+          },
+          "ipmaWarning": null
+        },
+        "status": "live"
+      }
+    },
+    {
+      "id": "benagil",
+      "name": "Praia de Benagil",
+      "region": "Algarve",
+      "lat": 37.0872,
+      "lng": -8.4258,
+      "type": "Beach",
+      "img": "images/beaches/benagil-thumb.jpg",
+      "detailImg": "images/beaches/benagil-landscape.jpg",
+      "description": {
+        "en": "A picturesque beach nestled in a deep valley, acting as the primary launching pad for exploring the world-famous Benagil Sea Cave (Algar de Benagil).",
+        "pt": "Uma praia pitoresca encravada num vale profundo, que serve como principal ponto de partida para explorar a mundialmente famosa Gruta de Benagil (Algar de Benagil)."
+      },
+      "extraDetails": [
+        {
+          "label": {
+            "en": "🛶 Cave Advisory",
+            "pt": "🛶 Aviso sobre a Gruta"
+          },
+          "value": {
+            "en": "Heavy boat traffic • Swimming to the cave is unsafe",
+            "pt": "Tráfego intenso de embarcações • Nadar até à gruta é perigoso"
+          }
+        },
+        {
+          "label": {
+            "en": "🚗 Traffic Warning",
+            "pt": "🚗 Alerta de Trânsito"
+          },
+          "value": {
+            "en": "Narrow steep valley roads • Limited parking",
+            "pt": "Estradas de vale íngremes e estreitas • Estacionamento limitado"
+          }
+        }
+      ],
+      "amenities": [
+        "restaurant",
+        "lifeguard",
+        "water_sports",
+        "toilet",
+        "shower",
+        "parking"
+      ],
+      "euCode": "PTCW3J",
+      "officialAPAInfo": {
+        "name": "Benagil",
+        "code": "PTCW3J",
+        "lat": 37.08715,
+        "lng": -8.42636,
+        "id": 467,
+        "numericCode": 8979630742,
+        "arhRegion": "ARH-ALGARVE",
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCW3J&ano=2026",
+        "concelho": "LAGOA",
+        "dico": 806
+      },
+      "apaFacilities": {
+        "code": 8979630742,
+        "waterCode": "PTCW3J",
+        "lifeguard": true,
+        "firstAid": true,
+        "restrooms": true,
+        "showers": true,
+        "wasteCollection": true,
+        "beachCleaning": true,
+        "infoBoard": true,
+        "supportFacilities": true,
+        "parking": true,
+        "blueFlag": false,
+        "accessible": false,
+        "amphibiousChair": false,
+        "surfInterest": false,
+        "constructionWork": false,
+        "landslideRisk": true,
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCW3J&ano=2026",
+        "isCoastal": true,
+        "isInland": false
+      },
+      "live": {
+        "weather": {
+          "airTemp": 25,
+          "formattedAirTemp": "25°C",
+          "condition": {
+            "en": "Partly cloudy",
+            "pt": "Parcialmente Nublado",
+            "icon": "⛅"
+          },
+          "icon": "⛅"
+        },
+        "sun": {
+          "sunrise": "06:40",
+          "sunset": "20:40"
+        },
+        "waterTemp": {
+          "value": 17,
+          "formatted": "17.0°C",
+          "source": "Open-Meteo"
+        },
+        "waterQuality": {
+          "status": {
+            "en": "Excellent",
+            "pt": "Excelente"
+          },
+          "blueFlag": true,
+          "accessibleBeach": false,
+          "goldQuality": true,
+          "lastTested": "2026-08-04"
+        },
+        "jellyfish": {
+          "status": {
+            "en": "Low Risk",
+            "pt": "Risco Baixo"
+          },
+          "recentSightings": false,
+          "count": 0,
+          "species": [],
+          "hasPortugueseManOfWar": false,
+          "message": {
+            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
+            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
+          }
+        },
+        "swell": {
+          "value": 0.5,
+          "formatted": "0.5m",
+          "period": "6.0s",
+          "direction": "N/A"
+        },
+        "tide": {
+          "value": -1.4,
+          "formatted": "-1.4m ↗",
+          "trend": "rising",
+          "arrow": "↗",
+          "nextHigh": "19:00",
+          "nextLow": "01:00"
+        },
+        "wind": {
+          "speed": 10,
+          "direction": "N/A",
+          "formatted": "10 km/h (N/A)"
+        },
+        "uv": {
+          "value": 7,
+          "formatted": "UV 7"
+        },
+        "safety": {
+          "flag": "Green",
+          "verdict": {
+            "en": "DAILY SAFETY VERDICT: SAFE",
+            "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
+          },
+          "message": {
+            "en": "Conditions are perfect for swimming.",
+            "pt": "Condições perfeitas para ir a banhos."
+          },
+          "ipmaWarning": null
+        },
+        "status": "live"
+      }
+    },
+    {
+      "id": "camilo",
+      "name": "Praia do Camilo",
+      "region": "Algarve",
+      "lat": 37.0875,
+      "lng": -8.6678,
+      "type": "Beach",
+      "img": "images/beaches/camilo-thumb.jpg",
+      "detailImg": "images/beaches/camilo-landscape.jpg",
+      "description": {
+        "en": "A breathtakingly intimate pocket beach in Lagos framed by sculpted, orange-toned rock formations and calm, translucent waters.",
+        "pt": "Uma praia de bolso incrivelmente íntima em Lagos, emoldurada por formações rochosas esculpidas de tom alaranjado e águas calmas e translúcidas."
+      },
+      "extraDetails": [
+        {
+          "label": {
+            "en": "🌊 Tide Caution",
+            "pt": "🌊 Cuidado com a Maré"
+          },
+          "value": {
+            "en": "High tide covers most of the sandy beach area",
+            "pt": "A maré alta cobre a maior parte do areal"
+          }
+        },
+        {
+          "label": {
+            "en": "🪜 Stairway",
+            "pt": "🪜 Escadaria"
+          },
+          "value": {
+            "en": "200 wooden steps leading down to the cove",
+            "pt": "200 degraus de madeira para descer até à praia"
+          }
+        }
+      ],
+      "amenities": [
+        "parking",
+        "restaurant",
+        "lifeguard",
+        "toilet",
+        "shower"
+      ],
+      "euCode": "PTCN3V",
+      "officialAPAInfo": {
+        "name": "Camilo",
+        "code": "PTCN3V",
+        "lat": 37.08736,
+        "lng": -8.66839,
+        "id": 255,
+        "numericCode": 8979630304,
+        "arhRegion": "ARH-ALGARVE",
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCN3V&ano=2026",
+        "concelho": "LAGOS",
+        "dico": 807
+      },
+      "apaFacilities": {
+        "code": 8979630304,
+        "waterCode": "PTCN3V",
+        "lifeguard": true,
+        "firstAid": true,
+        "restrooms": true,
+        "showers": true,
+        "wasteCollection": true,
+        "beachCleaning": true,
+        "infoBoard": true,
+        "supportFacilities": true,
+        "parking": true,
+        "blueFlag": false,
+        "accessible": false,
+        "amphibiousChair": false,
+        "surfInterest": true,
+        "constructionWork": false,
+        "landslideRisk": true,
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCN3V&ano=2026",
+        "isCoastal": true,
+        "isInland": false
+      },
+      "live": {
+        "weather": {
+          "airTemp": 25,
+          "formattedAirTemp": "25°C",
+          "condition": {
+            "en": "Partly cloudy",
+            "pt": "Parcialmente Nublado",
+            "icon": "⛅"
+          },
+          "icon": "⛅"
+        },
+        "sun": {
+          "sunrise": "06:40",
+          "sunset": "20:40"
+        },
+        "waterTemp": {
+          "value": 17,
+          "formatted": "17.0°C",
+          "source": "Open-Meteo"
+        },
+        "waterQuality": {
+          "status": {
+            "en": "Excellent",
+            "pt": "Excelente"
+          },
+          "blueFlag": true,
+          "accessibleBeach": false,
+          "goldQuality": true,
+          "lastTested": "2026-08-04"
+        },
+        "jellyfish": {
+          "status": {
+            "en": "Low Risk",
+            "pt": "Risco Baixo"
+          },
+          "recentSightings": false,
+          "count": 0,
+          "species": [],
+          "hasPortugueseManOfWar": false,
+          "message": {
+            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
+            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
+          }
+        },
+        "swell": {
+          "value": 0.5,
+          "formatted": "0.5m",
+          "period": "6.0s",
+          "direction": "N/A"
+        },
+        "tide": {
+          "value": -1.4,
+          "formatted": "-1.4m ↗",
+          "trend": "rising",
+          "arrow": "↗",
+          "nextHigh": "19:00",
+          "nextLow": "01:00"
+        },
+        "wind": {
+          "speed": 10,
+          "direction": "N/A",
+          "formatted": "10 km/h (N/A)"
+        },
+        "uv": {
+          "value": 7,
+          "formatted": "UV 7"
+        },
+        "safety": {
+          "flag": "Green",
+          "verdict": {
+            "en": "DAILY SAFETY VERDICT: SAFE",
+            "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
+          },
+          "message": {
+            "en": "Conditions are perfect for swimming.",
+            "pt": "Condições perfeitas para ir a banhos."
+          },
+          "ipmaWarning": null
+        },
+        "status": "live"
+      }
+    },
+    {
+      "id": "rocha",
+      "name": "Praia da Rocha",
+      "region": "Algarve",
+      "lat": 37.1172,
+      "lng": -8.5358,
+      "type": "Beach",
+      "img": "images/beaches/rocha-thumb.jpg",
+      "detailImg": "images/beaches/rocha-landscape.jpg",
+      "description": {
+        "en": "One of Portugal's most famous and expansive urban beaches. Praia da Rocha features a massive, wide stretch of golden sand lined with a long wooden boardwalk connecting various beach bars and sports areas.",
+        "pt": "Uma das praias urbanas mais famosas e extensas de Portugal. A Praia da Rocha apresenta um vasto e largo areal dourado acompanhado por um longo passadiço de madeira com bares de praia e áreas desportivas."
+      },
+      "extraDetails": [
+        {
+          "label": {
+            "en": "🏖️ Capacity",
+            "pt": "🏖️ Capacidade"
+          },
+          "value": {
+            "en": "Extremely wide shoreline • Never feels crowded",
+            "pt": "Areal extremamente amplo • Raramente parece lotada"
+          }
+        },
+        {
+          "label": {
+            "en": "♿ Facilities",
+            "pt": "♿ Acessibilidade"
+          },
+          "value": {
+            "en": "Full wooden boardwalk access & accessible beach ramps",
+            "pt": "Acesso total por passadiço de madeira e rampas de acesso à praia"
+          }
+        }
+      ],
+      "amenities": [
+        "parking",
+        "restaurant",
+        "lifeguard",
+        "shower",
+        "sunbed",
+        "accessibility",
+        "water_sports",
+        "toilet"
+      ],
+      "euCode": "PTCH9Q",
+      "officialAPAInfo": {
+        "name": "Rocha",
+        "code": "PTCH9Q",
+        "lat": 37.11605,
+        "lng": -8.53737,
+        "id": 153,
+        "numericCode": 8979630088,
+        "arhRegion": "ARH-ALGARVE",
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCH9Q&ano=2026",
+        "concelho": "PORTIMÃO",
+        "dico": 811
+      },
+      "apaFacilities": {
+        "code": 8979630088,
+        "waterCode": "PTCH9Q",
+        "lifeguard": true,
+        "firstAid": true,
+        "restrooms": true,
+        "showers": true,
+        "wasteCollection": true,
+        "beachCleaning": true,
+        "infoBoard": true,
+        "supportFacilities": true,
+        "parking": true,
+        "blueFlag": true,
+        "accessible": true,
+        "amphibiousChair": false,
+        "surfInterest": true,
+        "constructionWork": false,
+        "landslideRisk": true,
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCH9Q&ano=2026",
+        "isCoastal": true,
+        "isInland": false
+      },
+      "live": {
+        "weather": {
+          "airTemp": 28.9,
+          "formattedAirTemp": "29°C",
+          "condition": {
+            "en": "Mainly clear",
+            "pt": "Pouco Nublado",
+            "icon": "🌤️"
+          },
+          "icon": "🌤️"
+        },
+        "sun": {
+          "sunrise": "06:41",
+          "sunset": "20:38"
+        },
+        "waterTemp": {
+          "value": 17.8,
+          "formatted": "17.8°C",
+          "source": "Open-Meteo"
+        },
+        "waterQuality": {
+          "status": {
+            "en": "Excellent",
+            "pt": "Excelente"
+          },
+          "blueFlag": true,
+          "accessibleBeach": true,
+          "goldQuality": true,
+          "lastTested": "2026-08-04"
+        },
+        "jellyfish": {
+          "status": {
+            "en": "Low Risk",
+            "pt": "Risco Baixo"
+          },
+          "recentSightings": false,
+          "count": 0,
+          "species": [],
+          "hasPortugueseManOfWar": false,
+          "message": {
+            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
+            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
+          }
+        },
+        "swell": {
+          "value": 0.4,
+          "formatted": "0.4m",
+          "period": "3.6s",
+          "direction": "W"
+        },
+        "tide": {
+          "value": -1.4,
+          "formatted": "-1.4m ↗",
+          "trend": "rising",
+          "arrow": "↗",
+          "nextHigh": "19:00",
+          "nextLow": "01:00"
+        },
+        "wind": {
+          "speed": 18,
+          "direction": "NW",
+          "formatted": "18 km/h (NW)"
+        },
+        "uv": {
+          "value": 6,
+          "formatted": "UV 6"
+        },
+        "safety": {
+          "flag": "Green",
+          "verdict": {
+            "en": "DAILY SAFETY VERDICT: SAFE",
+            "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
+          },
+          "message": {
+            "en": "Conditions are perfect for swimming.",
+            "pt": "Condições perfeitas para ir a banhos."
+          },
+          "ipmaWarning": null
+        },
+        "status": "live"
+      }
+    },
+    {
+      "id": "cacela-velha",
+      "name": "Cacela Velha",
+      "region": "Algarve",
+      "lat": 37.1565,
+      "lng": -7.5458,
+      "type": "Beach",
+      "img": "images/beaches/cacela-thumb.jpg",
+      "detailImg": "images/beaches/cacela-landscape.jpg",
+      "description": {
+        "en": "A pristine, completely undeveloped barrier island beach located at the eastern edge of the Ria Formosa Natural Park. It offers warm, shallow waters and vast, peaceful horizons.",
+        "pt": "Uma praia de ilha barreira totalmente intocada, localizada no extremo oriente do Parque Natural da Ria Formosa. Oferece águas quentes e rasas e um horizonte vasto e tranquilo."
+      },
+      "extraDetails": [
+        {
+          "label": {
+            "en": "🚤 Lagoon Transit",
+            "pt": "🚤 Travessia da Lagoa"
+          },
+          "value": {
+            "en": "Wade across at low tide or take a fisherman's taxi boat",
+            "pt": "Atravessar a pé na maré baixa ou apanhar barco-táxi de pescadores"
+          }
+        },
+        {
+          "label": {
+            "en": "🎒 Zero Amenities",
+            "pt": "🎒 Sem Serviços"
+          },
+          "value": {
+            "en": "Wild island beach • Bring your own water and shade",
+            "pt": "Praia selvagem • Trazer água e sombra próprias"
+          }
+        }
+      ],
+      "amenities": [
+        "lifeguard",
+        "restaurant"
+      ],
+      "euCode": "PTCD2W",
+      "officialAPAInfo": {
+        "name": "Fábrica - Mar",
+        "code": "PTCD2W",
+        "lat": 37.149184,
+        "lng": -7.551729,
+        "id": 5,
+        "numericCode": 8979629780,
+        "arhRegion": "ARH-ALGARVE",
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCD2W&ano=2026",
+        "concelho": "VILA REAL DE SANTO ANTÓNIO",
+        "dico": 816
+      },
+      "apaFacilities": {
+        "code": 8979629780,
+        "waterCode": "PTCD2W",
+        "lifeguard": true,
+        "firstAid": false,
+        "restrooms": false,
+        "showers": false,
+        "wasteCollection": true,
+        "beachCleaning": true,
+        "infoBoard": true,
+        "supportFacilities": true,
+        "parking": false,
+        "blueFlag": false,
+        "accessible": false,
+        "amphibiousChair": false,
+        "surfInterest": false,
+        "constructionWork": false,
+        "landslideRisk": false,
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCD2W&ano=2026",
+        "isCoastal": true,
+        "isInland": false
+      },
+      "live": {
+        "weather": {
+          "airTemp": 29.5,
+          "formattedAirTemp": "30°C",
+          "condition": {
+            "en": "Mainly clear",
+            "pt": "Pouco Nublado",
+            "icon": "🌤️"
+          },
+          "icon": "🌤️"
+        },
+        "sun": {
+          "sunrise": "06:37",
+          "sunset": "20:34"
+        },
+        "waterTemp": {
+          "value": 19.4,
+          "formatted": "19.4°C",
+          "source": "Open-Meteo"
+        },
+        "waterQuality": {
+          "status": {
+            "en": "Excellent",
+            "pt": "Excelente"
+          },
+          "blueFlag": true,
+          "accessibleBeach": false,
+          "goldQuality": true,
+          "lastTested": "2026-08-04"
+        },
+        "jellyfish": {
+          "status": {
+            "en": "Low Risk",
+            "pt": "Risco Baixo"
+          },
+          "recentSightings": false,
+          "count": 0,
+          "species": [],
+          "hasPortugueseManOfWar": false,
+          "message": {
+            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
+            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
+          }
+        },
+        "swell": {
+          "value": 0.5,
+          "formatted": "0.5m",
+          "period": "2.9s",
+          "direction": "SW"
+        },
+        "tide": {
+          "value": -1.4,
+          "formatted": "-1.4m ↗",
+          "trend": "rising",
+          "arrow": "↗",
+          "nextHigh": "19:00",
+          "nextLow": "01:00"
+        },
+        "wind": {
+          "speed": 6,
+          "direction": "SW",
+          "formatted": "6 km/h (SW)"
+        },
+        "uv": {
+          "value": 6,
+          "formatted": "UV 6"
+        },
+        "safety": {
+          "flag": "Green",
+          "verdict": {
+            "en": "DAILY SAFETY VERDICT: SAFE",
+            "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
+          },
+          "message": {
+            "en": "Conditions are perfect for swimming.",
+            "pt": "Condições perfeitas para ir a banhos."
+          },
+          "ipmaWarning": null
+        },
+        "status": "live"
+      }
+    },
+    {
+      "id": "faro",
+      "name": "Ilha de Faro",
+      "region": "Algarve",
+      "lat": 37.0083,
+      "lng": -7.9943,
+      "type": "Beach",
+      "img": "images/beaches/faro-thumb.jpg",
+      "detailImg": "images/beaches/faro-landscape.jpg",
+      "description": {
+        "en": "Situated on a barrier island within the Ria Formosa Natural Park, Ilha de Faro is an easily accessible beach connected to the mainland by a single-lane bridge. It features an expansive golden sand beach facing the open ocean, alongside a sheltered lagoon side popular for water sports.",
+        "pt": "Situada numa ilha barreira no Parque Natural da Ria Formosa, a Ilha de Faro é facilmente acessível por uma ponte de faixa única. Apresenta um extenso areal dourado virado ao oceano e um lado de lagoa abrigado, popular para desportos náuticos."
+      },
+      "extraDetails": [
+        {
+          "label": {
+            "en": "🌉 Bridge Access",
+            "pt": "🌉 Acesso pela Ponte"
+          },
+          "value": {
+            "en": "New bridge • Heavy traffic during summer peak hours",
+            "pt": "Ponte nova • Trânsito intenso nas horas de ponta no verão"
+          }
+        },
+        {
+          "label": {
+            "en": "🏖️ Dual Coastline",
+            "pt": "🏖️ Dupla Frente de Mar"
+          },
+          "value": {
+            "en": "Calm Ria Formosa lagoon on one side, open Atlantic waves on the other",
+            "pt": "Lagoa calma da Ria Formosa de um lado, ondas do Atlântico do outro"
+          }
+        },
+        {
+          "label": {
+            "en": "🚌 Public Transit",
+            "pt": "🚌 Transportes Públicos"
+          },
+          "value": {
+            "en": "Direct municipal bus connection (Line 16) from Faro Airport & city center",
+            "pt": "Ligação direta de autocarro (Linha 16) desde o Aeroporto de Faro e centro"
+          }
+        }
+      ],
+      "amenities": [
+        "parking",
+        "restaurant",
+        "lifeguard",
+        "shower",
+        "sunbed",
+        "accessibility",
+        "water_sports",
+        "toilet"
+      ],
+      "euCode": "PTCP9U",
+      "officialAPAInfo": {
+        "name": "Faro - Mar Central",
+        "code": "PTCP9U",
+        "lat": 37.0069,
+        "lng": -7.9937,
+        "id": 720,
+        "numericCode": 10174971494,
+        "arhRegion": "ARH-ALGARVE",
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCP9U&ano=2026",
+        "concelho": "FARO",
+        "dico": 805
+      },
+      "apaFacilities": {
+        "code": 10174971494,
+        "waterCode": "PTCP9U",
+        "lifeguard": true,
+        "firstAid": true,
+        "restrooms": true,
+        "showers": true,
+        "wasteCollection": true,
+        "beachCleaning": true,
+        "infoBoard": true,
+        "supportFacilities": true,
+        "parking": true,
+        "blueFlag": true,
+        "accessible": true,
+        "amphibiousChair": true,
+        "surfInterest": true,
+        "constructionWork": false,
+        "landslideRisk": false,
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCP9U&ano=2026",
+        "isCoastal": true,
+        "isInland": false
+      },
+      "live": {
+        "weather": {
+          "airTemp": 25.5,
+          "formattedAirTemp": "26°C",
+          "condition": {
+            "en": "Mainly clear",
+            "pt": "Pouco Nublado",
+            "icon": "🌤️"
+          },
+          "icon": "🌤️"
+        },
+        "sun": {
+          "sunrise": "06:39",
+          "sunset": "20:36"
+        },
+        "waterTemp": {
+          "value": 18.4,
+          "formatted": "18.4°C",
+          "source": "Open-Meteo"
+        },
+        "waterQuality": {
+          "status": {
+            "en": "Excellent",
+            "pt": "Excelente"
+          },
+          "blueFlag": true,
+          "accessibleBeach": true,
+          "goldQuality": true,
+          "lastTested": "2026-08-04"
+        },
+        "jellyfish": {
+          "status": {
+            "en": "Low Risk",
+            "pt": "Risco Baixo"
+          },
+          "recentSightings": false,
+          "count": 0,
+          "species": [],
+          "hasPortugueseManOfWar": false,
+          "message": {
+            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
+            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
+          }
+        },
+        "swell": {
+          "value": 0.9,
+          "formatted": "0.9m",
+          "period": "4.0s",
+          "direction": "W"
+        },
+        "tide": {
+          "value": -1.4,
+          "formatted": "-1.4m ↗",
+          "trend": "rising",
+          "arrow": "↗",
+          "nextHigh": "19:00",
+          "nextLow": "01:00"
+        },
+        "wind": {
+          "speed": 23,
+          "direction": "W",
+          "formatted": "23 km/h (W)"
+        },
+        "uv": {
+          "value": 6,
+          "formatted": "UV 6"
+        },
+        "safety": {
+          "flag": "Green",
+          "verdict": {
+            "en": "DAILY SAFETY VERDICT: SAFE",
+            "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
+          },
+          "message": {
+            "en": "Conditions are perfect for swimming.",
+            "pt": "Condições perfeitas para ir a banhos."
+          },
+          "ipmaWarning": null
+        },
+        "status": "live"
+      }
+    },
+    {
+      "id": "cabeco",
+      "name": "Praia do Cabeço",
+      "region": "Algarve",
+      "lat": 37.1754,
+      "lng": -7.4721,
+      "type": "Beach",
+      "img": "images/beaches/cabeco-thumb.jpg",
+      "detailImg": "images/beaches/cabeco-landscape.jpg",
+      "description": {
+        "en": "Also known as Praia da Retur, this tranquil Eastern Algarve gem in Castro Marim is framed by a lush pine forest and pristine sand dunes. Renowned for its calm, shallow waters and noticeably warmer sea temperatures, it offers a peaceful, expansive coastal escape.",
+        "pt": "Também conhecida como Praia da Retur, esta tranquila joia do Sotavento Algarvio em Castro Marim é emoldurada por uma densa mata de pinheiros e dunas preservadas. Famosa pelas suas águas calmas e rasas com temperaturas visivelmente mais quentes, oferece um refúgio sereno e amplo."
+      },
+      "extraDetails": [
+        {
+          "label": {
+            "en": "🌲 Pine Forest",
+            "pt": "🌲 Pinhal"
+          },
+          "value": {
+            "en": "Framed by the dense Gancho pine woods with wooden boardwalks protecting the dunes",
+            "pt": "Emoldurada pela Mata do Gancho com passadiços de madeira a proteger as dunas"
+          }
+        },
+        {
+          "label": {
+            "en": "🌡️ Warm Waters",
+            "pt": "🌡️ Água Quente"
+          },
+          "value": {
+            "en": "Enjoys some of the warmest sea temperatures in mainland Portugal",
+            "pt": "Desfruta de uma das temperaturas de água mais quentes de Portugal continental"
+          }
+        },
+        {
+          "label": {
+            "en": "👨‍👩‍👧 Family Friendly",
+            "pt": "👨‍👩‍👧 Familiar"
+          },
+          "value": {
+            "en": "Gentle seabed slope, minimal swell, and safe swimming conditions",
+            "pt": "Pequeno declive do fundo, ondulação mínima e banhos seguros"
+          }
+        }
+      ],
+      "amenities": [
+        "parking",
+        "restaurant",
+        "lifeguard",
+        "shower",
+        "sunbed",
+        "accessibility",
+        "toilet"
+      ],
+      "euCode": "PTCJ3N",
+      "officialAPAInfo": {
+        "name": "Cabeço",
+        "code": "PTCJ3N",
+        "lat": 37.17479,
+        "lng": -7.47198,
+        "id": 166,
+        "numericCode": 8979630116,
+        "arhRegion": "ARH-ALGARVE",
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCJ3N&ano=2026",
+        "concelho": "CASTRO MARIM",
+        "dico": 804
+      },
+      "apaFacilities": {
+        "code": 8979630116,
+        "waterCode": "PTCJ3N",
+        "lifeguard": true,
+        "firstAid": true,
+        "restrooms": true,
+        "showers": false,
+        "wasteCollection": true,
+        "beachCleaning": true,
+        "infoBoard": true,
+        "supportFacilities": true,
+        "parking": true,
+        "blueFlag": true,
+        "accessible": true,
+        "amphibiousChair": true,
+        "surfInterest": false,
+        "constructionWork": false,
+        "landslideRisk": false,
+        "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCJ3N&ano=2026",
+        "isCoastal": true,
+        "isInland": false
+      },
+      "live": {
+        "weather": {
+          "airTemp": 29.6,
+          "formattedAirTemp": "30°C",
+          "condition": {
+            "en": "Mainly clear",
+            "pt": "Pouco Nublado",
+            "icon": "🌤️"
+          },
+          "icon": "🌤️"
+        },
+        "sun": {
+          "sunrise": "06:37",
+          "sunset": "20:34"
+        },
+        "waterTemp": {
+          "value": 21.2,
+          "formatted": "21.2°C",
+          "source": "Open-Meteo"
+        },
+        "waterQuality": {
+          "status": {
+            "en": "Excellent",
+            "pt": "Excelente"
+          },
+          "blueFlag": true,
+          "accessibleBeach": true,
+          "goldQuality": true,
+          "lastTested": "2026-08-04"
+        },
+        "jellyfish": {
+          "status": {
+            "en": "Low Risk",
+            "pt": "Risco Baixo"
+          },
+          "recentSightings": false,
+          "count": 0,
+          "species": [],
+          "hasPortugueseManOfWar": false,
+          "message": {
+            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
+            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
+          }
+        },
+        "swell": {
+          "value": 0.5,
+          "formatted": "0.5m",
+          "period": "3.0s",
+          "direction": "SW"
+        },
+        "tide": {
+          "value": -1.4,
+          "formatted": "-1.4m ↗",
+          "trend": "rising",
+          "arrow": "↗",
+          "nextHigh": "19:00",
+          "nextLow": "01:00"
+        },
+        "wind": {
+          "speed": 11,
+          "direction": "SW",
+          "formatted": "11 km/h (SW)"
+        },
+        "uv": {
+          "value": 6,
+          "formatted": "UV 6"
+        },
+        "safety": {
+          "flag": "Green",
+          "verdict": {
+            "en": "DAILY SAFETY VERDICT: SAFE",
+            "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
+          },
+          "message": {
+            "en": "Conditions are perfect for swimming.",
+            "pt": "Condições perfeitas para ir a banhos."
+          },
+          "ipmaWarning": null
+        },
+        "status": "live"
+      }
+    }
+  ]
+}

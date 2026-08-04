@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #133342;
+    --primary-color: #1a3847;
     --secondary-color: #489FB5;
     --accent1-color: #82C0CC;
     --accent2-color: #EDE7E3;
@@ -21,11 +21,16 @@ body {
     color: #333;
 }
 
+/* --- HEADER PRINCIPAL --- */
 .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--primary-color);
     color: white;
-    padding: 0;
+    padding: 0 20px 0 0; /* Dá margem à direita para o switcher e mantém a imagem à esquerda */
     border-bottom: 6px solid var(--sand-color);
+    position: relative;
 }
 
 .logo-container {
@@ -58,6 +63,47 @@ body {
     opacity: 0.8;
 }
 
+/* --- SELECTOR DE LÍNGUA (PT | EN) --- */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--heading-font);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.6);
+    z-index: 5;
+}
+
+.lang-btn {
+    background: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 2px 4px;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.lang-btn.active {
+    color: #ffffff;
+    border-bottom: 2px solid var(--accent1-color);
+}
+
+.lang-btn:hover {
+    color: #ffffff;
+}
+
+.divider {
+    opacity: 0.4;
+    margin: 0 2px;
+    user-select: none;
+}
+
+/* --- NAVEGAÇÃO E FILTROS --- */
 .filter-nav {
     padding: 20px 15px 10px 15px;
     background-color: var(--accent2-color);
@@ -92,6 +138,7 @@ body {
     font-weight: bold;
 }
 
+/* --- HERO SECTION --- */
 .hero-section {
     position: relative;
     padding: 60px 20px;
@@ -122,6 +169,7 @@ body {
     font-weight: 700;
     letter-spacing: 2px;
     color: var(--accent1-color);
+    text-transform: uppercase;
 }
 
 .hero-title {
@@ -185,6 +233,7 @@ body {
     transform: translateY(-1px);
 }
 
+/* --- GRELHA DE PRAIAS --- */
 .beaches-section {
     padding: 20px;
 }
@@ -233,6 +282,10 @@ body {
     z-index: 2;
 }
 
+.stat-label {
+    text-transform: uppercase;
+}
+
 .hint-safe {
     background-color: #2ec4b6;
 }
@@ -266,6 +319,7 @@ body {
     font-family: var(--heading-font);
 }
 
+/* --- MODAL --- */
 .modal {
     position: fixed;
     top: 0;
@@ -372,7 +426,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* --- Live Status Badge --- */
+/* --- LIVE STATUS BADGE --- */
 .live-status-badge {
     display: inline-flex;
     align-items: center;
@@ -387,6 +441,17 @@ body {
     text-transform: uppercase;
     width: fit-content;
     transition: all 0.3s ease;
+}
+
+.live-status-badge.stale {
+    background: rgba(255, 193, 7, 0.15);
+    color: #ffc107;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.live-status-badge.stale .badge-dot {
+    background-color: #ffc107;
+    box-shadow: none;
 }
 
 .badge-dot {
@@ -433,24 +498,21 @@ body {
         opacity: 0.3;
         transform: scale(0.9);
     }
-
     50% {
         opacity: 1;
         transform: scale(1.2);
     }
-
     100% {
         opacity: 0.3;
         transform: scale(0.9);
     }
 }
 
-/* --- Mobile View (Default) --- */
+/* --- MÉTRICAS E DETALHES DO MODAL --- */
 .modal-metrics-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* Centers items on incomplete rows (e.g. 2 items on row 2) */
     gap: 16px 12px;
     margin: 18px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -459,7 +521,6 @@ body {
 }
 
 .metric-item {
-    /* Gives each item ~30% width so 3 fit on Row 1, and 2 naturally center on Row 2 */
     flex: 1 1 28%;
     max-width: 32%;
     display: flex;
@@ -471,7 +532,6 @@ body {
 .metric-item span {
     font-family: var(--heading-font);
     font-size: 0.92rem;
-    /* Clean sizing so values like '+0.4m ↗' fit without wrapping */
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -582,7 +642,6 @@ body {
     transform: translateY(-1px);
 }
 
-/* Dynamic Extra Details Container */
 .extra-details-container {
     background: rgba(0, 0, 0, 0.25);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -621,10 +680,8 @@ body {
     line-height: 1.3;
 }
 
-/* --- Responsive Layout Adjustments --- */
+/* --- RESPONSIVIDADE --- */
 @media (min-width: 550px) {
-
-    /* Fits all 5 metrics in 1 single horizontal row on tablet/desktop views */
     .modal-metrics-grid {
         grid-template-columns: repeat(5, 1fr);
     }
@@ -642,8 +699,7 @@ body {
 
 @media (min-width: 768px) {
     .main-header {
-        display: block;
-        padding: 0;
+        padding-right: 30px;
     }
 
     .logo-container {
@@ -675,7 +731,6 @@ body {
     }
 }
 
-/* Fix for small/short screens in landscape orientation */
 @media (max-height: 600px) {
     #details-modal:not(.hidden) {
         display: flex !important;
@@ -701,7 +756,6 @@ body {
     .modal-metrics-grid {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        /* Clean 5-column grid on desktop */
         gap: 8px;
     }
 

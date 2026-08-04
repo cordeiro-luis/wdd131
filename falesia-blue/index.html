@@ -41,7 +41,6 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="styles/style.css">
-    <script src="js/spots.js?v=2" defer></script>
     <script src="js/main.js" defer></script>
 </head>
 
@@ -53,6 +52,13 @@
             <h1 class="logo-text">FALÉSIA<span class="logo-alt">BLUE</span> <span class="logo-sub">| Beach & Ocean
                     Guide</span></h1>
         </div>
+
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="pt" aria-label="Mudar para Português">PT</button>
+            <span class="divider" aria-hidden="true">|</span>
+            <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
+        </div>
+
     </header>
 
     <main>
@@ -64,13 +70,13 @@
             <ul>
                 <li><button class="filter-btn" data-region="Arrábida">Arrábida</button></li>
                 <li><button class="filter-btn" data-region="Algarve">Algarve</button></li>
-                <li><button class="filter-btn" data-region="Azores">Azores</button></li>
+                <li><button class="filter-btn" data-region="Azores">Açores</button></li>
             </ul>
         </nav>
 
         <!-- spot grid -->
         <section class="beaches-section">
-            <h2>Explore Destinations</h2>
+            <h2 id="section-explore-title">Explore Destinations</h2>
             <div class="grid-container" id="beaches-grid">
                 <!-- Dynamic JS HTML here -->
             </div>

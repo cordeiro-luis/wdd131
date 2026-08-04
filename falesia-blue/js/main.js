@@ -1,267 +1,407 @@
-// DOM Selectors
+// --- UI LABELS DICTIONARY ---
+const UI_TEXTS = {
+    pt: {
+        exploreDestinations: "Explorar Destinos",
+        todaysSpot: "Destaque do Dia",
+        explore: "Explorar",
+        waterTemp: "Temp. Água",
+        swell: "Ondulação",
+        tide: "Maré",
+        wind: "Vento",
+        sunSafety: "Índice UV",
+        directions: "Como Chegar",
+        verdictTitle: "Avaliação de Segurança",
+        webcam: "Câmara em Direto",
+        facilities: "Infraestruturas & Acessos",
+        officialSource: "Fonte Oficial",
+        jellyfish: "Medusas",
+        weatherAir: "Clima & Ar",
+        sun: "Sol",
+        waterQuality: "Qualidade da Água",
+        regions: {
+            "All": "Todas",
+            "Arrábida": "Arrábida",
+            "Cascais": "Cascais",
+            "Sintra": "Sintra",
+            "Costa da Caparica": "Costa da Caparica",
+            "Azores": "Açores",
+            "Algarve": "Algarve"
+        }
+    },
+    en: {
+        exploreDestinations: "Explore Destinations",
+        todaysSpot: "Today's Spot",
+        explore: "Explore",
+        waterTemp: "Water Temp",
+        swell: "Swell",
+        tide: "Tide",
+        wind: "Wind",
+        sunSafety: "Sun Safety",
+        directions: "Directions",
+        verdictTitle: "Daily Safety Verdict",
+        webcam: "Live Webcam",
+        facilities: "Facilities & Access",
+        officialSource: "Official Source",
+        jellyfish: "Jellyfish Status",
+        weatherAir: "Weather & Air",
+        sun: "Sun Schedule",
+        waterQuality: "Water Quality",
+        regions: {
+            "All": "All",
+            "Arrábida": "Arrábida",
+            "Cascais": "Cascais",
+            "Sintra": "Sintra",
+            "Costa da Caparica": "Costa da Caparica",
+            "Azores": "Azores",
+            "Algarve": "Algarve"
+        }
+    }
+};
+
+// --- AMENITIES CONFIGURATION ---
+const AMENITIES_MAP = {
+    parking: { icon: "🚗", en: "Parking", pt: "Estacionamento" },
+    restaurant: { icon: "🍽️", en: "Restaurants", pt: "Restaurantes" },
+    lifeguard: { icon: "🧑‍⚕️", en: "Lifeguard", pt: "Nadador-Salvador" },
+    shower: { icon: "🚿", en: "Showers", pt: "Chuveiros" },
+    sunbed: { icon: "🪑", en: "Sunbeds", pt: "Espreguiçadeiras" },
+    accessibility: { icon: "♿", en: "Accessible", pt: "Acessibilidade" },
+    water_sports: { icon: "🛶", en: "Water Sports", pt: "Desportos Náuticos" },
+    toilet: { icon: "🚽", en: "Toilets", pt: "Casas de Banho" }
+};
+
+// State Variables
+let beachesData = [];
+let metaLastUpdated = null;
+let currentLang = document.documentElement.lang || 'pt';
+let lastActiveElement = null;
+let currentModalBeachId = null;
+
+// DOM Elements
 const gridContainer = document.getElementById('beaches-grid');
 const heroContainer = document.getElementById('hero-suggestion');
 const filterButtons = document.querySelectorAll('.filter-btn');
 const modal = document.getElementById('details-modal');
 const modalContent = document.getElementById('modal-dynamic-content');
 
-// Accessibility: Track active element before modal opens
-let lastActiveElement = null;
+// --- HELPER FUNCTIONS ---
 
-window.addEventListener('DOMContentLoaded', () => {
-    setupHeroSuggestion();
+function updateFilterNavLabels() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const regionTranslations = UI_TEXTS[currentLang].regions;
 
-    // Initial view rendering Arrábida spots
-    const initialBeaches = spots.filter(beach => beach.region === 'Arrábida');
-    renderCards(initialBeaches);
-
-    const defaultBtn = document.querySelector('.filter-btn[data-region="Arrábida"]');
-    if (defaultBtn) defaultBtn.classList.add('active');
-
-    setupFilters();
-    setupModalClose();
-});
-
-// Helper: Format temperature with exactly 1 decimal digit
-function formatTemp(val) {
-    if (val === null || val === undefined || val === "-") return "-";
-    const num = Number(val);
-    return isNaN(num) ? "-" : `${num.toFixed(1)}°C`;
-}
-
-// Helper function to find current hour index from Open-Meteo time array
-function getCurrentHourIndex(timeArray) {
-    if (!timeArray || timeArray.length === 0) return 0;
-    const nowISO = new Date().toISOString().slice(0, 13);
-    const index = timeArray.findIndex(t => t.startsWith(nowISO));
-    return index !== -1 ? index : 0;
-}
-
-// Calculates dynamic safety badge state based on live/stored swell & flag data
-function computeBeachStatus(beach) {
-    const swell = beach.waveHeight;
-
-    if (swell !== null && swell !== undefined) {
-        if ((beach.type === "Natural Pool" && swell > 1.5) || beach.flag === "Red" || swell >= 2.0) {
-            return { cssClass: "hint-danger", text: "Danger" };
-        } else if (beach.flag === "Yellow" || swell >= 1.2) {
-            return { cssClass: "hint-caution", text: "Caution" };
+    filterBtns.forEach(btn => {
+        const regionKey = btn.getAttribute('data-region');
+        if (regionKey && regionTranslations[regionKey]) {
+            btn.textContent = regionTranslations[regionKey];
         }
-        return { cssClass: "hint-safe", text: "Safe" };
-    }
-
-    if (beach.flag === "Red") return { cssClass: "hint-danger", text: "Danger" };
-    if (beach.flag === "Yellow") return { cssClass: "hint-caution", text: "Caution" };
-    return { cssClass: "hint-safe", text: "Safe" };
-}
-
-// Updates a specific beach card on the main grid dynamically
-function updateCardInGrid(beach) {
-    const safeName = CSS.escape(beach.name);
-    const cardEl = document.querySelector(`.beach-card[data-beach="${safeName}"]`);
-    if (!cardEl) return;
-
-    const cardTempEl = cardEl.querySelector('.card-temp');
-    const statusBadgeEl = cardEl.querySelector('.status-badge');
-
-    if (cardTempEl) {
-        cardTempEl.innerHTML = `🌡️ ${formatTemp(beach.temp)}`;
-    }
-
-    if (statusBadgeEl) {
-        const statusInfo = computeBeachStatus(beach);
-        statusBadgeEl.className = `status-badge ${statusInfo.cssClass}`;
-        statusBadgeEl.setAttribute('title', `Status: ${statusInfo.text}`);
-    }
-}
-
-// Helper to compute and update the modal's verdict box dynamically
-function updateModalVerdict(beach) {
-    const verdictBox = document.querySelector('.glass-verdict-box');
-    if (!verdictBox) return;
-
-    let alertTitle = "DAILY SAFETY VERDICT: SAFE";
-    let alertDesc = "Conditions are perfect for swimming.";
-    let alertClass = "verdict-safe";
-
-    const swell = beach.waveHeight;
-
-    if ((beach.type === "Natural Pool" && swell > 1.5) || beach.flag === "Red" || swell >= 2.0) {
-        alertTitle = "⚠️ HIGH SURF / STRONG CURRENTS";
-        alertDesc = "Exercise extreme caution or avoid swimming.";
-        alertClass = "verdict-danger";
-    } else if (beach.flag === "Yellow" || swell >= 1.2) {
-        alertTitle = "⚠️ CAUTION REQUIRED";
-        alertDesc = "Moderate swell or tide movement. Pay attention.";
-        alertClass = "verdict-caution";
-    }
-
-    verdictBox.className = `glass-verdict-box ${alertClass}`;
-    verdictBox.innerHTML = `
-        <h4>${alertTitle}</h4>
-        <p>${alertDesc}</p>
-    `;
-}
-
-async function fetchLiveMetrics(lat, lng) {
-    try {
-        const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current=wind_speed_10m,wind_direction_10m,uv_index&timezone=auto`;
-        // ✅ Updated parameter: sea_level_height_msl
-        const marineUrl = `https://marine-api.open-meteo.com/v1/marine?latitude=${lat}&longitude=${lng}&current=wave_height&hourly=sea_surface_temperature,sea_level_height_msl&timezone=auto`;
-
-        const [weatherRes, marineRes] = await Promise.all([
-            fetch(weatherUrl),
-            fetch(marineUrl)
-        ]);
-
-        if (!weatherRes.ok) throw new Error(`Weather API returned HTTP ${weatherRes.status}`);
-        if (!marineRes.ok) throw new Error(`Marine API returned HTTP ${marineRes.status}`);
-
-        const weatherData = await weatherRes.json();
-        const marineData = await marineRes.json();
-
-        const currentHourIdx = getCurrentHourIndex(marineData.hourly?.time || []);
-        const rawTemp = marineData.hourly?.sea_surface_temperature?.[currentHourIdx] ?? null;
-
-        // --- TIDE CALCULATION (Compact Format) ---
-        const seaLevels = marineData.hourly?.sea_level_height_msl || [];
-        const currentSeaLevel = seaLevels[currentHourIdx] ?? null;
-        const nextSeaLevel = seaLevels[currentHourIdx + 1] ?? null;
-
-        let tideFormatted = "-";
-        if (currentSeaLevel !== null) {
-            const sign = currentSeaLevel >= 0 ? "+" : "";
-            const heightStr = `${sign}${currentSeaLevel.toFixed(1)}m`;
-
-            if (nextSeaLevel !== null) {
-                // Compact arrow trend
-                const trendIcon = nextSeaLevel >= currentSeaLevel ? "↗" : "↘";
-                tideFormatted = `${heightStr} ${trendIcon}`;
-            } else {
-                tideFormatted = heightStr;
-            }
-        }
-
-        const getCardinalDirection = (deg) => {
-            const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
-            return directions[Math.round(deg / 45) % 8];
-        };
-
-        const rawSwell = marineData.current?.wave_height ?? null;
-        const rawWindSpeed = weatherData.current?.wind_speed_10m ?? null;
-        const rawWindDir = weatherData.current?.wind_direction_10m ? getCardinalDirection(weatherData.current.wind_direction_10m) : '';
-        const rawUV = weatherData.current?.uv_index ?? null;
-
-        return {
-            temp: rawTemp !== null ? formatTemp(rawTemp) : "-",
-            waveHeight: rawSwell !== null ? `${rawSwell.toFixed(1)}m` : "-",
-            wind: rawWindSpeed !== null ? `${Math.round(rawWindSpeed)} km/h (${rawWindDir})` : "-",
-            uv: rawUV !== null ? `UV ${Math.round(rawUV)}` : "-",
-            tide: tideFormatted,
-
-            rawTempNum: rawTemp !== null ? Number(rawTemp.toFixed(1)) : null,
-            rawSwellNum: rawSwell !== null ? Number(rawSwell.toFixed(1)) : null
-        };
-    } catch (error) {
-        console.warn("Could not fetch live metrics:", error);
-        return {
-            temp: "-",
-            waveHeight: "-",
-            wind: "-",
-            uv: "-",
-            tide: "-",
-            rawTempNum: null,
-            rawSwellNum: null
-        };
-    }
-}
-
-function fetchMetricsForVisibleBeaches(beaches) {
-    beaches.forEach(async (beach) => {
-        if (!beach.lat || !beach.lng) return;
-
-        if (beach.temp !== null && beach.waveHeight !== null) {
-            updateCardInGrid(beach);
-            return;
-        }
-
-        const liveData = await fetchLiveMetrics(beach.lat, beach.lng);
-
-        if (liveData.rawTempNum !== null) beach.temp = liveData.rawTempNum;
-        if (liveData.rawSwellNum !== null) beach.waveHeight = liveData.rawSwellNum;
-
-        updateCardInGrid(beach);
     });
 }
 
+function getText(field) {
+    if (!field) return '';
+    if (typeof field === 'string') return field;
+    return field[currentLang] || field['en'] || field['pt'] || '';
+}
+
+function getLiveBadgeHTML(timestamp) {
+    if (!timestamp) {
+        const fallbackText = currentLang === 'pt' ? 'DADOS RECENTES' : 'RECENT DATA';
+        return `<div id="live-badge" class="live-status-badge stale">
+            <span class="badge-dot"></span> 🕒 ${fallbackText}
+        </div>`;
+    }
+
+    const lastUpdated = new Date(timestamp).getTime();
+    const now = Date.now();
+    const diffInMinutes = Math.floor((now - lastUpdated) / (1000 * 60));
+    const ONE_HOUR_MINUTES = 60;
+
+    if (isNaN(lastUpdated) || diffInMinutes >= ONE_HOUR_MINUTES) {
+        const hoursAgo = Math.floor(diffInMinutes / 60) || 1;
+        const staleText = currentLang === 'pt'
+            ? `ATUALIZADO HÁ ${hoursAgo}H`
+            : `UPDATED ${hoursAgo}H AGO`;
+
+        return `<div id="live-badge" class="live-status-badge stale">
+            <span class="badge-dot"></span> 🕒 ${staleText}
+        </div>`;
+    }
+
+    const liveText = currentLang === 'pt' ? '⚡ DADOS EM TEMPO REAL' : '⚡ LIVE DATA';
+    return `<div id="live-badge" class="live-status-badge live">
+        <span class="badge-dot"></span> ${liveText}
+    </div>`;
+}
+
+function getSafetyBadgeInfo(flag) {
+    switch (flag?.toLowerCase()) {
+        case 'red':
+            return { cssClass: "hint-danger", text: "Danger", verdictClass: "verdict-danger" };
+        case 'yellow':
+            return { cssClass: "hint-caution", text: "Caution", verdictClass: "verdict-caution" };
+        case 'green':
+        default:
+            return { cssClass: "hint-safe", text: "Safe", verdictClass: "verdict-safe" };
+    }
+}
+
+function renderAmenitiesHTML(amenityKeys) {
+    if (!amenityKeys || !amenityKeys.length) return '';
+    return amenityKeys.map(key => {
+        const item = AMENITIES_MAP[key];
+        if (!item) return '';
+        const label = item[currentLang] || item.en;
+        return `<span class="amenity-tag">${item.icon} ${label}</span>`;
+    }).join('');
+}
+
+function renderWebcamHTML(beach) {
+    const webcam = beach.webcam || beach.webcamUrl || beach.live?.webcam;
+    if (!webcam) return '';
+
+    const webcamUrl = typeof webcam === 'object' ? webcam.url : webcam;
+    if (!webcamUrl || typeof webcamUrl !== 'string' || !webcamUrl.trim()) return '';
+
+    const label = UI_TEXTS[currentLang].webcam;
+    const isEmbeddable = webcamUrl.includes('embed') || webcamUrl.includes('player') || webcamUrl.includes('youtube.com/embed');
+
+    if (isEmbeddable) {
+        return `
+            <div class="modal-webcam-block">
+                <h4>📹 ${label}</h4>
+                <div class="webcam-responsive-frame">
+                    <iframe src="${webcamUrl}" title="${beach.name} Webcam" frameborder="0" allowfullscreen loading="lazy"></iframe>
+                </div>
+            </div>
+        `;
+    }
+
+    return `
+        <div class="modal-webcam-block">
+            <a href="${webcamUrl}" target="_blank" rel="noopener noreferrer" class="webcam-direct-btn">
+                📹 ${label}
+            </a>
+        </div>
+    `;
+}
+
+// Extracts ALL live & static details into dynamic key-value rows
+function getExtendedDetailRows(beach) {
+    const rows = [];
+    const isPt = currentLang === 'pt';
+    const live = beach.live || {};
+    const labels = UI_TEXTS[currentLang];
+
+    // 1. Weather & Air Condition
+    if (live.weather) {
+        const w = live.weather;
+        const temp = w.formattedAirTemp || (w.airTemp ? `${w.airTemp}°C` : '');
+        const cond = getText(w.condition);
+        const icon = w.icon || w.condition?.icon || '';
+        const parts = [temp, cond, icon].filter(Boolean);
+
+        if (parts.length > 0) {
+            rows.push({
+                label: `🌤️ ${labels.weatherAir}`,
+                value: parts.join(' • ')
+            });
+        }
+    }
+
+    // 2. Sun Schedule
+    if (live.sun && (live.sun.sunrise || live.sun.sunset)) {
+        rows.push({
+            label: `☀️ ${labels.sun}`,
+            value: `🌅 ${live.sun.sunrise || '-'} &nbsp;|&nbsp; 🌇 ${live.sun.sunset || '-'}`
+        });
+    }
+
+    // 3. Water Quality & Badges
+    if (live.waterQuality) {
+        const wq = live.waterQuality;
+        const qStatus = getText(wq.status);
+        const awards = [];
+
+        if (wq.blueFlag) awards.push(isPt ? '🔷 Bandeira Azul' : '🔷 Blue Flag');
+        if (wq.goldQuality) awards.push(isPt ? '🏆 Qualidade de Ouro' : '🏆 Gold Quality');
+
+        let qualityText = qStatus;
+        if (wq.lastTested) {
+            qualityText += ` (${isPt ? 'Teste' : 'Tested'}: ${wq.lastTested})`;
+        }
+
+        if (awards.length > 0) {
+            qualityText += qualityText ? ` • ${awards.join(' • ')}` : awards.join(' • ');
+        }
+
+        if (qualityText) {
+            rows.push({
+                label: `💧 ${labels.waterQuality}`,
+                value: qualityText
+            });
+        }
+    }
+
+    // 4. Extra Local Info / Description Notes
+    if (beach.extraDetails && Array.isArray(beach.extraDetails)) {
+        beach.extraDetails.forEach(item => {
+            const labelStr = getText(item.label);
+            const valueStr = getText(item.value);
+            if (labelStr && valueStr) {
+                rows.push({ label: labelStr, value: valueStr });
+            }
+        });
+    }
+
+    // 5. Jellyfish Status
+    if (live.jellyfish) {
+        const j = live.jellyfish;
+        const jStatus = getText(j.status);
+        const jMsg = getText(j.message);
+        if (jStatus) {
+            rows.push({
+                label: `🪼 ${labels.jellyfish}`,
+                value: `${jStatus}${jMsg ? ' — ' + jMsg : ''}`
+            });
+        }
+    }
+
+    // 6. Official APA Facilities & Warnings
+    if (beach.apaFacilities) {
+        const fac = beach.apaFacilities;
+        const active = [];
+
+        if (fac.showers) active.push(isPt ? 'Duches' : 'Showers');
+        if (fac.restrooms) active.push(isPt ? 'WCs' : 'Restrooms');
+        if (fac.firstAid) active.push(isPt ? 'Posto de Primeiros Socorros' : 'First Aid Station');
+        if (fac.amphibiousChair) active.push(isPt ? 'Cadeira Anfíbia' : 'Amphibious Chair');
+        if (fac.landslideRisk) active.push(isPt ? '⚠️ Risco de Arriba' : '⚠️ Landslide Warning');
+
+        if (active.length > 0) {
+            rows.push({
+                label: `🏖️ ${labels.facilities}`,
+                value: active.join(' • ')
+            });
+        }
+    }
+
+    // 7. Official SNIRH Link (Clean, readable text)
+    if (beach.officialAPAInfo?.snirhUrl) {
+        const euCodeStr = beach.euCode ? ` (${beach.euCode})` : '';
+        rows.push({
+            label: `🔗 ${labels.officialSource}`,
+            value: `<a href="${beach.officialAPAInfo.snirhUrl}" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: underline;">Relatório APA / SNIRH${euCodeStr}</a>`
+        });
+    }
+
+    return rows;
+}
+
+// --- INITIALIZATION ---
+
+window.addEventListener('DOMContentLoaded', async () => {
+    await loadBeachesData();
+    setupModalClose();
+    setupLangSwitcher();
+    updateFilterNavLabels();
+});
+
+async function loadBeachesData() {
+    try {
+        const response = await fetch('data/beaches-live.json');
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+        const data = await response.json();
+        beachesData = data.beaches || [];
+        metaLastUpdated = data.meta?.lastUpdated || null;
+
+        setupHeroSuggestion();
+
+        const defaultRegion = 'Arrábida';
+        const filtered = beachesData.filter(b => b.region === defaultRegion);
+        renderCards(filtered.length ? filtered : beachesData);
+
+        const defaultBtn = document.querySelector(`.filter-btn[data-region="${defaultRegion}"]`);
+        if (defaultBtn) defaultBtn.classList.add('active');
+
+        setupFilters();
+
+    } catch (error) {
+        console.error('Failed to load beaches dataset:', error);
+        if (gridContainer) {
+            gridContainer.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #888;">Unable to load beach conditions. Please try again later.</p>`;
+        }
+    }
+}
+
+// --- HERO FEATURED SPOT ---
+
 function setupHeroSuggestion() {
-    if (typeof spots === 'undefined' || spots.length === 0) return;
+    if (!beachesData.length || !heroContainer) return;
 
-    const randomIndex = Math.floor(Math.random() * spots.length);
-    const suggestion = spots[randomIndex];
+    const randomIndex = Math.floor(Math.random() * beachesData.length);
+    const suggestion = beachesData[randomIndex];
+    const live = suggestion.live || {};
 
-    heroContainer.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45)), url('${suggestion.detailImg}')`;
+    heroContainer.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45)), url('${suggestion.detailImg || suggestion.img}')`;
 
-    const textDescription = suggestion.description
-        ? suggestion.description.substring(0, 120) + "..."
-        : "Calm water, perfect for snorkeling!";
+    const description = getText(suggestion.description);
+    const textDescription = description
+        ? description.substring(0, 120) + "..."
+        : "Calm water, perfect for swimming!";
+
+    const tempFormatted = live.waterTemp?.formatted || "-";
+    const swellFormatted = live.swell?.formatted || "-";
+    const swellLabel = UI_TEXTS[currentLang].swell;
 
     heroContainer.setAttribute('role', 'region');
     heroContainer.setAttribute('aria-label', "Today's Featured Beach Spot");
 
     heroContainer.innerHTML = `
-        <div class="hero-glass-card">
-            <span class="hero-tag">TODAY'S SPOT</span>
-            <h2 class="hero-title">${suggestion.name}</h2>
-            <p class="hero-description">${textDescription}</p>
-            
-            <div class="hero-meta-row">
-                <div class="meta-item">
-                    <span class="hero-icon" aria-hidden="true">🌡️</span>
-                    <span id="hero-temp-val">${formatTemp(suggestion.temp)}</span>
-                </div>
-                <span class="meta-divider" aria-hidden="true">|</span>
-                <div class="meta-item">
-                    <span class="hero-icon" aria-hidden="true">🌊</span>
-                    <span id="hero-swell-val">Swell: ${suggestion.waveHeight !== null ? `${suggestion.waveHeight.toFixed(1)}m` : '-'}</span>
-                </div>
+    <div class="hero-glass-card">
+        <span class="hero-tag">${UI_TEXTS[currentLang].todaysSpot}</span>
+        <h2 class="hero-title">${suggestion.name}</h2>
+        <p class="hero-description">${textDescription}</p>
+        
+        <div class="hero-meta-row">
+            <div class="meta-item">
+                <span class="hero-icon" aria-hidden="true">🌡️</span>
+                <span>${tempFormatted}</span>
             </div>
-            
-            <button class="hero-btn" id="hero-explore-btn" aria-label="Explore details for ${suggestion.name}">Explore</button>
+            <span class="meta-divider" aria-hidden="true">|</span>
+            <div class="meta-item">
+                <span class="hero-icon" aria-hidden="true">🌊</span>
+                <span>${swellLabel}: ${swellFormatted}</span>
+            </div>
         </div>
-    `;
+        
+        <button class="hero-btn" id="hero-explore-btn" aria-label="Explore details for ${suggestion.name}">${UI_TEXTS[currentLang].explore}</button>
+    </div>`;
 
     document.getElementById('hero-explore-btn').addEventListener('click', () => {
-        openDetails(suggestion.name);
+        openDetails(suggestion.id || suggestion.name);
     });
-
-    if (suggestion.lat && suggestion.lng && (suggestion.temp === null || suggestion.waveHeight === null)) {
-        fetchLiveMetrics(suggestion.lat, suggestion.lng).then(liveData => {
-            if (liveData.rawTempNum !== null) suggestion.temp = liveData.rawTempNum;
-            if (liveData.rawSwellNum !== null) suggestion.waveHeight = liveData.rawSwellNum;
-
-            const heroTempEl = document.getElementById('hero-temp-val');
-            const heroSwellEl = document.getElementById('hero-swell-val');
-
-            if (heroTempEl) heroTempEl.textContent = liveData.temp;
-            if (heroSwellEl) heroSwellEl.textContent = `Swell: ${liveData.waveHeight}`;
-        });
-    }
 }
 
+// --- BEACH CARDS GRID ---
+
 function renderCards(beaches) {
+    if (!gridContainer) return;
     gridContainer.innerHTML = "";
 
     beaches.forEach(beach => {
         const card = document.createElement('div');
         card.className = 'beach-card';
-        card.setAttribute('data-beach', beach.name);
+        card.setAttribute('data-beach', beach.id || beach.name);
 
-        const statusInfo = computeBeachStatus(beach);
+        const live = beach.live || {};
+        const statusInfo = getSafetyBadgeInfo(live.safety?.flag);
+        const waterTemp = live.waterTemp?.formatted || "-";
 
         card.setAttribute('tabindex', '0');
         card.setAttribute('role', 'button');
-        card.setAttribute('aria-label', `Beach: ${beach.name}, Region: ${beach.region}. Water temperature: ${formatTemp(beach.temp)}. Condition: ${statusInfo.text}. Press Enter to view details.`);
+        card.setAttribute('aria-label', `Beach: ${beach.name}, Region: ${beach.region}. Water temperature: ${waterTemp}. Condition: ${statusInfo.text}.`);
 
         card.innerHTML = `
             <span class="status-badge ${statusInfo.cssClass}" title="Status: ${statusInfo.text}"></span>
@@ -270,24 +410,24 @@ function renderCards(beaches) {
                 <h3>${beach.name}</h3>
                 <div class="card-meta-layout">
                     <p><span aria-hidden="true">📍</span> ${beach.region}</p>
-                    <span class="card-temp">🌡️ ${formatTemp(beach.temp)}</span>
+                    <span class="card-temp">🌡️ ${waterTemp}</span>
                 </div>
             </div>
         `;
 
-        card.addEventListener('click', () => openDetails(beach.name));
+        card.addEventListener('click', () => openDetails(beach.id || beach.name));
         card.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                openDetails(beach.name);
+                openDetails(beach.id || beach.name);
             }
         });
 
         gridContainer.appendChild(card);
     });
-
-    fetchMetricsForVisibleBeaches(beaches);
 }
+
+// --- REGION FILTERS ---
 
 function setupFilters() {
     filterButtons.forEach(btn => {
@@ -296,36 +436,57 @@ function setupFilters() {
             e.target.classList.add('active');
 
             const selectedRegion = e.target.getAttribute('data-region');
-            const filtered = spots.filter(beach => beach.region === selectedRegion);
+            const filtered = beachesData.filter(beach => beach.region === selectedRegion);
             renderCards(filtered);
         });
     });
 }
 
-function openDetails(beachName) {
-    const beach = spots.find(b => b.name === beachName);
+// --- MODAL DETAILS POPUP ---
+
+function openDetails(beachIdentifier) {
+    const beach = beachesData.find(b => b.id === beachIdentifier || b.name === beachIdentifier);
     if (!beach) return;
 
+    currentModalBeachId = beachIdentifier;
     lastActiveElement = document.activeElement;
 
-    const windText = beach.wind ? `${beach.wind.speed} (${beach.wind.direction})` : "-";
-    const uvText = beach.uvIndex ? `UV ${beach.uvIndex.value} (${beach.uvIndex.label})` : "-";
+    const live = beach.live || {};
+    const labels = UI_TEXTS[currentLang];
 
+    // Live Metrics
+    const waterTemp = live.waterTemp?.formatted || "-";
+    const swell = live.swell?.formatted || "-";
+    const tide = live.tide?.formatted || "-";
+    const wind = live.wind?.formatted || "-";
+    const uv = live.uv?.formatted || "-";
+
+    // Safety & Verdict
+    const badgeInfo = getSafetyBadgeInfo(live.safety?.flag);
+    const verdictTitle = getText(live.safety?.verdict) || labels.verdictTitle;
+    const verdictMessage = getText(live.safety?.message) || "Check ocean conditions prior to swimming.";
+
+    // Live/Stale Status Badge
+    const statusBadgeHTML = getLiveBadgeHTML(metaLastUpdated);
+
+    // Conditional Webcam Block
+    const webcamHTML = renderWebcamHTML(beach);
+
+    // Extended Details Table Rows
+    const detailRows = getExtendedDetailRows(beach);
     let extraDetailsHTML = "";
-    if (beach.extraDetails && beach.extraDetails.length > 0) {
-        const rows = beach.extraDetails.map(item => `
+    if (detailRows.length > 0) {
+        const rowsHTML = detailRows.map(item => `
             <div class="extra-detail-row">
                 <span class="extra-detail-label">${item.label}</span>
                 <span class="extra-detail-value">${item.value}</span>
             </div>
         `).join('');
 
-        extraDetailsHTML = `<div class="extra-details-container">${rows}</div>`;
+        extraDetailsHTML = `<div class="extra-details-container">${rowsHTML}</div>`;
     }
 
-    const amenitiesHTML = (beach.amenities || [])
-        .map(amenity => `<span class="amenity-tag">${amenity}</span>`)
-        .join('');
+    const amenitiesHTML = renderAmenitiesHTML(beach.amenities);
 
     const mapsQuery = encodeURIComponent(`${beach.name}, ${beach.region}, Portugal`);
     const mapsURL = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
@@ -337,45 +498,49 @@ function openDetails(beachName) {
 
     modalContent.innerHTML = `
         <div class="modal-card-container">
-            <img src="${beach.detailImg}" alt="${beach.name}" class="modal-landscape-img">
+            <img src="${beach.detailImg || beach.img}" alt="${beach.name}" class="modal-landscape-img">
             
             <div class="modal-glass-overlay">
                 <div class="modal-header-text">
                     <h2 id="modal-title">${beach.name.toUpperCase()}</h2>
-                    <p class="modal-subtitle">${beach.region.toUpperCase()} (${beach.type.toUpperCase()})</p>
+                    <p class="modal-subtitle">${beach.region.toUpperCase()} (${(beach.type || 'BEACH').toUpperCase()})</p>
                 </div>
 
-                <div id="live-badge" class="live-status-badge loading">
-                    <span class="badge-dot"></span> FETCHING LIVE DATA...
-                </div>
+                ${statusBadgeHTML}
                 
                 <div class="modal-metrics-grid">
                     <div class="metric-item">
-                        <span id="metric-temp">🌡️ ${formatTemp(beach.temp)}</span>
-                        <small>Water Temp</small>
+                        <span id="metric-temp">🌡️ ${waterTemp}</span>
+                        <small>${labels.waterTemp}</small>
                     </div>
                     <div class="metric-item">
-                        <span id="metric-swell">🌊 ${beach.waveHeight !== null ? `${beach.waveHeight.toFixed(1)}m` : '-'}</span>
-                        <small>Swell</small>
+                        <span id="metric-swell">🌊 ${swell}</span>
+                        <small>${labels.swell}</small>
                     </div>
                     <div class="metric-item">
-                        <span id="metric-tide">⚓ -</span>
-                        <small>Tide</small>
+                        <span id="metric-tide">⚓ ${tide}</span>
+                        <small>${labels.tide}</small>
                     </div>
                     <div class="metric-item">
-                        <span id="metric-wind">💨 ${windText}</span>
-                        <small>Wind</small>
+                        <span id="metric-wind">💨 ${wind}</span>
+                        <small>${labels.wind}</small>
                     </div>
                     <div class="metric-item">
-                        <span id="metric-uv">☀️ ${uvText}</span>
-                        <small>Sun Safety</small>
+                        <span id="metric-uv">☀️ ${uv}</span>
+                        <small>${labels.sunSafety}</small>
                     </div>
                 </div>
                 
-                <!-- VERDICT BOX (Dynamic) -->
-                <div class="glass-verdict-box"></div>
+                <!-- VERDICT BOX -->
+                <div class="glass-verdict-box ${badgeInfo.verdictClass}">
+                    <h4>${verdictTitle}</h4>
+                    <p>${verdictMessage}</p>
+                </div>
 
-                <p class="modal-description">${beach.description || 'No description available for this destination.'}</p>
+                <!-- WEBCAM (Only renders if valid URL exists) -->
+                ${webcamHTML}
+
+                <p class="modal-description">${getText(beach.description) || ''}</p>
 
                 ${extraDetailsHTML}
 
@@ -383,59 +548,30 @@ function openDetails(beachName) {
                     ${amenitiesHTML}
                 </div>
                 
-                <button class="directions-btn" onclick="window.open('${mapsURL}', '_blank')">DIRECTIONS</button>
+                <button class="directions-btn" id="modal-directions-btn">${labels.directions}</button>
             </div>
         </div>
     `;
 
-    // Render initial verdict
-    updateModalVerdict(beach);
+    const directionsBtn = document.getElementById('modal-directions-btn');
+    if (directionsBtn) {
+        directionsBtn.addEventListener('click', () => window.open(mapsURL, '_blank'));
+    }
 
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
 
     setTimeout(() => modal.focus(), 50);
-
-    // Fetch live metrics including Tide
-    if (beach.lat && beach.lng) {
-        const badgeEl = document.getElementById('live-badge');
-
-        fetchLiveMetrics(beach.lat, beach.lng).then(liveData => {
-            if (liveData.rawTempNum !== null) beach.temp = liveData.rawTempNum;
-            if (liveData.rawSwellNum !== null) beach.waveHeight = liveData.rawSwellNum;
-
-            const tempEl = document.getElementById('metric-temp');
-            const swellEl = document.getElementById('metric-swell');
-            const tideEl = document.getElementById('metric-tide');
-            const windEl = document.getElementById('metric-wind');
-            const uvEl = document.getElementById('metric-uv');
-
-            if (tempEl) tempEl.innerHTML = `🌡️ ${liveData.temp}`;
-            if (swellEl) swellEl.innerHTML = `🌊 ${liveData.waveHeight}`;
-            if (tideEl) tideEl.innerHTML = `⚓ ${liveData.tide}`;
-            if (windEl) windEl.innerHTML = `💨 ${liveData.wind}`;
-            if (uvEl) uvEl.innerHTML = `☀️ ${liveData.uv}`;
-
-            // Update main grid card badge and modal verdict banner live
-            updateCardInGrid(beach);
-            updateModalVerdict(beach);
-
-            if (badgeEl) {
-                if (liveData.temp !== "-") {
-                    badgeEl.className = "live-status-badge live";
-                    badgeEl.innerHTML = `<span class="badge-dot"></span> ⚡ LIVE DATA`;
-                } else {
-                    badgeEl.className = "live-status-badge offline";
-                    badgeEl.innerHTML = `<span class="badge-dot"></span> 📌 OFFLINE / STATIC`;
-                }
-            }
-        });
-    }
 }
 
+// --- MODAL CLOSE HANDLERS ---
+
 function setupModalClose() {
-    document.getElementById('modal-close-btn').addEventListener('click', closeModal);
-    document.getElementById('modal-close-overlay').addEventListener('click', closeModal);
+    const closeBtn = document.getElementById('modal-close-btn');
+    const closeOverlay = document.getElementById('modal-close-overlay');
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (closeOverlay) closeOverlay.addEventListener('click', closeModal);
 
     window.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeModal();
@@ -443,11 +579,52 @@ function setupModalClose() {
 }
 
 function closeModal() {
+    if (!modal) return;
     modal.classList.add('hidden');
     document.body.style.overflow = '';
 
     if (lastActiveElement) {
         lastActiveElement.focus();
+    }
+}
+
+// --- LANGUAGE SWITCHER LOGIC ---
+
+function setupLangSwitcher() {
+    const langBtns = document.querySelectorAll('.lang-btn');
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const selectedLang = e.currentTarget.getAttribute('data-lang');
+            if (selectedLang && selectedLang !== currentLang) {
+                changeLanguage(selectedLang);
+            }
+        });
+    });
+}
+
+function changeLanguage(newLang) {
+    currentLang = newLang;
+    document.documentElement.lang = newLang;
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === newLang);
+    });
+
+    const exploreTitle = document.getElementById('section-explore-title');
+    if (exploreTitle) {
+        exploreTitle.textContent = UI_TEXTS[currentLang].exploreDestinations;
+    }
+
+    updateFilterNavLabels();
+    setupHeroSuggestion();
+
+    const activeBtn = document.querySelector('.filter-btn.active');
+    const activeRegion = activeBtn ? activeBtn.getAttribute('data-region') : 'Arrábida';
+    const filtered = beachesData.filter(b => b.region === activeRegion);
+    renderCards(filtered.length ? filtered : beachesData);
+
+    if (modal && !modal.classList.contains('hidden') && currentModalBeachId) {
+        openDetails(currentModalBeachId);
     }
 }
 
