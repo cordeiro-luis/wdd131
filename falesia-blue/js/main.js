@@ -309,7 +309,18 @@ window.addEventListener('DOMContentLoaded', async () => {
 
 async function loadBeachesData() {
     try {
-        const response = await fetch('data/beaches-live.json');
+
+        // Cache-buster parameter (?t=timestamp) & no-cache headers force a fresh fetch every time
+        const cacheBuster = new Date().getTime();
+        const response = await fetch(`data/beaches-live.json?t=${cacheBuster}`, {
+            cache: 'no-store',
+            headers: {
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache'
+            }
+        });
+
+
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
         const data = await response.json();
