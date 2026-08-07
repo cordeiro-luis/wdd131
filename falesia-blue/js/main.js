@@ -348,11 +348,31 @@ async function loadBeachesData() {
 
 // --- HERO FEATURED SPOT ---
 
+function getDailySpot(beaches) {
+    if (!beaches || beaches.length === 0) return null;
+
+    // Get current date string: YYYY-MM-DD
+    const today = new Date().toISOString().split('T')[0];
+
+    // Compute a hash code from the date string
+    let hash = 0;
+    for (let i = 0; i < today.length; i++) {
+        hash = today.charCodeAt(i) + ((hash << 5) - hash);
+    }
+
+    // Map the hash to a valid index in beachesData
+    const index = Math.abs(hash) % beaches.length;
+    return beaches[index];
+}
+
+
 function setupHeroSuggestion() {
     if (!beachesData.length || !heroContainer) return;
 
-    const randomIndex = Math.floor(Math.random() * beachesData.length);
-    const suggestion = beachesData[randomIndex];
+    // Pick today's deterministic daily spot (same across all devices)
+    const suggestion = getDailySpot(beachesData);
+    if (!suggestion) return;
+
     const live = suggestion.live || {};
 
     heroContainer.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45)), url('${suggestion.detailImg || suggestion.img}')`;
