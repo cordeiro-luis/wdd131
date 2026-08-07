@@ -25,18 +25,21 @@ body {
 .main-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     background-color: var(--primary-color);
     color: white;
-    padding: 0 20px 0 0; /* Dá margem à direita para o switcher e mantém a imagem à esquerda */
+    padding: 0 15px 0 0;
+    /* Slightly tighter right padding */
     border-bottom: 6px solid var(--sand-color);
     position: relative;
 }
 
 .logo-container {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    align-items: flex-end;
+    gap: 8px;
+    min-width: 0;
+    /* Allows text inside flex container to shrink properly */
 }
 
 .logo-cliffs {
@@ -51,6 +54,7 @@ body {
     letter-spacing: 0.5px;
     padding-right: 5px;
     line-height: 1.2;
+    padding-bottom: 6px;
 }
 
 .logo-alt {
@@ -74,6 +78,10 @@ body {
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.6);
     z-index: 5;
+    align-self: center;
+    padding-bottom: 6px;
+    flex-shrink: 0;
+    /* 🚨 CRITICAL: Prevents PT | EN from ever being squished or cut off */
 }
 
 .lang-btn {
@@ -467,11 +475,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.live-status-badge.loading .badge-dot {
-    background: #e74c3c;
-    animation: livePulse 1.2s infinite ease-in-out;
-}
-
 .live-status-badge.live {
     background: rgba(46, 204, 113, 0.15);
     color: #2ecc71;
@@ -491,21 +494,6 @@ body {
 
 .live-status-badge.offline .badge-dot {
     background: #95a5a6;
-}
-
-@keyframes livePulse {
-    0% {
-        opacity: 0.3;
-        transform: scale(0.9);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.2);
-    }
-    100% {
-        opacity: 0.3;
-        transform: scale(0.9);
-    }
 }
 
 /* --- MÉTRICAS E DETALHES DO MODAL --- */
@@ -681,6 +669,19 @@ body {
 }
 
 /* --- RESPONSIVIDADE --- */
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 0.95rem;
+        /* Slightly smaller on small screens to guarantee 2-line fit */
+        line-height: 1.15;
+    }
+
+    .logo-container {
+        gap: 6px;
+    }
+}
+
 @media (min-width: 550px) {
     .modal-metrics-grid {
         grid-template-columns: repeat(5, 1fr);
