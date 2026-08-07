@@ -20,6 +20,7 @@ const UI_TEXTS = {
         waterQuality: "Qualidade da Água",
         nearMe: "Perto de Mim",
         locationError: "Não foi possível obter a sua localização.",
+        noBeachesNearby: "Nenhuma praia a menos de 15 km. A mostrar as mais próximas!",
         regions: {
             "All": "Todas",
             "Arrábida": "Arrábida",
@@ -50,6 +51,7 @@ const UI_TEXTS = {
         waterQuality: "Water Quality",
         nearMe: "Near Me",
         locationError: "Unable to retrieve your location.",
+        noBeachesNearby: "No beaches within 15 km. Showing closest spots!",
         regions: {
             "All": "All",
             "Arrábida": "Arrábida",
@@ -142,7 +144,7 @@ function setupNearMeFilter() {
 
     nearMeBtn.addEventListener('click', () => {
         if (!navigator.geolocation) {
-            showToast(UI_TEXTS[currentLang].locationError);
+            showToast(`⚠️ ${UI_TEXTS[currentLang].locationError}`);
             return;
         }
 
@@ -154,43 +156,61 @@ function setupNearMeFilter() {
                 const userLat = position.coords.latitude;
                 const userLng = position.coords.longitude;
 
-                const sortedBeaches = beachesData.map(beach => {
-                    const beachLat = beach.coordinates?.lat ?? beach.lat;
-                    const beachLng = beach.coordinates?.lng ?? beach.lng;
+                // 1. Calculate distance for all beaches and sort closest -> furthest
+                const allSortedBeaches = beachesData.map(beach => {
+                    const beachLat = beach.coordinates?.lat ?? beach.lat ?? beach.latitude ?? beach.location?.lat;
+                    const beachLng = beach.coordinates?.lng ?? beach.lng ?? beach.longitude ?? beach.location?.lng;
 
                     let distKm = null;
-                    if (beachLat && beachLng) {
-                        distKm = calculateDistanceKm(userLat, userLng, beachLat, beachLng);
+                    if (beachLat !== undefined && beachLat !== null && beachLng !== undefined && beachLng !== null) {
+                        distKm = calculateDistanceKm(userLat, userLng, Number(beachLat), Number(beachLng));
                     }
                     return { ...beach, distanceKm: distKm };
                 })
-                    .filter(b => b.distanceKm !== null)
-                    .sort((a, b) => a.distanceKm - b.distanceKm);
+                .filter(b => b.distanceKm !== null)
+                .sort((a, b) => a.distanceKm - b.distanceKm);
 
+                // 2. Filter strictly within 15 km radius
+                const MAX_RADIUS_KM = 15;
+                let displayBeaches = allSortedBeaches.filter(b => b.distanceKm <= MAX_RADIUS_KM);
+
+                // Fallback: If no beaches are within 15km, show top 5 closest
+                if (displayBeaches.length === 0 && allSortedBeaches.length > 0) {
+                    displayBeaches = allSortedBeaches.slice(0, 5);
+                    showToast(`📍 ${UI_TEXTS[currentLang].noBeachesNearby}`);
+                } else if (displayBeaches.length > 0) {
+                    showToast(`📍 ${displayBeaches.length} ${currentLang === 'pt' ? 'praias encontradas a < 15 km' : 'beaches found < 15 km'}`);
+                }
+
+                // Update UI button state
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 nearMeBtn.classList.add('active');
                 nearMeBtn.textContent = `📍 ${UI_TEXTS[currentLang].nearMe || 'Near Me'}`;
 
-                renderCards(sortedBeaches, true);
+                // Render cards
+                renderCards(displayBeaches, true);
             },
             (error) => {
                 console.warn('Geolocation error:', error);
                 nearMeBtn.textContent = originalText;
 
-                // Friendly error messages depending on reason
                 let errorMsg = UI_TEXTS[currentLang].locationError;
                 if (error.code === error.PERMISSION_DENIED) {
-                    errorMsg = currentLang === 'pt'
-                        ? 'Permissão de localização negada.'
-                        : 'Location permission denied.';
+                    errorMsg = currentLang === 'pt' ? 'Permissão de localização negada.' : 'Location permission denied.';
+                } else if (error.code === error.TIMEOUT) {
+                    errorMsg = currentLang === 'pt' ? 'Sinal de GPS fraco. Tente novamente.' : 'GPS signal weak. Please try again.';
                 }
+
                 showToast(`⚠️ ${errorMsg}`);
             },
-            { enableHighAccuracy: true, timeout: 8000 }
+            {
+                enableHighAccuracy: false,
+                timeout: 15000,
+                maximumAge: 60000
+            }
         );
     });
 }
-
 
 function getText(field) {
     if (!field) return '';
@@ -390,7 +410,7 @@ function getExtendedDetailRows(beach) {
         }
     }
 
-    // 7. Official SNIRH Link (Clean, readable text)
+    // 7. Official SNIRH Link
     if (beach.officialAPAInfo?.snirhUrl) {
         const euCodeStr = beach.euCode ? ` (${beach.euCode})` : '';
         rows.push({
@@ -413,8 +433,6 @@ window.addEventListener('DOMContentLoaded', async () => {
 
 async function loadBeachesData() {
     try {
-
-        // Cache-buster parameter (?t=timestamp) & no-cache headers force a fresh fetch every time
         const cacheBuster = new Date().getTime();
         const response = await fetch(`data/beaches-live.json?t=${cacheBuster}`, {
             cache: 'no-store',
@@ -423,7 +441,6 @@ async function loadBeachesData() {
                 'Pragma': 'no-cache'
             }
         });
-
 
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
@@ -456,25 +473,19 @@ async function loadBeachesData() {
 function getDailySpot(beaches) {
     if (!beaches || beaches.length === 0) return null;
 
-    // Get current date string: YYYY-MM-DD
     const today = new Date().toISOString().split('T')[0];
-
-    // Compute a hash code from the date string
     let hash = 0;
     for (let i = 0; i < today.length; i++) {
         hash = today.charCodeAt(i) + ((hash << 5) - hash);
     }
 
-    // Map the hash to a valid index in beachesData
     const index = Math.abs(hash) % beaches.length;
     return beaches[index];
 }
 
-
 function setupHeroSuggestion() {
     if (!beachesData.length || !heroContainer) return;
 
-    // Pick today's deterministic daily spot (same across all devices)
     const suggestion = getDailySpot(beachesData);
     if (!suggestion) return;
 
@@ -535,7 +546,6 @@ function renderCards(beaches, isNearMeMode = false) {
         const statusInfo = getSafetyBadgeInfo(live.safety?.flag);
         const waterTemp = live.waterTemp?.formatted || "-";
 
-        // Display Distance if in "Near Me" mode
         const locationLabel = (isNearMeMode && beach.distanceKm !== undefined)
             ? `📍 ${beach.distanceKm.toFixed(1)} km`
             : `📍 ${beach.region}`;
@@ -575,9 +585,7 @@ function setupFilters() {
 // --- MODAL DETAILS POPUP ---
 
 async function openDetails(beachIdentifier) {
-    // 🔄 Auto-fetch fresh live data if current cache is older than 60 minutes
     if (isDataStale()) {
-        console.log('🔄 Data is older than 60 mins. Silently re-fetching beaches-live.json...');
         await loadBeachesData();
     }
 
@@ -587,29 +595,22 @@ async function openDetails(beachIdentifier) {
     currentModalBeachId = beachIdentifier;
     lastActiveElement = document.activeElement;
 
-
     const live = beach.live || {};
     const labels = UI_TEXTS[currentLang];
 
-    // Live Metrics
     const waterTemp = live.waterTemp?.formatted || "-";
     const swell = live.swell?.formatted || "-";
     const tide = live.tide?.formatted || "-";
     const wind = live.wind?.formatted || "-";
     const uv = live.uv?.formatted || "-";
 
-    // Safety & Verdict
     const badgeInfo = getSafetyBadgeInfo(live.safety?.flag);
     const verdictTitle = getText(live.safety?.verdict) || labels.verdictTitle;
     const verdictMessage = getText(live.safety?.message) || "Check ocean conditions prior to swimming.";
 
-    // Live/Stale Status Badge
     const statusBadgeHTML = getLiveBadgeHTML(metaLastUpdated);
-
-    // Conditional Webcam Block
     const webcamHTML = renderWebcamHTML(beach);
 
-    // Extended Details Table Rows
     const detailRows = getExtendedDetailRows(beach);
     let extraDetailsHTML = "";
     if (detailRows.length > 0) {
@@ -668,13 +669,11 @@ async function openDetails(beachIdentifier) {
                     </div>
                 </div>
                 
-                <!-- VERDICT BOX -->
                 <div class="glass-verdict-box ${badgeInfo.verdictClass}">
                     <h4>${verdictTitle}</h4>
                     <p>${verdictMessage}</p>
                 </div>
 
-                <!-- WEBCAM (Only renders if valid URL exists) -->
                 ${webcamHTML}
 
                 <p class="modal-description">${getText(beach.description) || ''}</p>
@@ -771,6 +770,5 @@ document.addEventListener('visibilitychange', () => {
         loadBeachesData();
     }
 });
-
 
 window.openDetails = openDetails;
