@@ -66,12 +66,16 @@
             <!-- Dynamic JS HTML here -->
         </div>
 
-        <nav class="filter-nav">
-            <ul>
-                <li><button class="filter-btn" data-region="Arrábida">Arrábida</button></li>
-                <li><button class="filter-btn" data-region="Algarve">Algarve</button></li>
-                <li><button class="filter-btn" data-region="Azores">Açores</button></li>
-            </ul>
+        <nav class="filter-nav" aria-label="Region filters">
+            <div class="filter-scroll-wrapper">
+                <button class="filter-btn near-me-btn" data-region="near-me">📍 Perto de Mim</button>
+                <button class="filter-btn active" data-region="Arrábida">Arrábida</button>
+                <button class="filter-btn" data-region="Cascais">Cascais</button>
+                <button class="filter-btn" data-region="Sintra">Sintra</button>
+                <button class="filter-btn" data-region="Costa da Caparica">Costa da Caparica</button>
+                <button class="filter-btn" data-region="Algarve">Algarve</button>
+                <button class="filter-btn" data-region="Azores">Açores</button>
+            </div>
         </nav>
 
         <!-- spot grid -->

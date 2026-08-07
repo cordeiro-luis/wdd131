@@ -18,6 +18,8 @@ const UI_TEXTS = {
         weatherAir: "Clima & Ar",
         sun: "Sol",
         waterQuality: "Qualidade da Água",
+        nearMe: "Perto de Mim",
+        locationError: "Não foi possível obter a sua localização.",
         regions: {
             "All": "Todas",
             "Arrábida": "Arrábida",
@@ -46,6 +48,8 @@ const UI_TEXTS = {
         weatherAir: "Weather & Air",
         sun: "Sun Schedule",
         waterQuality: "Water Quality",
+        nearMe: "Near Me",
+        locationError: "Unable to retrieve your location.",
         regions: {
             "All": "All",
             "Arrábida": "Arrábida",
@@ -98,10 +102,110 @@ function updateFilterNavLabels() {
     });
 }
 
+// --- TOAST NOTIFICATION HELPER ---
+function showToast(message, duration = 3500) {
+    let toast = document.getElementById('app-toast');
+
+    // Create element if it doesn't exist yet
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'app-toast';
+        toast.className = 'toast-notification';
+        document.body.appendChild(toast);
+    }
+
+    toast.textContent = message;
+    toast.classList.add('show');
+
+    // Automatically hide after duration
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, duration);
+}
+
+// --- HAVERSINE DISTANCE HELPER ---
+function calculateDistanceKm(lat1, lon1, lat2, lon2) {
+    const R = 6371; // Earth radius in KM
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    return R * (2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
+}
+
+// --- GPS "NEAR ME" FILTER HANDLER ---
+function setupNearMeFilter() {
+    const nearMeBtn = document.querySelector('.filter-btn[data-region="near-me"]');
+    if (!nearMeBtn) return;
+
+    nearMeBtn.addEventListener('click', () => {
+        if (!navigator.geolocation) {
+            showToast(UI_TEXTS[currentLang].locationError);
+            return;
+        }
+
+        const originalText = nearMeBtn.textContent;
+        nearMeBtn.textContent = "📍 ...";
+
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const userLat = position.coords.latitude;
+                const userLng = position.coords.longitude;
+
+                const sortedBeaches = beachesData.map(beach => {
+                    const beachLat = beach.coordinates?.lat ?? beach.lat;
+                    const beachLng = beach.coordinates?.lng ?? beach.lng;
+
+                    let distKm = null;
+                    if (beachLat && beachLng) {
+                        distKm = calculateDistanceKm(userLat, userLng, beachLat, beachLng);
+                    }
+                    return { ...beach, distanceKm: distKm };
+                })
+                    .filter(b => b.distanceKm !== null)
+                    .sort((a, b) => a.distanceKm - b.distanceKm);
+
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                nearMeBtn.classList.add('active');
+                nearMeBtn.textContent = `📍 ${UI_TEXTS[currentLang].nearMe || 'Near Me'}`;
+
+                renderCards(sortedBeaches, true);
+            },
+            (error) => {
+                console.warn('Geolocation error:', error);
+                nearMeBtn.textContent = originalText;
+
+                // Friendly error messages depending on reason
+                let errorMsg = UI_TEXTS[currentLang].locationError;
+                if (error.code === error.PERMISSION_DENIED) {
+                    errorMsg = currentLang === 'pt'
+                        ? 'Permissão de localização negada.'
+                        : 'Location permission denied.';
+                }
+                showToast(`⚠️ ${errorMsg}`);
+            },
+            { enableHighAccuracy: true, timeout: 8000 }
+        );
+    });
+}
+
+
 function getText(field) {
     if (!field) return '';
     if (typeof field === 'string') return field;
     return field[currentLang] || field['en'] || field['pt'] || '';
+}
+
+// Checks if current loaded metadata is older than 60 minutes (or missing)
+function isDataStale() {
+    if (!metaLastUpdated) return true;
+    const lastUpdated = new Date(metaLastUpdated).getTime();
+    if (isNaN(lastUpdated)) return true;
+
+    const diffInMinutes = Math.floor((Date.now() - lastUpdated) / (1000 * 60));
+    return diffInMinutes >= 60;
 }
 
 function getLiveBadgeHTML(timestamp) {
@@ -337,6 +441,7 @@ async function loadBeachesData() {
         if (defaultBtn) defaultBtn.classList.add('active');
 
         setupFilters();
+        setupNearMeFilter();
 
     } catch (error) {
         console.error('Failed to load beaches dataset:', error);
@@ -417,7 +522,7 @@ function setupHeroSuggestion() {
 
 // --- BEACH CARDS GRID ---
 
-function renderCards(beaches) {
+function renderCards(beaches, isNearMeMode = false) {
     if (!gridContainer) return;
     gridContainer.innerHTML = "";
 
@@ -430,9 +535,10 @@ function renderCards(beaches) {
         const statusInfo = getSafetyBadgeInfo(live.safety?.flag);
         const waterTemp = live.waterTemp?.formatted || "-";
 
-        card.setAttribute('tabindex', '0');
-        card.setAttribute('role', 'button');
-        card.setAttribute('aria-label', `Beach: ${beach.name}, Region: ${beach.region}. Water temperature: ${waterTemp}. Condition: ${statusInfo.text}.`);
+        // Display Distance if in "Near Me" mode
+        const locationLabel = (isNearMeMode && beach.distanceKm !== undefined)
+            ? `📍 ${beach.distanceKm.toFixed(1)} km`
+            : `📍 ${beach.region}`;
 
         card.innerHTML = `
             <span class="status-badge ${statusInfo.cssClass}" title="Status: ${statusInfo.text}"></span>
@@ -440,20 +546,13 @@ function renderCards(beaches) {
             <div class="card-info">
                 <h3>${beach.name}</h3>
                 <div class="card-meta-layout">
-                    <p><span aria-hidden="true">📍</span> ${beach.region}</p>
+                    <p>${locationLabel}</p>
                     <span class="card-temp">🌡️ ${waterTemp}</span>
                 </div>
             </div>
         `;
 
         card.addEventListener('click', () => openDetails(beach.id || beach.name));
-        card.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                openDetails(beach.id || beach.name);
-            }
-        });
-
         gridContainer.appendChild(card);
     });
 }
@@ -475,12 +574,19 @@ function setupFilters() {
 
 // --- MODAL DETAILS POPUP ---
 
-function openDetails(beachIdentifier) {
+async function openDetails(beachIdentifier) {
+    // 🔄 Auto-fetch fresh live data if current cache is older than 60 minutes
+    if (isDataStale()) {
+        console.log('🔄 Data is older than 60 mins. Silently re-fetching beaches-live.json...');
+        await loadBeachesData();
+    }
+
     const beach = beachesData.find(b => b.id === beachIdentifier || b.name === beachIdentifier);
     if (!beach) return;
 
     currentModalBeachId = beachIdentifier;
     lastActiveElement = document.activeElement;
+
 
     const live = beach.live || {};
     const labels = UI_TEXTS[currentLang];
@@ -658,5 +764,13 @@ function changeLanguage(newLang) {
         openDetails(currentModalBeachId);
     }
 }
+
+// Silently refresh data when user returns to the tab after 60+ minutes
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && isDataStale()) {
+        loadBeachesData();
+    }
+});
+
 
 window.openDetails = openDetails;
