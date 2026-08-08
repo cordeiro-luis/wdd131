@@ -142,7 +142,7 @@ body {
 
 .filter-btn {
     background-color: #dbe1e5;
-    border: none;
+    border: 1px solid transparent;
     color: var(--primary-color);
     padding: 8px 18px;
     border-radius: 20px;
@@ -151,23 +151,24 @@ body {
     font-size: 0.9rem;
     cursor: pointer;
     white-space: nowrap;
-    transition: all 0.2s;
+    transition: all 0.2s ease-in-out;
     flex-shrink: 0;
-    /* Prevents buttons from squishing */
     scroll-snap-align: start;
 }
 
-.filter-btn.active,
+/* Estado ao passar o rato (Hover) */
 .filter-btn:hover {
     background-color: var(--primary-color);
-    color: white;
-    font-weight: bold;
+    color: #ffffff;
 }
 
-.filter-btn.near-me-btn {
-    background-color: var(--primary-color);
-    color: #38bdf8;
-    border: 1px solid #38bdf8;
+/* Estado quando o filtro está Selecionado/Ativo (Estilo do 'Explorar') */
+.filter-btn.active {
+    background-color: #0284c7 !important;
+    /* Azul vibrante igual ao 'Explorar' */
+    color: #ffffff !important;
+    /* Texto branco de alto contraste */
+    border-color: #0284c7 !important;
     font-weight: 700;
 }
 

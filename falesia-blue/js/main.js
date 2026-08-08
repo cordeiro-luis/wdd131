@@ -204,9 +204,9 @@ function setupNearMeFilter() {
                 showToast(`⚠️ ${errorMsg}`);
             },
             {
-                enableHighAccuracy: false,
+                enableHighAccuracy: true,
                 timeout: 15000,
-                maximumAge: 60000
+                maximumAge: 300000
             }
         );
     });
