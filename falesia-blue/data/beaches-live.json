@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-08-08T13:05:02.929Z",
+    "lastUpdated": "2026-08-08T14:05:03.179Z",
     "totalBeaches": 17,
     "apaAlertsTotal": 0,
     "status": "success"
@@ -97,7 +97,7 @@
       },
       "live": {
         "weather": {
-          "airTemp": 32.3,
+          "airTemp": 31.7,
           "formattedAirTemp": "32°C",
           "condition": {
             "en": "Clear sky",
@@ -111,8 +111,8 @@
           "sunset": "20:39"
         },
         "waterTemp": {
-          "value": 19.4,
-          "formatted": "19.4°C",
+          "value": 19.3,
+          "formatted": "19.3°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -123,19 +123,19 @@
           "lastTested": "2026-08-08"
         },
         "swell": {
-          "value": 0.4,
-          "formatted": "0.4m",
-          "period": "4.9s",
+          "value": 0.5,
+          "formatted": "0.5m",
+          "period": "4.3s",
           "direction": "W"
         },
         "wind": {
-          "speed": 17,
+          "speed": 20,
           "direction": "W",
-          "formatted": "17 km/h (W)"
+          "formatted": "20 km/h (W)"
         },
         "uv": {
-          "value": 8,
-          "formatted": "UV 8"
+          "value": 7,
+          "formatted": "UV 7"
         },
         "safety": {
           "flag": "Green",
@@ -234,7 +234,7 @@
       },
       "live": {
         "weather": {
-          "airTemp": 32.3,
+          "airTemp": 31.7,
           "formattedAirTemp": "32°C",
           "condition": {
             "en": "Clear sky",
@@ -248,8 +248,8 @@
           "sunset": "20:39"
         },
         "waterTemp": {
-          "value": 19.4,
-          "formatted": "19.4°C",
+          "value": 19.3,
+          "formatted": "19.3°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -260,19 +260,19 @@
           "lastTested": "2026-08-08"
         },
         "swell": {
-          "value": 0.4,
-          "formatted": "0.4m",
-          "period": "4.9s",
+          "value": 0.5,
+          "formatted": "0.5m",
+          "period": "4.3s",
           "direction": "W"
         },
         "wind": {
-          "speed": 17,
+          "speed": 20,
           "direction": "W",
-          "formatted": "17 km/h (W)"
+          "formatted": "20 km/h (W)"
         },
         "uv": {
-          "value": 8,
-          "formatted": "UV 8"
+          "value": 7,
+          "formatted": "UV 7"
         },
         "safety": {
           "flag": "Green",
@@ -368,7 +368,7 @@
       },
       "live": {
         "weather": {
-          "airTemp": 32.2,
+          "airTemp": 31.6,
           "formattedAirTemp": "32°C",
           "condition": {
             "en": "Clear sky",
@@ -382,8 +382,8 @@
           "sunset": "20:39"
         },
         "waterTemp": {
-          "value": 19.4,
-          "formatted": "19.4°C",
+          "value": 19.3,
+          "formatted": "19.3°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -394,19 +394,19 @@
           "lastTested": "2026-08-08"
         },
         "swell": {
-          "value": 0.4,
-          "formatted": "0.4m",
-          "period": "4.9s",
+          "value": 0.5,
+          "formatted": "0.5m",
+          "period": "4.3s",
           "direction": "W"
         },
         "wind": {
-          "speed": 17,
+          "speed": 20,
           "direction": "W",
-          "formatted": "17 km/h (W)"
+          "formatted": "20 km/h (W)"
         },
         "uv": {
-          "value": 8,
-          "formatted": "UV 8"
+          "value": 7,
+          "formatted": "UV 7"
         },
         "safety": {
           "flag": "Green",
@@ -500,22 +500,22 @@
       },
       "live": {
         "weather": {
-          "airTemp": 20,
-          "formattedAirTemp": "20°C",
+          "airTemp": 31.7,
+          "formattedAirTemp": "32°C",
           "condition": {
-            "en": "Partly cloudy",
-            "pt": "Parcialmente Nublado",
-            "icon": "⛅"
+            "en": "Clear sky",
+            "pt": "Céu Limpo",
+            "icon": "☀️"
           },
-          "icon": "⛅"
+          "icon": "☀️"
         },
         "sun": {
-          "sunrise": "06:30",
-          "sunset": "20:30"
+          "sunrise": "06:44",
+          "sunset": "20:39"
         },
         "waterTemp": {
-          "value": 19.4,
-          "formatted": "19.4°C",
+          "value": 19.3,
+          "formatted": "19.3°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -526,19 +526,19 @@
           "lastTested": "2026-08-08"
         },
         "swell": {
-          "value": 0.4,
-          "formatted": "0.4m",
-          "period": "4.9s",
+          "value": 0.5,
+          "formatted": "0.5m",
+          "period": "4.3s",
           "direction": "W"
         },
         "wind": {
-          "speed": 10,
-          "direction": "N/A",
-          "formatted": "10 km/h (N/A)"
+          "speed": 20,
+          "direction": "W",
+          "formatted": "20 km/h (W)"
         },
         "uv": {
-          "value": 5,
-          "formatted": "UV 5"
+          "value": 7,
+          "formatted": "UV 7"
         },
         "safety": {
           "flag": "Green",
@@ -652,8 +652,8 @@
           "sunset": "20:38"
         },
         "waterTemp": {
-          "value": 19.4,
-          "formatted": "19.4°C",
+          "value": 19.3,
+          "formatted": "19.3°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -664,19 +664,19 @@
           "lastTested": "2026-08-08"
         },
         "swell": {
-          "value": 0.4,
-          "formatted": "0.4m",
-          "period": "4.9s",
+          "value": 0.5,
+          "formatted": "0.5m",
+          "period": "4.3s",
           "direction": "W"
         },
         "wind": {
-          "speed": 12,
+          "speed": 17,
           "direction": "W",
-          "formatted": "12 km/h (W)"
+          "formatted": "17 km/h (W)"
         },
         "uv": {
-          "value": 8,
-          "formatted": "UV 8"
+          "value": 7,
+          "formatted": "UV 7"
         },
         "safety": {
           "flag": "Green",
@@ -737,22 +737,22 @@
       ],
       "live": {
         "weather": {
-          "airTemp": 23.3,
+          "airTemp": 23.4,
           "formattedAirTemp": "23°C",
           "condition": {
-            "en": "Partly cloudy",
-            "pt": "Parcialmente Nublado",
-            "icon": "⛅"
+            "en": "Clear sky",
+            "pt": "Céu Limpo",
+            "icon": "☀️"
           },
-          "icon": "⛅"
+          "icon": "☀️"
         },
         "sun": {
           "sunrise": "07:01",
           "sunset": "20:55"
         },
         "waterTemp": {
-          "value": 23.2,
-          "formatted": "23.2°C",
+          "value": 23.3,
+          "formatted": "23.3°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -765,13 +765,13 @@
         "swell": {
           "value": 0.6,
           "formatted": "0.6m",
-          "period": "8.8s",
+          "period": "8.9s",
           "direction": "SE"
         },
         "wind": {
-          "speed": 10,
+          "speed": 11,
           "direction": "S",
-          "formatted": "10 km/h (S)"
+          "formatted": "11 km/h (S)"
         },
         "uv": {
           "value": 8,
@@ -833,7 +833,7 @@
       ],
       "live": {
         "weather": {
-          "airTemp": 19.6,
+          "airTemp": 20,
           "formattedAirTemp": "20°C",
           "condition": {
             "en": "Clear sky",
@@ -847,8 +847,8 @@
           "sunset": "20:55"
         },
         "waterTemp": {
-          "value": 22.4,
-          "formatted": "22.4°C",
+          "value": 22.5,
+          "formatted": "22.5°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -865,9 +865,9 @@
           "direction": "NE"
         },
         "wind": {
-          "speed": 8,
+          "speed": 10,
           "direction": "S",
-          "formatted": "8 km/h (S)"
+          "formatted": "10 km/h (S)"
         },
         "uv": {
           "value": 8,
@@ -969,7 +969,7 @@
       },
       "live": {
         "weather": {
-          "airTemp": 23.1,
+          "airTemp": 23,
           "formattedAirTemp": "23°C",
           "condition": {
             "en": "Light drizzle",
@@ -983,8 +983,8 @@
           "sunset": "20:43"
         },
         "waterTemp": {
-          "value": 22,
-          "formatted": "22.0°C",
+          "value": 22.1,
+          "formatted": "22.1°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -997,13 +997,13 @@
         "swell": {
           "value": 0.6,
           "formatted": "0.6m",
-          "period": "8.7s",
+          "period": "8.8s",
           "direction": "SW"
         },
         "wind": {
-          "speed": 3,
-          "direction": "NW",
-          "formatted": "3 km/h (NW)"
+          "speed": 5,
+          "direction": "W",
+          "formatted": "5 km/h (W)"
         },
         "uv": {
           "value": 8,
@@ -1105,7 +1105,7 @@
       },
       "live": {
         "weather": {
-          "airTemp": 23.4,
+          "airTemp": 23.3,
           "formattedAirTemp": "23°C",
           "condition": {
             "en": "Light drizzle",
@@ -1137,9 +1137,9 @@
           "direction": "SW"
         },
         "wind": {
-          "speed": 4,
+          "speed": 5,
           "direction": "W",
-          "formatted": "4 km/h (W)"
+          "formatted": "5 km/h (W)"
         },
         "uv": {
           "value": 8,
@@ -1241,11 +1241,11 @@
       },
       "live": {
         "weather": {
-          "airTemp": 23.3,
+          "airTemp": 23.4,
           "formattedAirTemp": "23°C",
           "condition": {
-            "en": "Moderate drizzle",
-            "pt": "Chuvisco Moderado",
+            "en": "Light drizzle",
+            "pt": "Chuvisco Leve",
             "icon": "🌦️"
           },
           "icon": "🌦️"
@@ -1255,8 +1255,8 @@
           "sunset": "20:45"
         },
         "waterTemp": {
-          "value": 22.7,
-          "formatted": "22.7°C",
+          "value": 22.8,
+          "formatted": "22.8°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -1269,13 +1269,13 @@
         "swell": {
           "value": 1,
           "formatted": "1.0m",
-          "period": "8.0s",
+          "period": "8.1s",
           "direction": "NW"
         },
         "wind": {
-          "speed": 10,
+          "speed": 11,
           "direction": "W",
-          "formatted": "10 km/h (W)"
+          "formatted": "11 km/h (W)"
         },
         "uv": {
           "value": 8,
@@ -1377,7 +1377,7 @@
       },
       "live": {
         "weather": {
-          "airTemp": 36.7,
+          "airTemp": 37.1,
           "formattedAirTemp": "37°C",
           "condition": {
             "en": "Clear sky",
@@ -1403,19 +1403,19 @@
           "lastTested": "2026-08-08"
         },
         "swell": {
-          "value": 0.3,
-          "formatted": "0.3m",
-          "period": "4.1s",
+          "value": 0.4,
+          "formatted": "0.4m",
+          "period": "3.5s",
           "direction": "W"
         },
         "wind": {
-          "speed": 10,
+          "speed": 14,
           "direction": "W",
-          "formatted": "10 km/h (W)"
+          "formatted": "14 km/h (W)"
         },
         "uv": {
-          "value": 8,
-          "formatted": "UV 8"
+          "value": 7,
+          "formatted": "UV 7"
         },
         "safety": {
           "flag": "Green",
@@ -1514,7 +1514,7 @@
       },
       "live": {
         "weather": {
-          "airTemp": 36.8,
+          "airTemp": 37.3,
           "formattedAirTemp": "37°C",
           "condition": {
             "en": "Clear sky",
@@ -1528,8 +1528,8 @@
           "sunset": "20:34"
         },
         "waterTemp": {
-          "value": 17.9,
-          "formatted": "17.9°C",
+          "value": 17.8,
+          "formatted": "17.8°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -1540,19 +1540,19 @@
           "lastTested": "2026-08-08"
         },
         "swell": {
-          "value": 0.3,
-          "formatted": "0.3m",
-          "period": "3.9s",
+          "value": 0.4,
+          "formatted": "0.4m",
+          "period": "3.4s",
           "direction": "W"
         },
         "wind": {
-          "speed": 10,
+          "speed": 14,
           "direction": "W",
-          "formatted": "10 km/h (W)"
+          "formatted": "14 km/h (W)"
         },
         "uv": {
-          "value": 8,
-          "formatted": "UV 8"
+          "value": 7,
+          "formatted": "UV 7"
         },
         "safety": {
           "flag": "Green",
@@ -1650,7 +1650,7 @@
       },
       "live": {
         "weather": {
-          "airTemp": 31.1,
+          "airTemp": 31,
           "formattedAirTemp": "31°C",
           "condition": {
             "en": "Clear sky",
@@ -1664,8 +1664,8 @@
           "sunset": "20:35"
         },
         "waterTemp": {
-          "value": 17.3,
-          "formatted": "17.3°C",
+          "value": 17.4,
+          "formatted": "17.4°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -1678,7 +1678,7 @@
         "swell": {
           "value": 0.5,
           "formatted": "0.5m",
-          "period": "3.6s",
+          "period": "3.5s",
           "direction": "NW"
         },
         "wind": {
@@ -1687,8 +1687,8 @@
           "formatted": "25 km/h (NW)"
         },
         "uv": {
-          "value": 8,
-          "formatted": "UV 8"
+          "value": 7,
+          "formatted": "UV 7"
         },
         "safety": {
           "flag": "Green",
@@ -1789,7 +1789,7 @@
       },
       "live": {
         "weather": {
-          "airTemp": 34.8,
+          "airTemp": 34.9,
           "formattedAirTemp": "35°C",
           "condition": {
             "en": "Clear sky",
@@ -1817,17 +1817,17 @@
         "swell": {
           "value": 0.4,
           "formatted": "0.4m",
-          "period": "3.6s",
+          "period": "3.4s",
           "direction": "NW"
         },
         "wind": {
-          "speed": 15,
+          "speed": 18,
           "direction": "W",
-          "formatted": "15 km/h (W)"
+          "formatted": "18 km/h (W)"
         },
         "uv": {
-          "value": 8,
-          "formatted": "UV 8"
+          "value": 7,
+          "formatted": "UV 7"
         },
         "safety": {
           "flag": "Green",
@@ -1922,8 +1922,8 @@
       },
       "live": {
         "weather": {
-          "airTemp": 32.4,
-          "formattedAirTemp": "32°C",
+          "airTemp": 32.6,
+          "formattedAirTemp": "33°C",
           "condition": {
             "en": "Clear sky",
             "pt": "Céu Limpo",
@@ -1950,17 +1950,17 @@
         "swell": {
           "value": 0.1,
           "formatted": "0.1m",
-          "period": "4.9s",
+          "period": "4.3s",
           "direction": "SW"
         },
         "wind": {
-          "speed": 14,
+          "speed": 17,
           "direction": "S",
-          "formatted": "14 km/h (S)"
+          "formatted": "17 km/h (S)"
         },
         "uv": {
-          "value": 8,
-          "formatted": "UV 8"
+          "value": 7,
+          "formatted": "UV 7"
         },
         "safety": {
           "flag": "Green",
@@ -2071,7 +2071,7 @@
       },
       "live": {
         "weather": {
-          "airTemp": 29,
+          "airTemp": 28.6,
           "formattedAirTemp": "29°C",
           "condition": {
             "en": "Clear sky",
@@ -2085,8 +2085,8 @@
           "sunset": "20:31"
         },
         "waterTemp": {
-          "value": 19,
-          "formatted": "19.0°C",
+          "value": 19.1,
+          "formatted": "19.1°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -2099,17 +2099,17 @@
         "swell": {
           "value": 0.4,
           "formatted": "0.4m",
-          "period": "5.1s",
+          "period": "4.7s",
           "direction": "W"
         },
         "wind": {
-          "speed": 11,
+          "speed": 13,
           "direction": "SW",
-          "formatted": "11 km/h (SW)"
+          "formatted": "13 km/h (SW)"
         },
         "uv": {
-          "value": 8,
-          "formatted": "UV 8"
+          "value": 7,
+          "formatted": "UV 7"
         },
         "safety": {
           "flag": "Green",
@@ -2219,17 +2219,17 @@
       },
       "live": {
         "weather": {
-          "airTemp": 20,
-          "formattedAirTemp": "20°C",
+          "airTemp": 31,
+          "formattedAirTemp": "31°C",
           "condition": {
-            "en": "Partly cloudy",
-            "pt": "Parcialmente Nublado",
-            "icon": "⛅"
+            "en": "Clear sky",
+            "pt": "Céu Limpo",
+            "icon": "☀️"
           },
-          "icon": "⛅"
+          "icon": "☀️"
         },
         "sun": {
-          "sunrise": "06:30",
+          "sunrise": "06:40",
           "sunset": "20:30"
         },
         "waterTemp": {
@@ -2247,17 +2247,17 @@
         "swell": {
           "value": 0.2,
           "formatted": "0.2m",
-          "period": "4.7s",
+          "period": "3.8s",
           "direction": "SW"
         },
         "wind": {
-          "speed": 10,
-          "direction": "N/A",
-          "formatted": "10 km/h (N/A)"
+          "speed": 17,
+          "direction": "SW",
+          "formatted": "17 km/h (SW)"
         },
         "uv": {
-          "value": 5,
-          "formatted": "UV 5"
+          "value": 7,
+          "formatted": "UV 7"
         },
         "safety": {
           "flag": "Green",
