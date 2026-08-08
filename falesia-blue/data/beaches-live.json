@@ -1,7 +1,8 @@
 {
   "meta": {
-    "lastUpdated": "2026-08-08T08:05:01.781Z",
+    "lastUpdated": "2026-08-08T09:05:02.679Z",
     "totalBeaches": 17,
+    "apaAlertsTotal": 0,
     "status": "success"
   },
   "beaches": [
@@ -91,26 +92,27 @@
         "landslideRisk": true,
         "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCW2P&ano=2026",
         "isCoastal": true,
-        "isInland": false
+        "isInland": false,
+        "webcamUrl": null
       },
       "live": {
         "weather": {
-          "airTemp": 25.2,
-          "formattedAirTemp": "25°C",
+          "airTemp": 27.6,
+          "formattedAirTemp": "28°C",
           "condition": {
-            "en": "Mainly clear",
-            "pt": "Pouco Nublado",
-            "icon": "🌤️"
+            "en": "Clear sky",
+            "pt": "Céu Limpo",
+            "icon": "☀️"
           },
-          "icon": "🌤️"
+          "icon": "☀️"
         },
         "sun": {
           "sunrise": "06:44",
           "sunset": "20:39"
         },
         "waterTemp": {
-          "value": 18.8,
-          "formatted": "18.8°C",
+          "value": 19,
+          "formatted": "19.0°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -118,24 +120,7 @@
             "en": "Excellent",
             "pt": "Excelente"
           },
-          "blueFlag": true,
-          "accessibleBeach": false,
-          "goldQuality": true,
           "lastTested": "2026-08-08"
-        },
-        "jellyfish": {
-          "status": {
-            "en": "Low Risk",
-            "pt": "Risco Baixo"
-          },
-          "recentSightings": false,
-          "count": 0,
-          "species": [],
-          "hasPortugueseManOfWar": false,
-          "message": {
-            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
-            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
-          }
         },
         "swell": {
           "value": 0.3,
@@ -143,22 +128,14 @@
           "period": "6.1s",
           "direction": "W"
         },
-        "tide": {
-          "value": -1.4,
-          "formatted": "-1.4m ↗",
-          "trend": "rising",
-          "arrow": "↗",
-          "nextHigh": "19:00",
-          "nextLow": "01:00"
-        },
         "wind": {
           "speed": 4,
           "direction": "NW",
           "formatted": "4 km/h (NW)"
         },
         "uv": {
-          "value": 2,
-          "formatted": "UV 2"
+          "value": 4,
+          "formatted": "UV 4"
         },
         "safety": {
           "flag": "Green",
@@ -167,10 +144,11 @@
             "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
           },
           "message": {
-            "en": "Conditions are perfect for swimming.",
-            "pt": "Condições perfeitas para ir a banhos."
+            "en": "Conditions are good for bathing.",
+            "pt": "Condições favoráveis para ir a banhos."
           },
-          "ipmaWarning": null
+          "apaAlerts": [],
+          "ipmaWarnings": []
         },
         "status": "live"
       }
@@ -251,26 +229,27 @@
         "landslideRisk": true,
         "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCW2P&ano=2026",
         "isCoastal": true,
-        "isInland": false
+        "isInland": false,
+        "webcamUrl": null
       },
       "live": {
         "weather": {
-          "airTemp": 25.2,
-          "formattedAirTemp": "25°C",
+          "airTemp": 27.6,
+          "formattedAirTemp": "28°C",
           "condition": {
-            "en": "Mainly clear",
-            "pt": "Pouco Nublado",
-            "icon": "🌤️"
+            "en": "Clear sky",
+            "pt": "Céu Limpo",
+            "icon": "☀️"
           },
-          "icon": "🌤️"
+          "icon": "☀️"
         },
         "sun": {
           "sunrise": "06:44",
           "sunset": "20:39"
         },
         "waterTemp": {
-          "value": 18.8,
-          "formatted": "18.8°C",
+          "value": 19,
+          "formatted": "19.0°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -278,24 +257,7 @@
             "en": "Excellent",
             "pt": "Excelente"
           },
-          "blueFlag": true,
-          "accessibleBeach": false,
-          "goldQuality": true,
           "lastTested": "2026-08-08"
-        },
-        "jellyfish": {
-          "status": {
-            "en": "Low Risk",
-            "pt": "Risco Baixo"
-          },
-          "recentSightings": false,
-          "count": 0,
-          "species": [],
-          "hasPortugueseManOfWar": false,
-          "message": {
-            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
-            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
-          }
         },
         "swell": {
           "value": 0.3,
@@ -303,22 +265,14 @@
           "period": "6.1s",
           "direction": "W"
         },
-        "tide": {
-          "value": -1.4,
-          "formatted": "-1.4m ↗",
-          "trend": "rising",
-          "arrow": "↗",
-          "nextHigh": "19:00",
-          "nextLow": "01:00"
-        },
         "wind": {
           "speed": 4,
           "direction": "NW",
           "formatted": "4 km/h (NW)"
         },
         "uv": {
-          "value": 2,
-          "formatted": "UV 2"
+          "value": 4,
+          "formatted": "UV 4"
         },
         "safety": {
           "flag": "Green",
@@ -327,10 +281,11 @@
             "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
           },
           "message": {
-            "en": "Conditions are perfect for swimming.",
-            "pt": "Condições perfeitas para ir a banhos."
+            "en": "Conditions are good for bathing.",
+            "pt": "Condições favoráveis para ir a banhos."
           },
-          "ipmaWarning": null
+          "apaAlerts": [],
+          "ipmaWarnings": []
         },
         "status": "live"
       }
@@ -408,26 +363,27 @@
         "landslideRisk": true,
         "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCW7E&ano=2026",
         "isCoastal": true,
-        "isInland": false
+        "isInland": false,
+        "webcamUrl": null
       },
       "live": {
         "weather": {
-          "airTemp": 25.1,
-          "formattedAirTemp": "25°C",
+          "airTemp": 27.5,
+          "formattedAirTemp": "28°C",
           "condition": {
-            "en": "Mainly clear",
-            "pt": "Pouco Nublado",
-            "icon": "🌤️"
+            "en": "Clear sky",
+            "pt": "Céu Limpo",
+            "icon": "☀️"
           },
-          "icon": "🌤️"
+          "icon": "☀️"
         },
         "sun": {
           "sunrise": "06:44",
           "sunset": "20:39"
         },
         "waterTemp": {
-          "value": 18.8,
-          "formatted": "18.8°C",
+          "value": 19,
+          "formatted": "19.0°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -435,24 +391,7 @@
             "en": "Excellent",
             "pt": "Excelente"
           },
-          "blueFlag": true,
-          "accessibleBeach": false,
-          "goldQuality": true,
           "lastTested": "2026-08-08"
-        },
-        "jellyfish": {
-          "status": {
-            "en": "Low Risk",
-            "pt": "Risco Baixo"
-          },
-          "recentSightings": false,
-          "count": 0,
-          "species": [],
-          "hasPortugueseManOfWar": false,
-          "message": {
-            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
-            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
-          }
         },
         "swell": {
           "value": 0.3,
@@ -460,22 +399,14 @@
           "period": "6.1s",
           "direction": "W"
         },
-        "tide": {
-          "value": -1.4,
-          "formatted": "-1.4m ↗",
-          "trend": "rising",
-          "arrow": "↗",
-          "nextHigh": "19:00",
-          "nextLow": "01:00"
-        },
         "wind": {
           "speed": 4,
           "direction": "NW",
           "formatted": "4 km/h (NW)"
         },
         "uv": {
-          "value": 2,
-          "formatted": "UV 2"
+          "value": 4,
+          "formatted": "UV 4"
         },
         "safety": {
           "flag": "Green",
@@ -484,10 +415,11 @@
             "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
           },
           "message": {
-            "en": "Conditions are perfect for swimming.",
-            "pt": "Condições perfeitas para ir a banhos."
+            "en": "Conditions are good for bathing.",
+            "pt": "Condições favoráveis para ir a banhos."
           },
-          "ipmaWarning": null
+          "apaAlerts": [],
+          "ipmaWarnings": []
         },
         "status": "live"
       }
@@ -563,26 +495,27 @@
         "landslideRisk": true,
         "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCW7E&ano=2026",
         "isCoastal": true,
-        "isInland": false
+        "isInland": false,
+        "webcamUrl": null
       },
       "live": {
         "weather": {
-          "airTemp": 25.1,
-          "formattedAirTemp": "25°C",
+          "airTemp": 27.6,
+          "formattedAirTemp": "28°C",
           "condition": {
-            "en": "Mainly clear",
-            "pt": "Pouco Nublado",
-            "icon": "🌤️"
+            "en": "Clear sky",
+            "pt": "Céu Limpo",
+            "icon": "☀️"
           },
-          "icon": "🌤️"
+          "icon": "☀️"
         },
         "sun": {
           "sunrise": "06:44",
           "sunset": "20:39"
         },
         "waterTemp": {
-          "value": 18.8,
-          "formatted": "18.8°C",
+          "value": 19,
+          "formatted": "19.0°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -590,24 +523,7 @@
             "en": "Excellent",
             "pt": "Excelente"
           },
-          "blueFlag": true,
-          "accessibleBeach": false,
-          "goldQuality": true,
           "lastTested": "2026-08-08"
-        },
-        "jellyfish": {
-          "status": {
-            "en": "Low Risk",
-            "pt": "Risco Baixo"
-          },
-          "recentSightings": false,
-          "count": 0,
-          "species": [],
-          "hasPortugueseManOfWar": false,
-          "message": {
-            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
-            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
-          }
         },
         "swell": {
           "value": 0.3,
@@ -615,22 +531,14 @@
           "period": "6.1s",
           "direction": "W"
         },
-        "tide": {
-          "value": -1.4,
-          "formatted": "-1.4m ↗",
-          "trend": "rising",
-          "arrow": "↗",
-          "nextHigh": "19:00",
-          "nextLow": "01:00"
-        },
         "wind": {
           "speed": 4,
           "direction": "NW",
           "formatted": "4 km/h (NW)"
         },
         "uv": {
-          "value": 2,
-          "formatted": "UV 2"
+          "value": 4,
+          "formatted": "UV 4"
         },
         "safety": {
           "flag": "Green",
@@ -639,10 +547,11 @@
             "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
           },
           "message": {
-            "en": "Conditions are perfect for swimming.",
-            "pt": "Condições perfeitas para ir a banhos."
+            "en": "Conditions are good for bathing.",
+            "pt": "Condições favoráveis para ir a banhos."
           },
-          "ipmaWarning": null
+          "apaAlerts": [],
+          "ipmaWarnings": []
         },
         "status": "live"
       }
@@ -724,12 +633,13 @@
         "landslideRisk": true,
         "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCJ7C&ano=2026",
         "isCoastal": true,
-        "isInland": false
+        "isInland": false,
+        "webcamUrl": null
       },
       "live": {
         "weather": {
-          "airTemp": 24.4,
-          "formattedAirTemp": "24°C",
+          "airTemp": 26.2,
+          "formattedAirTemp": "26°C",
           "condition": {
             "en": "Mainly clear",
             "pt": "Pouco Nublado",
@@ -742,8 +652,8 @@
           "sunset": "20:38"
         },
         "waterTemp": {
-          "value": 18.8,
-          "formatted": "18.8°C",
+          "value": 19,
+          "formatted": "19.0°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -751,24 +661,7 @@
             "en": "Excellent",
             "pt": "Excelente"
           },
-          "blueFlag": true,
-          "accessibleBeach": true,
-          "goldQuality": true,
           "lastTested": "2026-08-08"
-        },
-        "jellyfish": {
-          "status": {
-            "en": "Low Risk",
-            "pt": "Risco Baixo"
-          },
-          "recentSightings": false,
-          "count": 0,
-          "species": [],
-          "hasPortugueseManOfWar": false,
-          "message": {
-            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
-            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
-          }
         },
         "swell": {
           "value": 0.3,
@@ -776,22 +669,14 @@
           "period": "6.1s",
           "direction": "W"
         },
-        "tide": {
-          "value": -1.4,
-          "formatted": "-1.4m ↗",
-          "trend": "rising",
-          "arrow": "↗",
-          "nextHigh": "19:00",
-          "nextLow": "01:00"
-        },
         "wind": {
-          "speed": 3,
+          "speed": 4,
           "direction": "NW",
-          "formatted": "3 km/h (NW)"
+          "formatted": "4 km/h (NW)"
         },
         "uv": {
-          "value": 2,
-          "formatted": "UV 2"
+          "value": 4,
+          "formatted": "UV 4"
         },
         "safety": {
           "flag": "Green",
@@ -800,10 +685,11 @@
             "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
           },
           "message": {
-            "en": "Conditions are perfect for swimming.",
-            "pt": "Condições perfeitas para ir a banhos."
+            "en": "Conditions are good for bathing.",
+            "pt": "Condições favoráveis para ir a banhos."
           },
-          "ipmaWarning": null
+          "apaAlerts": [],
+          "ipmaWarnings": []
         },
         "status": "live"
       }
@@ -851,8 +737,8 @@
       ],
       "live": {
         "weather": {
-          "airTemp": 19.8,
-          "formattedAirTemp": "20°C",
+          "airTemp": 20.9,
+          "formattedAirTemp": "21°C",
           "condition": {
             "en": "Clear sky",
             "pt": "Céu Limpo",
@@ -865,8 +751,8 @@
           "sunset": "20:55"
         },
         "waterTemp": {
-          "value": 22.9,
-          "formatted": "22.9°C",
+          "value": 23,
+          "formatted": "23.0°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -874,47 +760,22 @@
             "en": "Excellent",
             "pt": "Excelente"
           },
-          "blueFlag": true,
-          "accessibleBeach": false,
-          "goldQuality": true,
           "lastTested": "2026-08-08"
-        },
-        "jellyfish": {
-          "status": {
-            "en": "Low Risk",
-            "pt": "Risco Baixo"
-          },
-          "recentSightings": false,
-          "count": 0,
-          "species": [],
-          "hasPortugueseManOfWar": false,
-          "message": {
-            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
-            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
-          }
         },
         "swell": {
           "value": 0.6,
           "formatted": "0.6m",
-          "period": "8.5s",
-          "direction": "S"
-        },
-        "tide": {
-          "value": -1.4,
-          "formatted": "-1.4m ↗",
-          "trend": "rising",
-          "arrow": "↗",
-          "nextHigh": "19:00",
-          "nextLow": "01:00"
+          "period": "8.6s",
+          "direction": "SE"
         },
         "wind": {
-          "speed": 1,
-          "direction": "W",
-          "formatted": "1 km/h (W)"
+          "speed": 2,
+          "direction": "S",
+          "formatted": "2 km/h (S)"
         },
         "uv": {
-          "value": 0,
-          "formatted": "UV 0"
+          "value": 2,
+          "formatted": "UV 2"
         },
         "safety": {
           "flag": "Green",
@@ -923,10 +784,11 @@
             "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
           },
           "message": {
-            "en": "Conditions are perfect for swimming.",
-            "pt": "Condições perfeitas para ir a banhos."
+            "en": "Conditions are good for bathing.",
+            "pt": "Condições favoráveis para ir a banhos."
           },
-          "ipmaWarning": null
+          "apaAlerts": [],
+          "ipmaWarnings": []
         },
         "status": "live"
       }
@@ -971,8 +833,8 @@
       ],
       "live": {
         "weather": {
-          "airTemp": 15.1,
-          "formattedAirTemp": "15°C",
+          "airTemp": 16.6,
+          "formattedAirTemp": "17°C",
           "condition": {
             "en": "Clear sky",
             "pt": "Céu Limpo",
@@ -994,38 +856,13 @@
             "en": "Excellent",
             "pt": "Excelente"
           },
-          "blueFlag": false,
-          "accessibleBeach": false,
-          "goldQuality": true,
           "lastTested": "2026-08-08"
-        },
-        "jellyfish": {
-          "status": {
-            "en": "Low Risk",
-            "pt": "Risco Baixo"
-          },
-          "recentSightings": false,
-          "count": 0,
-          "species": [],
-          "hasPortugueseManOfWar": false,
-          "message": {
-            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
-            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
-          }
         },
         "swell": {
           "value": 0.6,
           "formatted": "0.6m",
-          "period": "8.0s",
+          "period": "8.1s",
           "direction": "NE"
-        },
-        "tide": {
-          "value": -1.4,
-          "formatted": "-1.4m ↗",
-          "trend": "rising",
-          "arrow": "↗",
-          "nextHigh": "19:00",
-          "nextLow": "01:00"
         },
         "wind": {
           "speed": 4,
@@ -1033,8 +870,8 @@
           "formatted": "4 km/h (W)"
         },
         "uv": {
-          "value": 0,
-          "formatted": "UV 0"
+          "value": 2,
+          "formatted": "UV 2"
         },
         "safety": {
           "flag": "Green",
@@ -1043,10 +880,11 @@
             "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
           },
           "message": {
-            "en": "Conditions are perfect for swimming.",
-            "pt": "Condições perfeitas para ir a banhos."
+            "en": "Conditions are good for bathing.",
+            "pt": "Condições favoráveis para ir a banhos."
           },
-          "ipmaWarning": null
+          "apaAlerts": [],
+          "ipmaWarnings": []
         },
         "status": "live"
       }
@@ -1126,12 +964,13 @@
         "landslideRisk": false,
         "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTAV7H&ano=2026",
         "isCoastal": true,
-        "isInland": false
+        "isInland": false,
+        "webcamUrl": null
       },
       "live": {
         "weather": {
-          "airTemp": 20,
-          "formattedAirTemp": "20°C",
+          "airTemp": 21.1,
+          "formattedAirTemp": "21°C",
           "condition": {
             "en": "Partly cloudy",
             "pt": "Parcialmente Nublado",
@@ -1153,24 +992,7 @@
             "en": "Excellent",
             "pt": "Excelente"
           },
-          "blueFlag": true,
-          "accessibleBeach": false,
-          "goldQuality": true,
           "lastTested": "2026-08-08"
-        },
-        "jellyfish": {
-          "status": {
-            "en": "Low Risk",
-            "pt": "Risco Baixo"
-          },
-          "recentSightings": false,
-          "count": 0,
-          "species": [],
-          "hasPortugueseManOfWar": false,
-          "message": {
-            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
-            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
-          }
         },
         "swell": {
           "value": 0.6,
@@ -1178,22 +1000,14 @@
           "period": "8.3s",
           "direction": "SW"
         },
-        "tide": {
-          "value": -1.4,
-          "formatted": "-1.4m ↗",
-          "trend": "rising",
-          "arrow": "↗",
-          "nextHigh": "19:00",
-          "nextLow": "01:00"
-        },
         "wind": {
-          "speed": 3,
+          "speed": 4,
           "direction": "NW",
-          "formatted": "3 km/h (NW)"
+          "formatted": "4 km/h (NW)"
         },
         "uv": {
-          "value": 1,
-          "formatted": "UV 1"
+          "value": 2,
+          "formatted": "UV 2"
         },
         "safety": {
           "flag": "Green",
@@ -1202,10 +1016,11 @@
             "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
           },
           "message": {
-            "en": "Conditions are perfect for swimming.",
-            "pt": "Condições perfeitas para ir a banhos."
+            "en": "Conditions are good for bathing.",
+            "pt": "Condições favoráveis para ir a banhos."
           },
-          "ipmaWarning": null
+          "apaAlerts": [],
+          "ipmaWarnings": []
         },
         "status": "live"
       }
@@ -1285,26 +1100,27 @@
         "landslideRisk": false,
         "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTAW9P&ano=2026",
         "isCoastal": true,
-        "isInland": false
+        "isInland": false,
+        "webcamUrl": null
       },
       "live": {
         "weather": {
-          "airTemp": 20.2,
-          "formattedAirTemp": "20°C",
+          "airTemp": 20.9,
+          "formattedAirTemp": "21°C",
           "condition": {
-            "en": "Mainly clear",
-            "pt": "Pouco Nublado",
-            "icon": "🌤️"
+            "en": "Partly cloudy",
+            "pt": "Parcialmente Nublado",
+            "icon": "⛅"
           },
-          "icon": "🌤️"
+          "icon": "⛅"
         },
         "sun": {
           "sunrise": "06:51",
           "sunset": "20:43"
         },
         "waterTemp": {
-          "value": 21.6,
-          "formatted": "21.6°C",
+          "value": 21.7,
+          "formatted": "21.7°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -1312,38 +1128,13 @@
             "en": "Excellent",
             "pt": "Excelente"
           },
-          "blueFlag": true,
-          "accessibleBeach": false,
-          "goldQuality": true,
           "lastTested": "2026-08-08"
-        },
-        "jellyfish": {
-          "status": {
-            "en": "Low Risk",
-            "pt": "Risco Baixo"
-          },
-          "recentSightings": false,
-          "count": 0,
-          "species": [],
-          "hasPortugueseManOfWar": false,
-          "message": {
-            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
-            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
-          }
         },
         "swell": {
           "value": 0.6,
           "formatted": "0.6m",
-          "period": "8.1s",
+          "period": "8.3s",
           "direction": "SW"
-        },
-        "tide": {
-          "value": -1.4,
-          "formatted": "-1.4m ↗",
-          "trend": "rising",
-          "arrow": "↗",
-          "nextHigh": "19:00",
-          "nextLow": "01:00"
         },
         "wind": {
           "speed": 3,
@@ -1351,8 +1142,8 @@
           "formatted": "3 km/h (NW)"
         },
         "uv": {
-          "value": 1,
-          "formatted": "UV 1"
+          "value": 2,
+          "formatted": "UV 2"
         },
         "safety": {
           "flag": "Green",
@@ -1361,10 +1152,11 @@
             "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
           },
           "message": {
-            "en": "Conditions are perfect for swimming.",
-            "pt": "Condições perfeitas para ir a banhos."
+            "en": "Conditions are good for bathing.",
+            "pt": "Condições favoráveis para ir a banhos."
           },
-          "ipmaWarning": null
+          "apaAlerts": [],
+          "ipmaWarnings": []
         },
         "status": "live"
       }
@@ -1444,18 +1236,19 @@
         "landslideRisk": true,
         "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTAW8J&ano=2026",
         "isCoastal": true,
-        "isInland": false
+        "isInland": false,
+        "webcamUrl": null
       },
       "live": {
         "weather": {
-          "airTemp": 20.6,
+          "airTemp": 21.4,
           "formattedAirTemp": "21°C",
           "condition": {
-            "en": "Mainly clear",
-            "pt": "Pouco Nublado",
-            "icon": "🌤️"
+            "en": "Light drizzle",
+            "pt": "Chuvisco Leve",
+            "icon": "🌦️"
           },
-          "icon": "🌤️"
+          "icon": "🌦️"
         },
         "sun": {
           "sunrise": "06:52",
@@ -1471,47 +1264,22 @@
             "en": "Excellent",
             "pt": "Excelente"
           },
-          "blueFlag": true,
-          "accessibleBeach": false,
-          "goldQuality": true,
           "lastTested": "2026-08-08"
-        },
-        "jellyfish": {
-          "status": {
-            "en": "Low Risk",
-            "pt": "Risco Baixo"
-          },
-          "recentSightings": false,
-          "count": 0,
-          "species": [],
-          "hasPortugueseManOfWar": false,
-          "message": {
-            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
-            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
-          }
         },
         "swell": {
           "value": 1,
           "formatted": "1.0m",
-          "period": "7.7s",
+          "period": "7.8s",
           "direction": "NW"
         },
-        "tide": {
-          "value": -1.4,
-          "formatted": "-1.4m ↗",
-          "trend": "rising",
-          "arrow": "↗",
-          "nextHigh": "19:00",
-          "nextLow": "01:00"
-        },
         "wind": {
-          "speed": 6,
+          "speed": 7,
           "direction": "NW",
-          "formatted": "6 km/h (NW)"
+          "formatted": "7 km/h (NW)"
         },
         "uv": {
-          "value": 1,
-          "formatted": "UV 1"
+          "value": 2,
+          "formatted": "UV 2"
         },
         "safety": {
           "flag": "Green",
@@ -1520,10 +1288,11 @@
             "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
           },
           "message": {
-            "en": "Conditions are perfect for swimming.",
-            "pt": "Condições perfeitas para ir a banhos."
+            "en": "Conditions are good for bathing.",
+            "pt": "Condições favoráveis para ir a banhos."
           },
-          "ipmaWarning": null
+          "apaAlerts": [],
+          "ipmaWarnings": []
         },
         "status": "live"
       }
@@ -1603,12 +1372,13 @@
         "landslideRisk": true,
         "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCV2P&ano=2026",
         "isCoastal": true,
-        "isInland": false
+        "isInland": false,
+        "webcamUrl": null
       },
       "live": {
         "weather": {
-          "airTemp": 28,
-          "formattedAirTemp": "28°C",
+          "airTemp": 30.2,
+          "formattedAirTemp": "30°C",
           "condition": {
             "en": "Clear sky",
             "pt": "Céu Limpo",
@@ -1621,8 +1391,8 @@
           "sunset": "20:34"
         },
         "waterTemp": {
-          "value": 17.3,
-          "formatted": "17.3°C",
+          "value": 17.5,
+          "formatted": "17.5°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -1630,47 +1400,22 @@
             "en": "Excellent",
             "pt": "Excelente"
           },
-          "blueFlag": true,
-          "accessibleBeach": false,
-          "goldQuality": true,
           "lastTested": "2026-08-08"
-        },
-        "jellyfish": {
-          "status": {
-            "en": "Low Risk",
-            "pt": "Risco Baixo"
-          },
-          "recentSightings": false,
-          "count": 0,
-          "species": [],
-          "hasPortugueseManOfWar": false,
-          "message": {
-            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
-            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
-          }
         },
         "swell": {
           "value": 0.2,
           "formatted": "0.2m",
-          "period": "4.8s",
+          "period": "5.0s",
           "direction": "W"
         },
-        "tide": {
-          "value": -1.4,
-          "formatted": "-1.4m ↗",
-          "trend": "rising",
-          "arrow": "↗",
-          "nextHigh": "19:00",
-          "nextLow": "01:00"
-        },
         "wind": {
-          "speed": 5,
+          "speed": 8,
           "direction": "N",
-          "formatted": "5 km/h (N)"
+          "formatted": "8 km/h (N)"
         },
         "uv": {
-          "value": 2,
-          "formatted": "UV 2"
+          "value": 4,
+          "formatted": "UV 4"
         },
         "safety": {
           "flag": "Green",
@@ -1679,10 +1424,11 @@
             "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
           },
           "message": {
-            "en": "Conditions are perfect for swimming.",
-            "pt": "Condições perfeitas para ir a banhos."
+            "en": "Conditions are good for bathing.",
+            "pt": "Condições favoráveis para ir a banhos."
           },
-          "ipmaWarning": null
+          "apaAlerts": [],
+          "ipmaWarnings": []
         },
         "status": "live"
       }
@@ -1763,12 +1509,13 @@
         "landslideRisk": true,
         "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCW3J&ano=2026",
         "isCoastal": true,
-        "isInland": false
+        "isInland": false,
+        "webcamUrl": null
       },
       "live": {
         "weather": {
-          "airTemp": 28.1,
-          "formattedAirTemp": "28°C",
+          "airTemp": 30.4,
+          "formattedAirTemp": "30°C",
           "condition": {
             "en": "Clear sky",
             "pt": "Céu Limpo",
@@ -1781,8 +1528,8 @@
           "sunset": "20:34"
         },
         "waterTemp": {
-          "value": 17.3,
-          "formatted": "17.3°C",
+          "value": 17.4,
+          "formatted": "17.4°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -1790,24 +1537,7 @@
             "en": "Excellent",
             "pt": "Excelente"
           },
-          "blueFlag": true,
-          "accessibleBeach": false,
-          "goldQuality": true,
           "lastTested": "2026-08-08"
-        },
-        "jellyfish": {
-          "status": {
-            "en": "Low Risk",
-            "pt": "Risco Baixo"
-          },
-          "recentSightings": false,
-          "count": 0,
-          "species": [],
-          "hasPortugueseManOfWar": false,
-          "message": {
-            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
-            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
-          }
         },
         "swell": {
           "value": 0.2,
@@ -1815,22 +1545,14 @@
           "period": "4.8s",
           "direction": "W"
         },
-        "tide": {
-          "value": -1.4,
-          "formatted": "-1.4m ↗",
-          "trend": "rising",
-          "arrow": "↗",
-          "nextHigh": "19:00",
-          "nextLow": "01:00"
-        },
         "wind": {
-          "speed": 5,
+          "speed": 8,
           "direction": "N",
-          "formatted": "5 km/h (N)"
+          "formatted": "8 km/h (N)"
         },
         "uv": {
-          "value": 2,
-          "formatted": "UV 2"
+          "value": 4,
+          "formatted": "UV 4"
         },
         "safety": {
           "flag": "Green",
@@ -1839,10 +1561,11 @@
             "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
           },
           "message": {
-            "en": "Conditions are perfect for swimming.",
-            "pt": "Condições perfeitas para ir a banhos."
+            "en": "Conditions are good for bathing.",
+            "pt": "Condições favoráveis para ir a banhos."
           },
-          "ipmaWarning": null
+          "apaAlerts": [],
+          "ipmaWarnings": []
         },
         "status": "live"
       }
@@ -1922,12 +1645,13 @@
         "landslideRisk": true,
         "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCN3V&ano=2026",
         "isCoastal": true,
-        "isInland": false
+        "isInland": false,
+        "webcamUrl": null
       },
       "live": {
         "weather": {
-          "airTemp": 25.7,
-          "formattedAirTemp": "26°C",
+          "airTemp": 27.6,
+          "formattedAirTemp": "28°C",
           "condition": {
             "en": "Clear sky",
             "pt": "Céu Limpo",
@@ -1949,47 +1673,22 @@
             "en": "Excellent",
             "pt": "Excelente"
           },
-          "blueFlag": true,
-          "accessibleBeach": false,
-          "goldQuality": true,
           "lastTested": "2026-08-08"
-        },
-        "jellyfish": {
-          "status": {
-            "en": "Low Risk",
-            "pt": "Risco Baixo"
-          },
-          "recentSightings": false,
-          "count": 0,
-          "species": [],
-          "hasPortugueseManOfWar": false,
-          "message": {
-            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
-            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
-          }
         },
         "swell": {
           "value": 0.4,
           "formatted": "0.4m",
-          "period": "4.2s",
+          "period": "4.1s",
           "direction": "NW"
         },
-        "tide": {
-          "value": -1.4,
-          "formatted": "-1.4m ↗",
-          "trend": "rising",
-          "arrow": "↗",
-          "nextHigh": "19:00",
-          "nextLow": "01:00"
-        },
         "wind": {
-          "speed": 9,
+          "speed": 15,
           "direction": "NW",
-          "formatted": "9 km/h (NW)"
+          "formatted": "15 km/h (NW)"
         },
         "uv": {
-          "value": 2,
-          "formatted": "UV 2"
+          "value": 4,
+          "formatted": "UV 4"
         },
         "safety": {
           "flag": "Green",
@@ -1998,10 +1697,11 @@
             "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
           },
           "message": {
-            "en": "Conditions are perfect for swimming.",
-            "pt": "Condições perfeitas para ir a banhos."
+            "en": "Conditions are good for bathing.",
+            "pt": "Condições favoráveis para ir a banhos."
           },
-          "ipmaWarning": null
+          "apaAlerts": [],
+          "ipmaWarnings": []
         },
         "status": "live"
       }
@@ -2084,12 +1784,13 @@
         "landslideRisk": true,
         "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCH9Q&ano=2026",
         "isCoastal": true,
-        "isInland": false
+        "isInland": false,
+        "webcamUrl": "https://beachcam.meo.pt/iframe_player.html?cam=praiadarocha"
       },
       "live": {
         "weather": {
-          "airTemp": 26.4,
-          "formattedAirTemp": "26°C",
+          "airTemp": 29.3,
+          "formattedAirTemp": "29°C",
           "condition": {
             "en": "Clear sky",
             "pt": "Céu Limpo",
@@ -2102,8 +1803,8 @@
           "sunset": "20:34"
         },
         "waterTemp": {
-          "value": 17.3,
-          "formatted": "17.3°C",
+          "value": 17.4,
+          "formatted": "17.4°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -2111,47 +1812,22 @@
             "en": "Excellent",
             "pt": "Excelente"
           },
-          "blueFlag": true,
-          "accessibleBeach": true,
-          "goldQuality": true,
           "lastTested": "2026-08-08"
-        },
-        "jellyfish": {
-          "status": {
-            "en": "Low Risk",
-            "pt": "Risco Baixo"
-          },
-          "recentSightings": false,
-          "count": 0,
-          "species": [],
-          "hasPortugueseManOfWar": false,
-          "message": {
-            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
-            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
-          }
         },
         "swell": {
           "value": 0.3,
           "formatted": "0.3m",
-          "period": "4.6s",
+          "period": "4.5s",
           "direction": "W"
         },
-        "tide": {
-          "value": -1.4,
-          "formatted": "-1.4m ↗",
-          "trend": "rising",
-          "arrow": "↗",
-          "nextHigh": "19:00",
-          "nextLow": "01:00"
-        },
         "wind": {
-          "speed": 2,
+          "speed": 4,
           "direction": "NW",
-          "formatted": "2 km/h (NW)"
+          "formatted": "4 km/h (NW)"
         },
         "uv": {
-          "value": 2,
-          "formatted": "UV 2"
+          "value": 4,
+          "formatted": "UV 4"
         },
         "safety": {
           "flag": "Green",
@@ -2160,10 +1836,11 @@
             "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
           },
           "message": {
-            "en": "Conditions are perfect for swimming.",
-            "pt": "Condições perfeitas para ir a banhos."
+            "en": "Conditions are good for bathing.",
+            "pt": "Condições favoráveis para ir a banhos."
           },
-          "ipmaWarning": null
+          "apaAlerts": [],
+          "ipmaWarnings": []
         },
         "status": "live"
       }
@@ -2240,12 +1917,13 @@
         "landslideRisk": false,
         "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCD2W&ano=2026",
         "isCoastal": true,
-        "isInland": false
+        "isInland": false,
+        "webcamUrl": null
       },
       "live": {
         "weather": {
-          "airTemp": 29.3,
-          "formattedAirTemp": "29°C",
+          "airTemp": 31.7,
+          "formattedAirTemp": "32°C",
           "condition": {
             "en": "Clear sky",
             "pt": "Céu Limpo",
@@ -2258,8 +1936,8 @@
           "sunset": "20:30"
         },
         "waterTemp": {
-          "value": 19,
-          "formatted": "19.0°C",
+          "value": 19.2,
+          "formatted": "19.2°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -2267,47 +1945,22 @@
             "en": "Excellent",
             "pt": "Excelente"
           },
-          "blueFlag": true,
-          "accessibleBeach": false,
-          "goldQuality": true,
           "lastTested": "2026-08-08"
-        },
-        "jellyfish": {
-          "status": {
-            "en": "Low Risk",
-            "pt": "Risco Baixo"
-          },
-          "recentSightings": false,
-          "count": 0,
-          "species": [],
-          "hasPortugueseManOfWar": false,
-          "message": {
-            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
-            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
-          }
         },
         "swell": {
           "value": 0.2,
           "formatted": "0.2m",
-          "period": "3.3s",
+          "period": "3.5s",
           "direction": "N"
         },
-        "tide": {
-          "value": -1.4,
-          "formatted": "-1.4m ↗",
-          "trend": "rising",
-          "arrow": "↗",
-          "nextHigh": "19:00",
-          "nextLow": "01:00"
-        },
         "wind": {
-          "speed": 6,
+          "speed": 10,
           "direction": "N",
-          "formatted": "6 km/h (N)"
+          "formatted": "10 km/h (N)"
         },
         "uv": {
-          "value": 2,
-          "formatted": "UV 2"
+          "value": 4,
+          "formatted": "UV 4"
         },
         "safety": {
           "flag": "Green",
@@ -2316,10 +1969,11 @@
             "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
           },
           "message": {
-            "en": "Conditions are perfect for swimming.",
-            "pt": "Condições perfeitas para ir a banhos."
+            "en": "Conditions are good for bathing.",
+            "pt": "Condições favoráveis para ir a banhos."
           },
-          "ipmaWarning": null
+          "apaAlerts": [],
+          "ipmaWarnings": []
         },
         "status": "live"
       }
@@ -2412,12 +2066,13 @@
         "landslideRisk": false,
         "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCP9U&ano=2026",
         "isCoastal": true,
-        "isInland": false
+        "isInland": false,
+        "webcamUrl": null
       },
       "live": {
         "weather": {
-          "airTemp": 25.2,
-          "formattedAirTemp": "25°C",
+          "airTemp": 27.4,
+          "formattedAirTemp": "27°C",
           "condition": {
             "en": "Clear sky",
             "pt": "Céu Limpo",
@@ -2430,8 +2085,8 @@
           "sunset": "20:31"
         },
         "waterTemp": {
-          "value": 18.1,
-          "formatted": "18.1°C",
+          "value": 18.3,
+          "formatted": "18.3°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -2439,24 +2094,7 @@
             "en": "Excellent",
             "pt": "Excelente"
           },
-          "blueFlag": true,
-          "accessibleBeach": true,
-          "goldQuality": true,
           "lastTested": "2026-08-08"
-        },
-        "jellyfish": {
-          "status": {
-            "en": "Low Risk",
-            "pt": "Risco Baixo"
-          },
-          "recentSightings": false,
-          "count": 0,
-          "species": [],
-          "hasPortugueseManOfWar": false,
-          "message": {
-            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
-            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
-          }
         },
         "swell": {
           "value": 0.4,
@@ -2464,22 +2102,14 @@
           "period": "5.3s",
           "direction": "W"
         },
-        "tide": {
-          "value": -1.4,
-          "formatted": "-1.4m ↗",
-          "trend": "rising",
-          "arrow": "↗",
-          "nextHigh": "19:00",
-          "nextLow": "01:00"
-        },
         "wind": {
-          "speed": 1,
+          "speed": 3,
           "direction": "S",
-          "formatted": "1 km/h (S)"
+          "formatted": "3 km/h (S)"
         },
         "uv": {
-          "value": 2,
-          "formatted": "UV 2"
+          "value": 4,
+          "formatted": "UV 4"
         },
         "safety": {
           "flag": "Green",
@@ -2488,10 +2118,11 @@
             "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
           },
           "message": {
-            "en": "Conditions are perfect for swimming.",
-            "pt": "Condições perfeitas para ir a banhos."
+            "en": "Conditions are good for bathing.",
+            "pt": "Condições favoráveis para ir a banhos."
           },
-          "ipmaWarning": null
+          "apaAlerts": [],
+          "ipmaWarnings": []
         },
         "status": "live"
       }
@@ -2583,12 +2214,13 @@
         "landslideRisk": false,
         "snirhUrl": "https://snirh.apambiente.pt/snirh/_dadossintese/zbalnear/janela/par_graficos.php?code_cee=PTCJ3N&ano=2026",
         "isCoastal": true,
-        "isInland": false
+        "isInland": false,
+        "webcamUrl": null
       },
       "live": {
         "weather": {
-          "airTemp": 28.8,
-          "formattedAirTemp": "29°C",
+          "airTemp": 30.8,
+          "formattedAirTemp": "31°C",
           "condition": {
             "en": "Clear sky",
             "pt": "Céu Limpo",
@@ -2601,8 +2233,8 @@
           "sunset": "20:30"
         },
         "waterTemp": {
-          "value": 20.1,
-          "formatted": "20.1°C",
+          "value": 20.2,
+          "formatted": "20.2°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -2610,47 +2242,22 @@
             "en": "Excellent",
             "pt": "Excelente"
           },
-          "blueFlag": true,
-          "accessibleBeach": true,
-          "goldQuality": true,
           "lastTested": "2026-08-08"
-        },
-        "jellyfish": {
-          "status": {
-            "en": "Low Risk",
-            "pt": "Risco Baixo"
-          },
-          "recentSightings": false,
-          "count": 0,
-          "species": [],
-          "hasPortugueseManOfWar": false,
-          "message": {
-            "en": "No recent sightings of jellyfish or Portuguese Man-of-War in the area.",
-            "pt": "Sem registo recente de organismos gelatinosos ou caravelas na zona."
-          }
         },
         "swell": {
           "value": 0.2,
           "formatted": "0.2m",
-          "period": "3.3s",
+          "period": "3.5s",
           "direction": "N"
         },
-        "tide": {
-          "value": -1.4,
-          "formatted": "-1.4m ↗",
-          "trend": "rising",
-          "arrow": "↗",
-          "nextHigh": "19:00",
-          "nextLow": "01:00"
-        },
         "wind": {
-          "speed": 8,
+          "speed": 11,
           "direction": "N",
-          "formatted": "8 km/h (N)"
+          "formatted": "11 km/h (N)"
         },
         "uv": {
-          "value": 2,
-          "formatted": "UV 2"
+          "value": 4,
+          "formatted": "UV 4"
         },
         "safety": {
           "flag": "Green",
@@ -2659,10 +2266,11 @@
             "pt": "AVALIAÇÃO DE SEGURANÇA: SEGURA"
           },
           "message": {
-            "en": "Conditions are perfect for swimming.",
-            "pt": "Condições perfeitas para ir a banhos."
+            "en": "Conditions are good for bathing.",
+            "pt": "Condições favoráveis para ir a banhos."
           },
-          "ipmaWarning": null
+          "apaAlerts": [],
+          "ipmaWarnings": []
         },
         "status": "live"
       }
