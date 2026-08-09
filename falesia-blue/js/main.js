@@ -22,13 +22,16 @@ const UI_TEXTS = {
         locationError: "Não foi possível obter a sua localização.",
         noBeachesNearby: "Nenhuma praia a menos de 15 km. A mostrar as mais próximas!",
         regions: {
-            "All": "Todas",
+            "near-me": "Perto de Mim",
             "Arrábida": "Arrábida",
-            "Cascais": "Cascais",
-            "Sintra": "Sintra",
-            "Costa da Caparica": "Costa da Caparica",
-            "Azores": "Açores",
-            "Algarve": "Algarve"
+            "Grande Lisboa": "Grande Lisboa",
+            "Algarve": "Algarve",
+            "Costa Oeste": "Costa Oeste",
+            "Alentejo Litoral": "Alentejo Litoral",
+            "Norte": "Norte",
+            "Açores": "Açores",
+            "Madeira": "Madeira",
+            "Praias Fluviais": "Praias Fluviais"
         }
     },
     en: {
@@ -53,13 +56,16 @@ const UI_TEXTS = {
         locationError: "Unable to retrieve your location.",
         noBeachesNearby: "No beaches within 15 km. Showing closest spots!",
         regions: {
-            "All": "All",
+            "near-me": "Near Me",
             "Arrábida": "Arrábida",
-            "Cascais": "Cascais",
-            "Sintra": "Sintra",
-            "Costa da Caparica": "Costa da Caparica",
-            "Azores": "Azores",
-            "Algarve": "Algarve"
+            "Grande Lisboa": "Greater Lisbon",
+            "Algarve": "Algarve",
+            "Costa Oeste": "West Coast",
+            "Alentejo Litoral": "Alentejo Coast",
+            "Norte": "North",
+            "Açores": "Azores",
+            "Madeira": "Madeira",
+            "Praias Fluviais": "River Beaches"
         }
     }
 };
@@ -167,8 +173,8 @@ function setupNearMeFilter() {
                     }
                     return { ...beach, distanceKm: distKm };
                 })
-                .filter(b => b.distanceKm !== null)
-                .sort((a, b) => a.distanceKm - b.distanceKm);
+                    .filter(b => b.distanceKm !== null)
+                    .sort((a, b) => a.distanceKm - b.distanceKm);
 
                 // 2. Filter strictly within 15 km radius
                 const MAX_RADIUS_KM = 15;
@@ -281,16 +287,22 @@ function renderAmenitiesHTML(amenityKeys) {
 }
 
 function renderWebcamHTML(beach) {
-    const webcam = beach.webcam || beach.webcamUrl || beach.live?.webcam;
+    const webcam = beach.webcamUrl;
+
     if (!webcam) return '';
 
     const webcamUrl = typeof webcam === 'object' ? webcam.url : webcam;
     if (!webcamUrl || typeof webcamUrl !== 'string' || !webcamUrl.trim()) return '';
 
     const label = UI_TEXTS[currentLang].webcam;
-    const isEmbeddable = webcamUrl.includes('embed') || webcamUrl.includes('player') || webcamUrl.includes('youtube.com/embed');
 
-    if (isEmbeddable) {
+    // Apenas serviços com permissão explícita de embedding (ex: YouTube, Vimeo)
+    const isStrictlyEmbeddable = webcamUrl.includes('youtube.com/embed') || 
+                                 webcamUrl.includes('youtube-nocookie.com') ||
+                                 webcamUrl.includes('vimeo.com/video');
+
+    // 1. Se for YouTube/Vimeo, mostra o leitor integrado na app
+    if (isStrictlyEmbeddable) {
         return `
             <div class="modal-webcam-block">
                 <h4>📹 ${label}</h4>
@@ -301,14 +313,16 @@ function renderWebcamHTML(beach) {
         `;
     }
 
+    // 2. Para MEO Beachcam, SpotFav e outros portais externalizados, mostra o botão
     return `
         <div class="modal-webcam-block">
             <a href="${webcamUrl}" target="_blank" rel="noopener noreferrer" class="webcam-direct-btn">
-                📹 ${label}
+                📹 ${label} ↗
             </a>
         </div>
     `;
 }
+
 
 // Extracts ALL live & static details into dynamic key-value rows
 function getExtendedDetailRows(beach) {
@@ -716,6 +730,13 @@ function setupModalClose() {
 
 function closeModal() {
     if (!modal) return;
+
+    // Parar imediatamente a câmara/vídeo do YouTube para não continuar o áudio
+    const webcamFrame = modal.querySelector('.webcam-responsive-frame');
+    if (webcamFrame) {
+        webcamFrame.innerHTML = '';
+    }
+
     modal.classList.add('hidden');
     document.body.style.overflow = '';
 
@@ -725,7 +746,6 @@ function closeModal() {
 }
 
 // --- LANGUAGE SWITCHER LOGIC ---
-
 function setupLangSwitcher() {
     const langBtns = document.querySelectorAll('.lang-btn');
     langBtns.forEach(btn => {
