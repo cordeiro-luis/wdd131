@@ -1,8 +1,8 @@
 {
   "meta": {
-    "lastUpdated": "2026-08-15T07:12:32.994Z",
+    "lastUpdated": "2026-09-03T11:14:13.581Z",
     "totalBeaches": 17,
-    "apaAlertsTotal": 0,
+    "apaAlertsTotal": 11,
     "status": "success"
   },
   "beaches": [
@@ -98,22 +98,22 @@
       },
       "live": {
         "weather": {
-          "airTemp": 21.7,
-          "formattedAirTemp": "22°C",
+          "airTemp": 33.9,
+          "formattedAirTemp": "34°C",
           "condition": {
-            "en": "Partly cloudy",
-            "pt": "Parcialmente Nublado",
-            "icon": "⛅"
+            "en": "Clear sky",
+            "pt": "Céu Limpo",
+            "icon": "☀️"
           },
-          "icon": "⛅"
+          "icon": "☀️"
         },
         "sun": {
-          "sunrise": "06:50",
-          "sunset": "20:30"
+          "sunrise": "07:07",
+          "sunset": "20:03"
         },
         "waterTemp": {
-          "value": 18.5,
-          "formatted": "18.5°C",
+          "value": 18.7,
+          "formatted": "18.7°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -124,7 +124,7 @@
           "blueFlag": false,
           "accessibleBeach": false,
           "goldQuality": true,
-          "lastTested": "2026-08-15"
+          "lastTested": "2026-09-03"
         },
         "jellyfish": {
           "status": {
@@ -141,27 +141,27 @@
           }
         },
         "swell": {
-          "value": 0.6,
-          "formatted": "0.6m",
-          "period": "6.5s",
+          "value": 0.3,
+          "formatted": "0.3m",
+          "period": "8.2s",
           "direction": "W"
         },
         "tide": {
-          "value": 1.5,
-          "formatted": "1.5m ↘",
+          "value": 1.4,
+          "formatted": "1.4m ↘",
           "trend": "falling",
           "arrow": "↘",
-          "nextHigh": "19:03",
-          "nextLow": "12:51"
+          "nextHigh": "22:36",
+          "nextLow": "16:23"
         },
         "wind": {
           "speed": 9,
-          "direction": "NW",
-          "formatted": "9 km/h (NW)"
+          "direction": "NE",
+          "formatted": "9 km/h (NE)"
         },
         "uv": {
-          "value": 0,
-          "formatted": "UV 0"
+          "value": 6,
+          "formatted": "UV 6"
         },
         "safety": {
           "flag": "Green",
@@ -260,22 +260,22 @@
       },
       "live": {
         "weather": {
-          "airTemp": 21.7,
-          "formattedAirTemp": "22°C",
+          "airTemp": 33.9,
+          "formattedAirTemp": "34°C",
           "condition": {
-            "en": "Partly cloudy",
-            "pt": "Parcialmente Nublado",
-            "icon": "⛅"
+            "en": "Clear sky",
+            "pt": "Céu Limpo",
+            "icon": "☀️"
           },
-          "icon": "⛅"
+          "icon": "☀️"
         },
         "sun": {
-          "sunrise": "06:50",
-          "sunset": "20:30"
+          "sunrise": "07:07",
+          "sunset": "20:03"
         },
         "waterTemp": {
-          "value": 18.5,
-          "formatted": "18.5°C",
+          "value": 18.7,
+          "formatted": "18.7°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -286,7 +286,7 @@
           "blueFlag": false,
           "accessibleBeach": false,
           "goldQuality": true,
-          "lastTested": "2026-08-15"
+          "lastTested": "2026-09-03"
         },
         "jellyfish": {
           "status": {
@@ -303,27 +303,27 @@
           }
         },
         "swell": {
-          "value": 0.6,
-          "formatted": "0.6m",
-          "period": "6.5s",
+          "value": 0.3,
+          "formatted": "0.3m",
+          "period": "8.2s",
           "direction": "W"
         },
         "tide": {
-          "value": 1.5,
-          "formatted": "1.5m ↘",
+          "value": 1.4,
+          "formatted": "1.4m ↘",
           "trend": "falling",
           "arrow": "↘",
-          "nextHigh": "19:03",
-          "nextLow": "12:51"
+          "nextHigh": "22:36",
+          "nextLow": "16:23"
         },
         "wind": {
           "speed": 9,
-          "direction": "NW",
-          "formatted": "9 km/h (NW)"
+          "direction": "NE",
+          "formatted": "9 km/h (NE)"
         },
         "uv": {
-          "value": 0,
-          "formatted": "UV 0"
+          "value": 6,
+          "formatted": "UV 6"
         },
         "safety": {
           "flag": "Green",
@@ -419,22 +419,22 @@
       },
       "live": {
         "weather": {
-          "airTemp": 21.6,
-          "formattedAirTemp": "22°C",
+          "airTemp": 33.8,
+          "formattedAirTemp": "34°C",
           "condition": {
-            "en": "Partly cloudy",
-            "pt": "Parcialmente Nublado",
-            "icon": "⛅"
+            "en": "Clear sky",
+            "pt": "Céu Limpo",
+            "icon": "☀️"
           },
-          "icon": "⛅"
+          "icon": "☀️"
         },
         "sun": {
-          "sunrise": "06:50",
-          "sunset": "20:30"
+          "sunrise": "07:07",
+          "sunset": "20:03"
         },
         "waterTemp": {
-          "value": 18.5,
-          "formatted": "18.5°C",
+          "value": 18.7,
+          "formatted": "18.7°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -445,7 +445,7 @@
           "blueFlag": false,
           "accessibleBeach": false,
           "goldQuality": true,
-          "lastTested": "2026-08-15"
+          "lastTested": "2026-09-03"
         },
         "jellyfish": {
           "status": {
@@ -462,27 +462,27 @@
           }
         },
         "swell": {
-          "value": 0.6,
-          "formatted": "0.6m",
-          "period": "6.5s",
+          "value": 0.3,
+          "formatted": "0.3m",
+          "period": "8.2s",
           "direction": "W"
         },
         "tide": {
-          "value": 1.5,
-          "formatted": "1.5m ↘",
+          "value": 1.4,
+          "formatted": "1.4m ↘",
           "trend": "falling",
           "arrow": "↘",
-          "nextHigh": "19:03",
-          "nextLow": "12:51"
+          "nextHigh": "22:36",
+          "nextLow": "16:23"
         },
         "wind": {
           "speed": 9,
-          "direction": "NW",
-          "formatted": "9 km/h (NW)"
+          "direction": "NE",
+          "formatted": "9 km/h (NE)"
         },
         "uv": {
-          "value": 0,
-          "formatted": "UV 0"
+          "value": 6,
+          "formatted": "UV 6"
         },
         "safety": {
           "flag": "Green",
@@ -576,22 +576,22 @@
       },
       "live": {
         "weather": {
-          "airTemp": 21.6,
-          "formattedAirTemp": "22°C",
+          "airTemp": 33.8,
+          "formattedAirTemp": "34°C",
           "condition": {
-            "en": "Partly cloudy",
-            "pt": "Parcialmente Nublado",
-            "icon": "⛅"
+            "en": "Clear sky",
+            "pt": "Céu Limpo",
+            "icon": "☀️"
           },
-          "icon": "⛅"
+          "icon": "☀️"
         },
         "sun": {
-          "sunrise": "06:50",
-          "sunset": "20:30"
+          "sunrise": "07:07",
+          "sunset": "20:03"
         },
         "waterTemp": {
-          "value": 18.5,
-          "formatted": "18.5°C",
+          "value": 18.7,
+          "formatted": "18.7°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -602,7 +602,7 @@
           "blueFlag": false,
           "accessibleBeach": false,
           "goldQuality": true,
-          "lastTested": "2026-08-15"
+          "lastTested": "2026-09-03"
         },
         "jellyfish": {
           "status": {
@@ -619,27 +619,27 @@
           }
         },
         "swell": {
-          "value": 0.6,
-          "formatted": "0.6m",
-          "period": "6.5s",
+          "value": 0.3,
+          "formatted": "0.3m",
+          "period": "8.2s",
           "direction": "W"
         },
         "tide": {
-          "value": 1.5,
-          "formatted": "1.5m ↘",
+          "value": 1.4,
+          "formatted": "1.4m ↘",
           "trend": "falling",
           "arrow": "↘",
-          "nextHigh": "19:03",
-          "nextLow": "12:51"
+          "nextHigh": "22:36",
+          "nextLow": "16:23"
         },
         "wind": {
           "speed": 9,
-          "direction": "NW",
-          "formatted": "9 km/h (NW)"
+          "direction": "NE",
+          "formatted": "9 km/h (NE)"
         },
         "uv": {
-          "value": 0,
-          "formatted": "UV 0"
+          "value": 6,
+          "formatted": "UV 6"
         },
         "safety": {
           "flag": "Green",
@@ -739,22 +739,22 @@
       },
       "live": {
         "weather": {
-          "airTemp": 21.5,
-          "formattedAirTemp": "22°C",
+          "airTemp": 31.9,
+          "formattedAirTemp": "32°C",
           "condition": {
-            "en": "Partly cloudy",
-            "pt": "Parcialmente Nublado",
-            "icon": "⛅"
+            "en": "Clear sky",
+            "pt": "Céu Limpo",
+            "icon": "☀️"
           },
-          "icon": "⛅"
+          "icon": "☀️"
         },
         "sun": {
-          "sunrise": "06:50",
-          "sunset": "20:30"
+          "sunrise": "07:06",
+          "sunset": "20:03"
         },
         "waterTemp": {
-          "value": 18.5,
-          "formatted": "18.5°C",
+          "value": 18.7,
+          "formatted": "18.7°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -765,7 +765,7 @@
           "blueFlag": true,
           "accessibleBeach": true,
           "goldQuality": true,
-          "lastTested": "2026-08-15"
+          "lastTested": "2026-09-03"
         },
         "jellyfish": {
           "status": {
@@ -782,27 +782,27 @@
           }
         },
         "swell": {
-          "value": 0.6,
-          "formatted": "0.6m",
-          "period": "6.5s",
+          "value": 0.3,
+          "formatted": "0.3m",
+          "period": "8.2s",
           "direction": "W"
         },
         "tide": {
-          "value": 1.5,
-          "formatted": "1.5m ↘",
+          "value": 1.4,
+          "formatted": "1.4m ↘",
           "trend": "falling",
           "arrow": "↘",
-          "nextHigh": "19:03",
-          "nextLow": "12:51"
+          "nextHigh": "22:36",
+          "nextLow": "16:23"
         },
         "wind": {
-          "speed": 9,
-          "direction": "NW",
-          "formatted": "9 km/h (NW)"
+          "speed": 7,
+          "direction": "NE",
+          "formatted": "7 km/h (NE)"
         },
         "uv": {
-          "value": 0,
-          "formatted": "UV 0"
+          "value": 6,
+          "formatted": "UV 6"
         },
         "safety": {
           "flag": "Green",
@@ -863,22 +863,22 @@
       "webcamUrl": null,
       "live": {
         "weather": {
-          "airTemp": 22.3,
-          "formattedAirTemp": "22°C",
+          "airTemp": 25.6,
+          "formattedAirTemp": "26°C",
           "condition": {
-            "en": "Clear sky",
-            "pt": "Céu Limpo",
-            "icon": "☀️"
+            "en": "Overcast",
+            "pt": "Encoberto",
+            "icon": "☁️"
           },
-          "icon": "☀️"
+          "icon": "☁️"
         },
         "sun": {
-          "sunrise": "07:07",
-          "sunset": "20:47"
+          "sunrise": "07:24",
+          "sunset": "20:20"
         },
         "waterTemp": {
-          "value": 24.1,
-          "formatted": "24.1°C",
+          "value": 24.6,
+          "formatted": "24.6°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -889,7 +889,7 @@
           "blueFlag": false,
           "accessibleBeach": false,
           "goldQuality": true,
-          "lastTested": "2026-08-15"
+          "lastTested": "2026-09-03"
         },
         "jellyfish": {
           "status": {
@@ -906,27 +906,27 @@
           }
         },
         "swell": {
-          "value": 0.7,
-          "formatted": "0.7m",
-          "period": "8.4s",
-          "direction": "W"
+          "value": 0.8,
+          "formatted": "0.8m",
+          "period": "10.6s",
+          "direction": "SW"
         },
         "tide": {
-          "value": 1.5,
-          "formatted": "1.5m ↘",
+          "value": 1.4,
+          "formatted": "1.4m ↘",
           "trend": "falling",
           "arrow": "↘",
-          "nextHigh": "19:03",
-          "nextLow": "12:51"
+          "nextHigh": "22:36",
+          "nextLow": "16:23"
         },
         "wind": {
-          "speed": 2,
-          "direction": "NW",
-          "formatted": "2 km/h (NW)"
+          "speed": 9,
+          "direction": "S",
+          "formatted": "9 km/h (S)"
         },
         "uv": {
-          "value": 0,
-          "formatted": "UV 0"
+          "value": 5,
+          "formatted": "UV 5"
         },
         "safety": {
           "flag": "Green",
@@ -984,22 +984,22 @@
       "webcamUrl": null,
       "live": {
         "weather": {
-          "airTemp": 17.9,
-          "formattedAirTemp": "18°C",
+          "airTemp": 20.7,
+          "formattedAirTemp": "21°C",
           "condition": {
-            "en": "Clear sky",
-            "pt": "Céu Limpo",
-            "icon": "☀️"
+            "en": "Mainly clear",
+            "pt": "Pouco Nublado",
+            "icon": "🌤️"
           },
-          "icon": "☀️"
+          "icon": "🌤️"
         },
         "sun": {
-          "sunrise": "07:06",
-          "sunset": "20:46"
+          "sunrise": "07:23",
+          "sunset": "20:19"
         },
         "waterTemp": {
-          "value": 24,
-          "formatted": "24.0°C",
+          "value": 24.1,
+          "formatted": "24.1°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -1010,7 +1010,7 @@
           "blueFlag": false,
           "accessibleBeach": false,
           "goldQuality": true,
-          "lastTested": "2026-08-15"
+          "lastTested": "2026-09-03"
         },
         "jellyfish": {
           "status": {
@@ -1027,27 +1027,27 @@
           }
         },
         "swell": {
-          "value": 0.4,
-          "formatted": "0.4m",
-          "period": "8.3s",
+          "value": 0.6,
+          "formatted": "0.6m",
+          "period": "9.7s",
           "direction": "W"
         },
         "tide": {
-          "value": 1.5,
-          "formatted": "1.5m ↘",
+          "value": 1.4,
+          "formatted": "1.4m ↘",
           "trend": "falling",
           "arrow": "↘",
-          "nextHigh": "19:03",
-          "nextLow": "12:51"
+          "nextHigh": "22:36",
+          "nextLow": "16:23"
         },
         "wind": {
-          "speed": 1,
-          "direction": "NW",
-          "formatted": "1 km/h (NW)"
+          "speed": 13,
+          "direction": "S",
+          "formatted": "13 km/h (S)"
         },
         "uv": {
-          "value": 0,
-          "formatted": "UV 0"
+          "value": 4,
+          "formatted": "UV 4"
         },
         "safety": {
           "flag": "Green",
@@ -1145,22 +1145,22 @@
       },
       "live": {
         "weather": {
-          "airTemp": 20.5,
-          "formattedAirTemp": "21°C",
+          "airTemp": 24.1,
+          "formattedAirTemp": "24°C",
           "condition": {
-            "en": "Overcast",
-            "pt": "Encoberto",
-            "icon": "☁️"
+            "en": "Mainly clear",
+            "pt": "Pouco Nublado",
+            "icon": "🌤️"
           },
-          "icon": "☁️"
+          "icon": "🌤️"
         },
         "sun": {
-          "sunrise": "06:57",
-          "sunset": "20:34"
+          "sunrise": "07:13",
+          "sunset": "20:08"
         },
         "waterTemp": {
-          "value": 23.8,
-          "formatted": "23.8°C",
+          "value": 23.9,
+          "formatted": "23.9°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -1171,7 +1171,7 @@
           "blueFlag": false,
           "accessibleBeach": false,
           "goldQuality": true,
-          "lastTested": "2026-08-15"
+          "lastTested": "2026-09-03"
         },
         "jellyfish": {
           "status": {
@@ -1188,27 +1188,27 @@
           }
         },
         "swell": {
-          "value": 0.5,
-          "formatted": "0.5m",
-          "period": "9.3s",
+          "value": 0.7,
+          "formatted": "0.7m",
+          "period": "11.2s",
           "direction": "SW"
         },
         "tide": {
-          "value": 1.5,
-          "formatted": "1.5m ↘",
+          "value": 1.4,
+          "formatted": "1.4m ↘",
           "trend": "falling",
           "arrow": "↘",
-          "nextHigh": "19:03",
-          "nextLow": "12:51"
+          "nextHigh": "22:36",
+          "nextLow": "16:23"
         },
         "wind": {
-          "speed": 1,
-          "direction": "E",
-          "formatted": "1 km/h (E)"
+          "speed": 2,
+          "direction": "NW",
+          "formatted": "2 km/h (NW)"
         },
         "uv": {
-          "value": 0,
-          "formatted": "UV 0"
+          "value": 5,
+          "formatted": "UV 5"
         },
         "safety": {
           "flag": "Green",
@@ -1306,22 +1306,22 @@
       },
       "live": {
         "weather": {
-          "airTemp": 20.8,
-          "formattedAirTemp": "21°C",
+          "airTemp": 24.4,
+          "formattedAirTemp": "24°C",
           "condition": {
-            "en": "Overcast",
-            "pt": "Encoberto",
-            "icon": "☁️"
+            "en": "Clear sky",
+            "pt": "Céu Limpo",
+            "icon": "☀️"
           },
-          "icon": "☁️"
+          "icon": "☀️"
         },
         "sun": {
-          "sunrise": "06:57",
-          "sunset": "20:35"
+          "sunrise": "07:14",
+          "sunset": "20:08"
         },
         "waterTemp": {
-          "value": 23.6,
-          "formatted": "23.6°C",
+          "value": 23.9,
+          "formatted": "23.9°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -1332,7 +1332,7 @@
           "blueFlag": true,
           "accessibleBeach": false,
           "goldQuality": true,
-          "lastTested": "2026-08-15"
+          "lastTested": "2026-09-03"
         },
         "jellyfish": {
           "status": {
@@ -1349,27 +1349,27 @@
           }
         },
         "swell": {
-          "value": 0.6,
-          "formatted": "0.6m",
-          "period": "9.3s",
+          "value": 0.8,
+          "formatted": "0.8m",
+          "period": "10.9s",
           "direction": "SW"
         },
         "tide": {
-          "value": 1.5,
-          "formatted": "1.5m ↘",
+          "value": 1.4,
+          "formatted": "1.4m ↘",
           "trend": "falling",
           "arrow": "↘",
-          "nextHigh": "19:03",
-          "nextLow": "12:51"
+          "nextHigh": "22:36",
+          "nextLow": "16:23"
         },
         "wind": {
-          "speed": 0,
-          "direction": "E",
-          "formatted": "0 km/h (E)"
+          "speed": 2,
+          "direction": "N",
+          "formatted": "2 km/h (N)"
         },
         "uv": {
-          "value": 0,
-          "formatted": "UV 0"
+          "value": 5,
+          "formatted": "UV 5"
         },
         "safety": {
           "flag": "Green",
@@ -1467,22 +1467,22 @@
       },
       "live": {
         "weather": {
-          "airTemp": 21.2,
-          "formattedAirTemp": "21°C",
+          "airTemp": 25.1,
+          "formattedAirTemp": "25°C",
           "condition": {
-            "en": "Clear sky",
-            "pt": "Céu Limpo",
-            "icon": "☀️"
+            "en": "Partly cloudy",
+            "pt": "Parcialmente Nublado",
+            "icon": "⛅"
           },
-          "icon": "☀️"
+          "icon": "⛅"
         },
         "sun": {
-          "sunrise": "06:58",
-          "sunset": "20:36"
+          "sunrise": "07:15",
+          "sunset": "20:10"
         },
         "waterTemp": {
-          "value": 23.1,
-          "formatted": "23.1°C",
+          "value": 23.8,
+          "formatted": "23.8°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -1493,7 +1493,7 @@
           "blueFlag": false,
           "accessibleBeach": false,
           "goldQuality": true,
-          "lastTested": "2026-08-15"
+          "lastTested": "2026-09-03"
         },
         "jellyfish": {
           "status": {
@@ -1510,27 +1510,27 @@
           }
         },
         "swell": {
-          "value": 0.7,
-          "formatted": "0.7m",
-          "period": "8.4s",
-          "direction": "W"
+          "value": 0.8,
+          "formatted": "0.8m",
+          "period": "10.1s",
+          "direction": "SW"
         },
         "tide": {
-          "value": 1.5,
-          "formatted": "1.5m ↘",
+          "value": 1.4,
+          "formatted": "1.4m ↘",
           "trend": "falling",
           "arrow": "↘",
-          "nextHigh": "19:03",
-          "nextLow": "12:51"
+          "nextHigh": "22:36",
+          "nextLow": "16:23"
         },
         "wind": {
           "speed": 2,
-          "direction": "SE",
-          "formatted": "2 km/h (SE)"
+          "direction": "N",
+          "formatted": "2 km/h (N)"
         },
         "uv": {
-          "value": 0,
-          "formatted": "UV 0"
+          "value": 5,
+          "formatted": "UV 5"
         },
         "safety": {
           "flag": "Green",
@@ -1628,22 +1628,22 @@
       },
       "live": {
         "weather": {
-          "airTemp": 20.8,
-          "formattedAirTemp": "21°C",
+          "airTemp": 33.3,
+          "formattedAirTemp": "33°C",
           "condition": {
-            "en": "Mainly clear",
-            "pt": "Pouco Nublado",
-            "icon": "🌤️"
+            "en": "Clear sky",
+            "pt": "Céu Limpo",
+            "icon": "☀️"
           },
-          "icon": "🌤️"
+          "icon": "☀️"
         },
         "sun": {
-          "sunrise": "06:50",
-          "sunset": "20:26"
+          "sunrise": "07:06",
+          "sunset": "20:00"
         },
         "waterTemp": {
-          "value": 17.8,
-          "formatted": "17.8°C",
+          "value": 17.6,
+          "formatted": "17.6°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -1654,7 +1654,7 @@
           "blueFlag": false,
           "accessibleBeach": false,
           "goldQuality": true,
-          "lastTested": "2026-08-15"
+          "lastTested": "2026-09-03"
         },
         "jellyfish": {
           "status": {
@@ -1671,27 +1671,27 @@
           }
         },
         "swell": {
-          "value": 0.3,
-          "formatted": "0.3m",
-          "period": "5.0s",
-          "direction": "W"
+          "value": 0.4,
+          "formatted": "0.4m",
+          "period": "5.7s",
+          "direction": "SE"
         },
         "tide": {
-          "value": 1.5,
-          "formatted": "1.5m ↘",
+          "value": 1.4,
+          "formatted": "1.4m ↘",
           "trend": "falling",
           "arrow": "↘",
-          "nextHigh": "19:03",
-          "nextLow": "12:51"
+          "nextHigh": "22:36",
+          "nextLow": "16:23"
         },
         "wind": {
-          "speed": 7,
-          "direction": "N",
-          "formatted": "7 km/h (N)"
+          "speed": 13,
+          "direction": "SE",
+          "formatted": "13 km/h (SE)"
         },
         "uv": {
-          "value": 1,
-          "formatted": "UV 1"
+          "value": 6,
+          "formatted": "UV 6"
         },
         "safety": {
           "flag": "Green",
@@ -1790,22 +1790,22 @@
       },
       "live": {
         "weather": {
-          "airTemp": 20.9,
-          "formattedAirTemp": "21°C",
+          "airTemp": 33.5,
+          "formattedAirTemp": "34°C",
           "condition": {
-            "en": "Mainly clear",
-            "pt": "Pouco Nublado",
-            "icon": "🌤️"
+            "en": "Clear sky",
+            "pt": "Céu Limpo",
+            "icon": "☀️"
           },
-          "icon": "🌤️"
+          "icon": "☀️"
         },
         "sun": {
-          "sunrise": "06:50",
-          "sunset": "20:26"
+          "sunrise": "07:06",
+          "sunset": "20:00"
         },
         "waterTemp": {
-          "value": 17.3,
-          "formatted": "17.3°C",
+          "value": 17.5,
+          "formatted": "17.5°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -1816,7 +1816,7 @@
           "blueFlag": false,
           "accessibleBeach": false,
           "goldQuality": true,
-          "lastTested": "2026-08-15"
+          "lastTested": "2026-09-03"
         },
         "jellyfish": {
           "status": {
@@ -1833,27 +1833,27 @@
           }
         },
         "swell": {
-          "value": 0.3,
-          "formatted": "0.3m",
-          "period": "5.0s",
-          "direction": "W"
+          "value": 0.4,
+          "formatted": "0.4m",
+          "period": "5.7s",
+          "direction": "SE"
         },
         "tide": {
-          "value": 1.5,
-          "formatted": "1.5m ↘",
+          "value": 1.4,
+          "formatted": "1.4m ↘",
           "trend": "falling",
           "arrow": "↘",
-          "nextHigh": "19:03",
-          "nextLow": "12:51"
+          "nextHigh": "22:36",
+          "nextLow": "16:23"
         },
         "wind": {
-          "speed": 7,
-          "direction": "N",
-          "formatted": "7 km/h (N)"
+          "speed": 13,
+          "direction": "SE",
+          "formatted": "13 km/h (SE)"
         },
         "uv": {
-          "value": 1,
-          "formatted": "UV 1"
+          "value": 6,
+          "formatted": "UV 6"
         },
         "safety": {
           "flag": "Green",
@@ -1951,22 +1951,22 @@
       },
       "live": {
         "weather": {
-          "airTemp": 20.6,
-          "formattedAirTemp": "21°C",
+          "airTemp": 31.8,
+          "formattedAirTemp": "32°C",
           "condition": {
-            "en": "Overcast",
-            "pt": "Encoberto",
-            "icon": "☁️"
+            "en": "Clear sky",
+            "pt": "Céu Limpo",
+            "icon": "☀️"
           },
-          "icon": "☁️"
+          "icon": "☀️"
         },
         "sun": {
-          "sunrise": "06:51",
-          "sunset": "20:26"
+          "sunrise": "07:07",
+          "sunset": "20:01"
         },
         "waterTemp": {
-          "value": 16.7,
-          "formatted": "16.7°C",
+          "value": 17.2,
+          "formatted": "17.2°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -1977,7 +1977,7 @@
           "blueFlag": false,
           "accessibleBeach": false,
           "goldQuality": true,
-          "lastTested": "2026-08-15"
+          "lastTested": "2026-09-03"
         },
         "jellyfish": {
           "status": {
@@ -1994,27 +1994,27 @@
           }
         },
         "swell": {
-          "value": 0.6,
-          "formatted": "0.6m",
-          "period": "4.8s",
-          "direction": "NW"
+          "value": 0.5,
+          "formatted": "0.5m",
+          "period": "5.7s",
+          "direction": "SE"
         },
         "tide": {
-          "value": 1.5,
-          "formatted": "1.5m ↘",
+          "value": 1.4,
+          "formatted": "1.4m ↘",
           "trend": "falling",
           "arrow": "↘",
-          "nextHigh": "19:03",
-          "nextLow": "12:51"
+          "nextHigh": "22:36",
+          "nextLow": "16:23"
         },
         "wind": {
           "speed": 11,
-          "direction": "NW",
-          "formatted": "11 km/h (NW)"
+          "direction": "SE",
+          "formatted": "11 km/h (SE)"
         },
         "uv": {
-          "value": 1,
-          "formatted": "UV 1"
+          "value": 6,
+          "formatted": "UV 6"
         },
         "safety": {
           "flag": "Green",
@@ -2115,22 +2115,22 @@
       },
       "live": {
         "weather": {
-          "airTemp": 20.6,
-          "formattedAirTemp": "21°C",
+          "airTemp": 32.6,
+          "formattedAirTemp": "33°C",
           "condition": {
-            "en": "Mainly clear",
-            "pt": "Pouco Nublado",
-            "icon": "🌤️"
+            "en": "Clear sky",
+            "pt": "Céu Limpo",
+            "icon": "☀️"
           },
-          "icon": "🌤️"
+          "icon": "☀️"
         },
         "sun": {
-          "sunrise": "06:50",
-          "sunset": "20:26"
+          "sunrise": "07:06",
+          "sunset": "20:00"
         },
         "waterTemp": {
-          "value": 17.1,
-          "formatted": "17.1°C",
+          "value": 17.4,
+          "formatted": "17.4°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -2141,7 +2141,7 @@
           "blueFlag": true,
           "accessibleBeach": true,
           "goldQuality": true,
-          "lastTested": "2026-08-15"
+          "lastTested": "2026-09-03"
         },
         "jellyfish": {
           "status": {
@@ -2160,25 +2160,25 @@
         "swell": {
           "value": 0.4,
           "formatted": "0.4m",
-          "period": "4.9s",
-          "direction": "NW"
+          "period": "5.8s",
+          "direction": "SE"
         },
         "tide": {
-          "value": 1.5,
-          "formatted": "1.5m ↘",
+          "value": 1.4,
+          "formatted": "1.4m ↘",
           "trend": "falling",
           "arrow": "↘",
-          "nextHigh": "19:03",
-          "nextLow": "12:51"
+          "nextHigh": "22:36",
+          "nextLow": "16:23"
         },
         "wind": {
-          "speed": 1,
-          "direction": "N",
-          "formatted": "1 km/h (N)"
+          "speed": 12,
+          "direction": "SE",
+          "formatted": "12 km/h (SE)"
         },
         "uv": {
-          "value": 1,
-          "formatted": "UV 1"
+          "value": 6,
+          "formatted": "UV 6"
         },
         "safety": {
           "flag": "Green",
@@ -2273,8 +2273,8 @@
       },
       "live": {
         "weather": {
-          "airTemp": 21.7,
-          "formattedAirTemp": "22°C",
+          "airTemp": 33.2,
+          "formattedAirTemp": "33°C",
           "condition": {
             "en": "Clear sky",
             "pt": "Céu Limpo",
@@ -2283,12 +2283,12 @@
           "icon": "☀️"
         },
         "sun": {
-          "sunrise": "06:46",
-          "sunset": "20:22"
+          "sunrise": "07:02",
+          "sunset": "19:56"
         },
         "waterTemp": {
-          "value": 19.6,
-          "formatted": "19.6°C",
+          "value": 19.5,
+          "formatted": "19.5°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -2299,7 +2299,7 @@
           "blueFlag": false,
           "accessibleBeach": false,
           "goldQuality": true,
-          "lastTested": "2026-08-15"
+          "lastTested": "2026-09-03"
         },
         "jellyfish": {
           "status": {
@@ -2316,27 +2316,27 @@
           }
         },
         "swell": {
-          "value": 0.2,
-          "formatted": "0.2m",
-          "period": "4.1s",
-          "direction": "SW"
+          "value": 0.6,
+          "formatted": "0.6m",
+          "period": "5.2s",
+          "direction": "SE"
         },
         "tide": {
-          "value": 1.5,
-          "formatted": "1.5m ↘",
+          "value": 1.4,
+          "formatted": "1.4m ↘",
           "trend": "falling",
           "arrow": "↘",
-          "nextHigh": "19:03",
-          "nextLow": "12:51"
+          "nextHigh": "22:36",
+          "nextLow": "16:23"
         },
         "wind": {
-          "speed": 15,
-          "direction": "N",
-          "formatted": "15 km/h (N)"
+          "speed": 12,
+          "direction": "E",
+          "formatted": "12 km/h (E)"
         },
         "uv": {
-          "value": 1,
-          "formatted": "UV 1"
+          "value": 6,
+          "formatted": "UV 6"
         },
         "safety": {
           "flag": "Green",
@@ -2447,8 +2447,8 @@
       },
       "live": {
         "weather": {
-          "airTemp": 20.9,
-          "formattedAirTemp": "21°C",
+          "airTemp": 30.2,
+          "formattedAirTemp": "30°C",
           "condition": {
             "en": "Clear sky",
             "pt": "Céu Limpo",
@@ -2457,12 +2457,12 @@
           "icon": "☀️"
         },
         "sun": {
-          "sunrise": "06:48",
-          "sunset": "20:23"
+          "sunrise": "07:04",
+          "sunset": "19:57"
         },
         "waterTemp": {
-          "value": 18,
-          "formatted": "18.0°C",
+          "value": 18.4,
+          "formatted": "18.4°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -2473,7 +2473,7 @@
           "blueFlag": true,
           "accessibleBeach": true,
           "goldQuality": true,
-          "lastTested": "2026-08-15"
+          "lastTested": "2026-09-03"
         },
         "jellyfish": {
           "status": {
@@ -2490,27 +2490,27 @@
           }
         },
         "swell": {
-          "value": 0.5,
-          "formatted": "0.5m",
-          "period": "5.5s",
-          "direction": "W"
+          "value": 0.7,
+          "formatted": "0.7m",
+          "period": "5.2s",
+          "direction": "SE"
         },
         "tide": {
-          "value": 1.5,
-          "formatted": "1.5m ↘",
+          "value": 1.4,
+          "formatted": "1.4m ↘",
           "trend": "falling",
           "arrow": "↘",
-          "nextHigh": "19:03",
-          "nextLow": "12:51"
+          "nextHigh": "22:36",
+          "nextLow": "16:23"
         },
         "wind": {
-          "speed": 5,
-          "direction": "N",
-          "formatted": "5 km/h (N)"
+          "speed": 18,
+          "direction": "E",
+          "formatted": "18 km/h (E)"
         },
         "uv": {
-          "value": 1,
-          "formatted": "UV 1"
+          "value": 6,
+          "formatted": "UV 6"
         },
         "safety": {
           "flag": "Green",
@@ -2620,22 +2620,22 @@
       },
       "live": {
         "weather": {
-          "airTemp": 21.4,
-          "formattedAirTemp": "21°C",
+          "airTemp": 32.4,
+          "formattedAirTemp": "32°C",
           "condition": {
-            "en": "Clear sky",
-            "pt": "Céu Limpo",
-            "icon": "☀️"
+            "en": "Mainly clear",
+            "pt": "Pouco Nublado",
+            "icon": "🌤️"
           },
-          "icon": "☀️"
+          "icon": "🌤️"
         },
         "sun": {
-          "sunrise": "06:46",
-          "sunset": "20:22"
+          "sunrise": "07:02",
+          "sunset": "19:56"
         },
         "waterTemp": {
-          "value": 21.4,
-          "formatted": "21.4°C",
+          "value": 20.3,
+          "formatted": "20.3°C",
           "source": "Open-Meteo"
         },
         "waterQuality": {
@@ -2646,7 +2646,7 @@
           "blueFlag": true,
           "accessibleBeach": true,
           "goldQuality": true,
-          "lastTested": "2026-08-15"
+          "lastTested": "2026-09-03"
         },
         "jellyfish": {
           "status": {
@@ -2663,27 +2663,27 @@
           }
         },
         "swell": {
-          "value": 0.3,
-          "formatted": "0.3m",
-          "period": "3.6s",
-          "direction": "NW"
+          "value": 0.6,
+          "formatted": "0.6m",
+          "period": "5.3s",
+          "direction": "SE"
         },
         "tide": {
-          "value": 1.5,
-          "formatted": "1.5m ↘",
+          "value": 1.4,
+          "formatted": "1.4m ↘",
           "trend": "falling",
           "arrow": "↘",
-          "nextHigh": "19:03",
-          "nextLow": "12:51"
+          "nextHigh": "22:36",
+          "nextLow": "16:23"
         },
         "wind": {
-          "speed": 18,
-          "direction": "N",
-          "formatted": "18 km/h (N)"
+          "speed": 10,
+          "direction": "E",
+          "formatted": "10 km/h (E)"
         },
         "uv": {
-          "value": 1,
-          "formatted": "UV 1"
+          "value": 6,
+          "formatted": "UV 6"
         },
         "safety": {
           "flag": "Green",
