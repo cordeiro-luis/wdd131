@@ -146,57 +146,6 @@ function calculateDistanceKm(lat1, lon1, lat2, lon2) {
     return R * (2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
 }
 
-// --- GPS "NEAR ME" FILTER HANDLER ---
-function setupNearMeFilter() {
-    if (!nearMeBtn) return;
-
-    nearMeBtn.addEventListener('click', () => {
-        const defaultBtnText = `📍 ${UI_TEXTS[currentLang]?.regions['near-me'] || 'Perto de Mim'}`;
-        nearMeBtn.textContent = "📍 ...";
-
-        filterButtons.forEach(b => b.classList.remove('active'));
-        nearMeBtn.classList.add('active');
-
-        if (!navigator.geolocation) {
-            if (typeof showToast === 'function') {
-                showToast(UI_TEXTS[currentLang]?.locationError || "Geolocalização não suportada.");
-            }
-            nearMeBtn.textContent = defaultBtnText;
-            return;
-        }
-
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                const userLat = position.coords.latitude;
-                const userLon = position.coords.longitude;
-
-                const sortedBeaches = beachesData
-                    .map(beach => {
-                        if (!beach.coordinates) return { ...beach, distanceKm: Infinity };
-                        const dist = calculateDistanceKm(
-                            userLat,
-                            userLon,
-                            beach.coordinates.lat,
-                            beach.coordinates.lng || beach.coordinates.lon
-                        );
-                        return { ...beach, distanceKm: dist };
-                    })
-                    .sort((a, b) => a.distanceKm - b.distanceKm);
-
-                renderCards(sortedBeaches, true);
-                nearMeBtn.textContent = defaultBtnText;
-            },
-            (error) => {
-                if (typeof showToast === 'function') {
-                    showToast(UI_TEXTS[currentLang]?.locationError || "Não foi possível obter a sua localização.");
-                }
-                nearMeBtn.textContent = defaultBtnText;
-            },
-            { timeout: 8000 }
-        );
-    });
-}
-
 function getText(field) {
     if (!field) return '';
     if (typeof field === 'string') return field;
@@ -402,15 +351,87 @@ function getExtendedDetailRows(beach) {
     return rows;
 }
 
-// --- INITIALIZATION ---
+// --- GPS "NEAR ME" FILTER HANDLER ---
+function handleNearMeFilter(isInitialLoad = false) {
+    if (!nearMeBtn) return;
 
-window.addEventListener('DOMContentLoaded', async () => {
-    await loadBeachesData();
-    setupModalClose();
-    setupLangSwitcher();
-    updateFilterNavLabels();
-});
+    const defaultBtnText = `📍 ${UI_TEXTS[currentLang]?.regions['near-me'] || 'Perto de Mim'}`;
+    nearMeBtn.textContent = "📍 ...";
 
+    filterButtons.forEach(b => b.classList.remove('active'));
+    nearMeBtn.classList.add('active');
+
+    // Helper fallback function when GPS is denied or fails
+    const fallbackToArrabida = () => {
+        const arrabidaBtn = document.querySelector('.filter-btn[data-region="Arrábida"]');
+        filterButtons.forEach(b => b.classList.remove('active'));
+        if (arrabidaBtn) arrabidaBtn.classList.add('active');
+
+        const filtered = beachesData.filter(b => b.region === 'Arrábida');
+        renderCards(filtered.length ? filtered : beachesData);
+        nearMeBtn.textContent = defaultBtnText;
+    };
+
+    if (!navigator.geolocation) {
+        if (!isInitialLoad && typeof showToast === 'function') {
+            showToast(UI_TEXTS[currentLang]?.locationError || "Geolocalização não suportada.");
+        }
+        fallbackToArrabida();
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+            const userLat = position.coords.latitude;
+            const userLon = position.coords.longitude;
+
+            // Calculate distance for all beaches
+            const sortedBeaches = beachesData
+                .map(beach => {
+                    if (!beach.coordinates) return { ...beach, distanceKm: Infinity };
+                    const dist = calculateDistanceKm(
+                        userLat,
+                        userLon,
+                        beach.coordinates.lat,
+                        beach.coordinates.lng || beach.coordinates.lon
+                    );
+                    return { ...beach, distanceKm: dist };
+                })
+                .sort((a, b) => a.distanceKm - b.distanceKm);
+
+            // Filter strictly by 15 Km radius
+            const nearbyBeaches = sortedBeaches.filter(b => b.distanceKm <= 15);
+
+            if (nearbyBeaches.length > 0) {
+                renderCards(nearbyBeaches, true);
+            } else {
+                if (typeof showToast === 'function') {
+                    showToast(UI_TEXTS[currentLang]?.noBeachesNearby || "Nenhuma praia a menos de 15 km. A mostrar as mais próximas!");
+                }
+                renderCards(sortedBeaches, true);
+            }
+
+            nearMeBtn.textContent = defaultBtnText;
+        },
+        (error) => {
+            if (!isInitialLoad && typeof showToast === 'function') {
+                showToast(UI_TEXTS[currentLang]?.locationError || "Não foi possível obter a sua localização.");
+            }
+            fallbackToArrabida();
+        },
+        { timeout: 8000 }
+    );
+}
+
+function setupNearMeFilter() {
+    if (!nearMeBtn) return;
+
+    nearMeBtn.addEventListener('click', () => {
+        handleNearMeFilter(false);
+    });
+}
+
+// --- INITIALIZATION & DATA LOADING ---
 async function loadBeachesData() {
     try {
         const cacheBuster = new Date().getTime();
@@ -429,16 +450,11 @@ async function loadBeachesData() {
         metaLastUpdated = data.meta?.lastUpdated || null;
 
         setupHeroSuggestion();
-
-        const defaultRegion = 'Arrábida';
-        const filtered = beachesData.filter(b => b.region === defaultRegion);
-        renderCards(filtered.length ? filtered : beachesData);
-
-        const defaultBtn = document.querySelector(`.filter-btn[data-region="${defaultRegion}"]`);
-        if (defaultBtn) defaultBtn.classList.add('active');
-
         setupFilters();
         setupNearMeFilter();
+
+        // Default to "Near Me" logic on initial load
+        handleNearMeFilter(true);
 
     } catch (error) {
         console.error('Failed to load beaches dataset:', error);
@@ -451,8 +467,16 @@ async function loadBeachesData() {
     }
 }
 
-// --- HERO FEATURED SPOT ---
+// --- INITIALIZATION ---
 
+window.addEventListener('DOMContentLoaded', async () => {
+    await loadBeachesData();
+    setupModalClose();
+    setupLangSwitcher();
+    updateFilterNavLabels();
+});
+
+// --- HERO FEATURED SPOT ---
 function getDailySpot(beaches) {
     if (!beaches || beaches.length === 0) return null;
 
